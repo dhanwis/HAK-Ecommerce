@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import AboutUsTestimonial from '../Components/AboutUsTestimonial';
 import BlogSection from '../Components/Blog/BlogSection';
 import InstagramSection from '../Components/InstagramSection/InstagramSection';
-import LogoSection from '../Components/LogoSection/LogoSection';
-import NewsletterSection from '../Components/News/NewsLetterSection';
 import PageHeading from '../Components/PageHeading/PageHeading';
 
 function AboutUs() {
@@ -14,16 +12,7 @@ function AboutUs() {
         label: "About Us",
         active: true,
     };
-    const logos = [
-        "assets/images/client/01.png",
-        "assets/images/client/02.png",
-        "assets/images/client/03.png",
-        "assets/images/client/04.png",
-        "assets/images/client/05.png",
-        "assets/images/client/06.png",
-        "assets/images/client/07.png",
-        "assets/images/client/08.png",
-    ];
+ 
     const blogs = useSelector(
         (state) => state.blog.blogItems
     );
@@ -138,8 +127,6 @@ function AboutUs() {
                     </Container>
                 </section>
                 <AboutUsTestimonial />
-                <NewsletterSection />
-                <LogoSection logos={logos} />
                 <BlogSection blogs={filteredBlogs} title={"Fashion Blogs"} />
                 <InstagramSection />
             </div>
