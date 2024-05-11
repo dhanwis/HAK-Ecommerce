@@ -16,11 +16,7 @@ function SignUp() {
 
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="Sign Up"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className='page-content'>
                 <section>
                     <Container>

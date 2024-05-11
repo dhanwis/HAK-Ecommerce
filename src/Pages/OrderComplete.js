@@ -13,11 +13,7 @@ function OrderComplete() {
     return (
         <div>
             <div className="page-wrapper">
-                <PageHeading
-                    title="Order Completed"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+                
                 <div className="page-content">
                     <section className="bg-light">
                         <Container>

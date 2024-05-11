@@ -55,11 +55,7 @@ function PLRS() {
   };
   return (
     <div className='page-wrapper'>
-      <PageHeading
-        title="Shop List Right Sidebar"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
+    
       <div className='page-content'>
         <section>
           <Container>

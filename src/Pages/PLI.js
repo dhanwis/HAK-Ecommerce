@@ -192,19 +192,13 @@ function PLI() {
     if (product === undefined ? (product = allProducts[0]) : product)
         return (
             <div className="page-wrapper">
-                <PageHeading
-                    title="Product Left Image"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+                
                 <div className="page-content">
                     <div>
                         <section>
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-6 col-12">
-
-
                                         <ReactImageGallery
                                             items={product.pictures.map((image, index) => ({
                                                 original: `assets/images/${image}`,

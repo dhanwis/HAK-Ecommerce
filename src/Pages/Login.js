@@ -17,11 +17,7 @@ function Login() {
 
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="Login"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className='page-content'>
                 <section>
                     <Container>

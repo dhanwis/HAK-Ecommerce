@@ -57,11 +57,7 @@ function PGRS() {
 
   return (
     <div className='page-wrapper'>
-      <PageHeading
-        title="Shop Grid Right Sidebar"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
+      
       <div className='page-content'>
         <section>
           <Container>

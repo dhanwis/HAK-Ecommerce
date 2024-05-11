@@ -45,11 +45,7 @@ function tAndC() {
     ];
     return (
         <div className="page-wrapper">
-            <PageHeading
-                title="Terms & Conditions"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+          
             <section>
                 <Container>
                     <Row>

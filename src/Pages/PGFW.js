@@ -54,11 +54,7 @@ function PGFW() {
   };
   return (
     <div className='page-wrapper'>
-      <PageHeading
-        title="Shop Grid Full Width"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
+     
       <div className='page-content'>
         <section>
           <Container fluid>

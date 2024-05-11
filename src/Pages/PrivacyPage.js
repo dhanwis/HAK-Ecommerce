@@ -28,11 +28,7 @@ function PrivacyPage() {
     ];
     return (
         <div className="page-wrapper">
-            <PageHeading
-                title="Privacy & Policy"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className="page-content">
                 <section>
                     <Container>
