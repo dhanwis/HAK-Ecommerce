@@ -181,7 +181,6 @@ function App() {
           <Route path="/blog-listing-2" element={<BlogsList2 />} />
           <Route path="/blog-single" element={<BlogSingle />} />
           <Route path="/contact-us" element={<ContatctUs />} />
-
         </Routes>
         <Footer />
 

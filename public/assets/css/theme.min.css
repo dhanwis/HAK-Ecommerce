@@ -78,7 +78,7 @@ Button
 .btn-primary:hover, .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle { color: #fff; background-color: #f85438; border-color: #f85438; }
 .btn-outline-primary { color: #fe4c1c; border-color: #fe4c1c; }
 .btn-outline-primary:hover { background-color: #f85438; border-color: #f85438; }
-.btn-dark { background-color: #042825; border-color: #042825; }
+.btn-dark { background-color: #220428; border-color: #042825; }
 .btn-dark:hover { background-color: #f85438; border-color: #f85438; }
 .btn.focus, .btn:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-primary.dropdown-toggle:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus { box-shadow: none; }
@@ -98,16 +98,16 @@ button:focus { outline: none; }
 /* ------------------------
 text 
 ------------------------*/
-.text-dark { color: #042825 !important; }
-.text-primary { color: #fe4c1c !important; }
-.text-muted { color: rgb(140, 152, 164) !important }
+.text-dark { color: #000000 !important; }
+.text-primary { color:rgb(248, 36, 142)!important; }
+.text-muted { color: rgb(0, 0, 0) !important }
 
 /* ------------------------
 Background 
 ------------------------*/
-.bg-primary { background-color: #fe4c1c !important; }
+.bg-primary { background-color: rgb(252, 164, 164) !important; }
 .bg-light { background-color: #f5f9fc !important; }
-.bg-dark { background-color: #042825 !important; }
+.bg-dark { background-color: white !important; }
 
 /* ------------------------
 Badge

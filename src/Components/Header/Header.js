@@ -1,19 +1,19 @@
 import React from "react";
 import HeaderMiddle from "./HeaderMiddle";
-import HeaderTop from "./HeaderTop";
 import HeaderNavBar from "./HeaderNavBar";
 
 export default function Header() {
   return (
     <>
       <header className="site-header">
-        <HeaderTop />
         <HeaderMiddle
           options={[
-            { value: "all", label: "All Categories" },
-            { value: "men", label: "Men" },
-            { value: "women", label: "Women" },
-            { value: "kids", label: "Kids" },
+            { value: "all", label: "Categories" },
+            { value: "kurti", label: "Kurtis" },
+            { value: "saree", label: "Sarees" },
+            { value: "kurti sets", label: "Kurti sets" },
+            { value: "churidar", label: "Churidars" },
+            { value: "churidar materials", label: "Churidar materials" },
           ]}
         />
         <HeaderNavBar />
