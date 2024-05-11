@@ -343,18 +343,6 @@ Insta
 
 /* ------------------------
 Modal Popup
-------------------------*/
-.modal .modal-dialog.cart-modal { margin: 0 0 0 auto; height: 100%; max-width: 450px; }
-.modal .modal-content { border: none; border-radius: 0; height: inherit; overflow-y: auto; }
-.modal.fade .modal-dialog.cart-modal { -webkit-transform: translateX(100%); transform: translateX(100%); }
-.modal.show .modal-dialog.cart-modal { -webkit-transform: translateX(0); transform: translateX(0); }
-.modal.view-modal .modal-dialog.cart-modal { max-width: 1200px; }
-
-#mailchimpModal.show{display: flex !important; align-items: center;}
-#mailchimpModal .modal-dialog{width: 700px; max-width: inherit;}
-#mailchimpModal .modal-body{padding: 3rem}
-.modal-header .close {background: rgb(250,143,143); color: #fff; opacity: 1;}
-
 
 /* ------------------------
     Accordion

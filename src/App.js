@@ -98,38 +98,7 @@ function App() {
             <img className="img-fluid" src="assets/images/loader.gif" alt="" />
           </div>
         </div>
-      )}
-      {showModal && (<>
-
-        <div className="modal fade" id="mailchimpModal" tabIndex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content" data-bg-img="assets/images/bg/08.png" style={{ backgroundImage: 'assets/images/bg/08.png' }}>
-              <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body text-center">
-                <div className="mb-4">
-                  <h6 className="text-primary mb-1">
-                    — Newsletter
-                  </h6>
-                  <h2 className="mb-0">Subscribe get notified!</h2>
-                </div>
-                <div className="subscribe-form">
-                  <form id="mc-form1" className="row align-items-center no-gutters mb-3">
-                    <div className="col">
-                      <input value="" name="EMAIL" className="email form-control input-2 bg-white" id="mc-email1" placeholder="Email Address" required="" type="email" />
-                    </div>
-                    <div className="col-auto">
-                      <input className="btn btn-primary overflow-auto" name="subscribe" value="Subscribe" type="submit" />
-                    </div>
-                  </form> <small>Get started for 1 Month free trial No Purchace required.</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div></>
-      )}
+      )} 
       <ToastContainer
         position="top-right"
         autoClose={5000}
