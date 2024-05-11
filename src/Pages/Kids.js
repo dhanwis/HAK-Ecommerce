@@ -4,8 +4,6 @@ import BlogSection from "../Components/Blog/BlogSection";
 import FeatureFurniture from "../Components/Feature/FeatureFurniture";
 import HeroBanner6 from "../Components/Hero Banner/HeroBanner6";
 import InstagramSectionKids from "../Components/InstagramSection/InstagramSectionKids";
-import LogoSection from "../Components/LogoSection/LogoSection";
-import NewsletterSection from "../Components/News/NewsLetterSection";
 import NewCollectionKids from "../Components/Our Products/NewCollectionKids";
 import KidsAd2 from "../Components/Section/KidsAd2";
 import KidsAds from "../Components/Section/KidsAds";
@@ -40,16 +38,7 @@ function Index6() {
       description: "Writing result-oriented",
     },
   ];
-  const logos = [
-    "assets/images/client/01.png",
-    "assets/images/client/02.png",
-    "assets/images/client/03.png",
-    "assets/images/client/04.png",
-    "assets/images/client/05.png",
-    "assets/images/client/06.png",
-    "assets/images/client/07.png",
-    "assets/images/client/08.png",
-  ];
+
   return  <div className="page-wrapper">
   <HeroBanner6 />
   <div className="page-content">
@@ -57,8 +46,6 @@ function Index6() {
   <ProductIndex6 />
   <KidsAd2 />
   <NewCollectionKids />
-  <NewsletterSection />
-  <LogoSection logos={logos} />
   <BlogSection blogs={kidsBlogs} title={"Kids Blog"}/>
 {/* <FeatureIndex feature={feature} /> */}
   <div className="bg-light">
