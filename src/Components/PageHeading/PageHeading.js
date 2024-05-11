@@ -29,7 +29,6 @@ const PageHeading = ({
         </nav>
       </div>
     </div>
-    {/* / .row */}
   </div>
   {/* / .container */}
 </section>
