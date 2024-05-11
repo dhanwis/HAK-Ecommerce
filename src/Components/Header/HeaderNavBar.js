@@ -11,9 +11,7 @@ import {
   Row
 } from "reactstrap";
 import { addToCart, removeCartItem, removeWishListItem } from "../../store/reducer/productReducer";
-import CatalogDropDown from "./CatalogDropDown";
-import ShopDropdown from "./DropDownMenuBarTable";
-import DropdownMenuNavBar from "./DropDownMenuNavBar";
+
 export default function HeaderNavBar() {
   const wishListItems = useSelector((state) => state.products.wishList);
   const cartItems = useSelector((state) => state.products.cart);
@@ -48,168 +46,7 @@ export default function HeaderNavBar() {
     });
   };
 
-  const homeLinks = [
-    { url: "/", label: "Home - Fashion 1" },
-    { url: "/index2", label: "Home - Fashion 2" },
-    { url: "/index3", label: "Home - Fashion 3" },
-    { url: "/index4", label: "Home - Electronic" },
-    { url: "/index5", label: "Home - Furniture" },
-    { url: "/index6", label: "Home - Kids" },
-  ];
-
-  const catagoryLinks = [
-    {
-      title: "Clothing",
-      links: [
-        { title: "All Clothing", url: "/shop-grid-left-sidebar" },
-        { title: "Top T-Shirts & Shirts", url: "/shop-grid-left-sidebar" },
-        { title: "Lingerie & Sleepwear", url: "/shop-grid-left-sidebar" },
-        { title: "Leggings & Jeggings", url: "/shop-grid-left-sidebar" },
-        { title: "Kurtas & Kurtis", url: "/shop-grid-left-sidebar" },
-        { title: "Dresses & Skirts", url: "/shop-grid-left-sidebar" },
-        { title: "Jumpers & Cardigans", url: "/shop-grid-left-sidebar" },
-      ],
-    },
-    {
-      title: "Shoes & Boots",
-      links: [
-        {
-          title: "All Shoes & Boots",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Branded Shoes",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Boots",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Heels",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Sandals",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          label: "Shoes",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          label: "Wide Fit Shoes",
-          url: "/shop-grid-left-sidebar",
-        },
-      ],
-    },
-    {
-      title: "Bags & Accessories",
-      links: [
-        {
-          title: "All Bags & Accessories",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Accessories",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Bags & Purses",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Shoulder Bags",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Skin Care",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Hair Accessories",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Artificial Jewellery",
-          url: "/shop-grid-left-sidebar",
-        },
-      ],
-    },
-    {
-      title: "Collections",
-      links: [
-        {
-          title: "All Collections",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Winter & Seasonal Wear",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Beauty & Grooming",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Ballerinas",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Party Dresses",
-          url: "/shop-grid-left-sidebar",
-        },
-        {
-          title: "Ethnic Wear",
-          url: "/shop-grid-left-sidebar",
-        },
-      ],
-    },
-  ];
-  const [shopLinks] = useState([
-    {
-      title: "Shop Layout",
-      links: [
-        { title: "Shop Grid - Left Sidebar", url: "/shop-grid-left-sidebar" },
-        { title: "Shop Grid - Right Sidebar", url: "/shop-grid-right-sidebar" },
-        { title: "Shop Grid - No Sidebar", url: "/shop-grid-no-sidebar" },
-        { title: "Shop Grid - Full Width", url: "/shop-grid-fullwidth" },
-        { title: "Shop List - Left Sidebar", url: "/shop-list-left-sidebar" },
-        { title: "Shop List - Right Sidebar", url: "/shop-list-right-sidebar" },
-        { title: "Shop List - No Sidebar", url: "/shop-list-no-sidebar" },
-        { title: "Shop List - Full Width", url: "/shop-list-fullwidth" },
-      ],
-    },
-    {
-      title: "Product Pages",
-      links: [
-        { title: "Product Left Image", url: "/product-left-image" },
-        { title: "Product Right Image", url: "/product-right-image" },
-        { title: "Product Cart", url: "/product-cart" },
-        { title: "Product Checkout", url: "/product-checkout" },
-        { title: "Order Completed", url: "/order-complete" },
-      ],
-    },
-  ]);
-
-  const pagesLinks = [
-    { label: "About", url: "/about-us" },
-    { label: "FAQ", url: "/faq" },
-    { label: "Login", url: "/login" },
-    { label: "Login 2", url: "/login-2" },
-    { label: "Sign Up", url: "/signup" },
-    { label: "Coming Soon", url: "/coming-soon" },
-    { label: "404", url: "/error-404" },
-    { label: "Privacy Policy", url: "/privacy-policy" },
-    { label: "Term & Conditions", url: "/terms-and-conditions" },
-  ];
-
-  const blogLinks = [
-    { label: "Blog Card", url: "/blog-card" },
-    { label: "Blog Listing 1", url: "/blog-listing" },
-    { label: "Blog Listing 2", url: "/blog-listing-2" },
-    { label: "Blog Single", url: "/blog-single" },
-  ];
+  
   const cartItems1 = useSelector((state) => state.products.cart);
   const calculateTotal = () => {
     return cartItems1.reduce((total, item) => {
@@ -243,24 +80,13 @@ export default function HeaderNavBar() {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                      <DropdownMenuNavBar title={"Home"} links={homeLinks} />
-
-                      <CatalogDropDown
-                        title={"Catalog"}
-                        catagoryLinks={catagoryLinks}
-                      />
-
-                      <ShopDropdown title={"shop"} shopLinks={shopLinks} />
-
-                      <DropdownMenuNavBar title={"Pages"} links={pagesLinks} />
-
-                      <DropdownMenuNavBar title={"Blog"} links={blogLinks} />
-
-                      <li className="nav-item">
-                        <Link to="/contact-us" className="nav-link">
-                          Contact
-                        </Link>
-                      </li>
+                    <li className="nav-item"><Link to="/" className="nav-link" active>Home</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Kurti</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Churidar</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Saree</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Kurti Set</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Churidar Material</Link></li>
+                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Contact</Link></li>
                     </ul>
                   </div>
                   <div className="right-nav align-items-center d-flex justify-content-end">

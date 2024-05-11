@@ -332,22 +332,9 @@ function PLI() {
                             <Row>
                                 <Col md={12}>
                                     <Nav tabs>
+                                       
                                         <NavItem>
-                                            <NavLink
-                                                className={
-                                                    activeTab === "1"
-                                                        ? "text-dark active ms-0"
-                                                        : "text-dark ms-0"
-                                                }
-                                                onClick={() => {
-                                                    toggle("1");
-                                                }}
-                                            >
-                                                Description
-                                            </NavLink>
-                                        </NavItem>
-                                        <NavItem>
-                                            <NavLink
+                                            <NavLink style={{cursor:'pointer'}}
                                                 className={
                                                     activeTab === "2" ? "text-dark active" : "text-dark"
                                                 }

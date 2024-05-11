@@ -16,7 +16,7 @@ export default function HeaderMiddle(props) {
               <div className="media ml-lg-11">
                 <i className="las la-mobile-alt ic-2x bg-white rounded p-2 shadow-sm mr-2 text-primary"></i>
                 <div className="media-body">
-                  <span className="mb-0 d-block">Call Us</span>
+                  <span className="mb-0 d-block">Contact Us</span>
                   <Link className="text-muted" to="tel:+912345678900">
                     +91-234-567-8900
                   </Link>
