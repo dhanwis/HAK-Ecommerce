@@ -192,19 +192,13 @@ function PLI() {
     if (product === undefined ? (product = allProducts[0]) : product)
         return (
             <div className="page-wrapper">
-                <PageHeading
-                    title="Product Left Image"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+                
                 <div className="page-content">
                     <div>
                         <section>
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-6 col-12">
-
-
                                         <ReactImageGallery
                                             items={product.pictures.map((image, index) => ({
                                                 original: `assets/images/${image}`,
@@ -338,22 +332,9 @@ function PLI() {
                             <Row>
                                 <Col md={12}>
                                     <Nav tabs>
+                                       
                                         <NavItem>
-                                            <NavLink
-                                                className={
-                                                    activeTab === "1"
-                                                        ? "text-dark active ms-0"
-                                                        : "text-dark ms-0"
-                                                }
-                                                onClick={() => {
-                                                    toggle("1");
-                                                }}
-                                            >
-                                                Description
-                                            </NavLink>
-                                        </NavItem>
-                                        <NavItem>
-                                            <NavLink
+                                            <NavLink style={{cursor:'pointer'}}
                                                 className={
                                                     activeTab === "2" ? "text-dark active" : "text-dark"
                                                 }

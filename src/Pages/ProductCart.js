@@ -49,11 +49,7 @@ function ProductCart() {
     let Tax = 1.0;
     return (
         <div className="page-wrapper">
-            <PageHeading
-                title="Product Cart"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+          
             <div className="page-content">
                 <section>
                     <Container>

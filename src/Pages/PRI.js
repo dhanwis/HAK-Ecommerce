@@ -188,11 +188,7 @@ function PRI() {
     if (product === undefined ? (product = allProducts[0]) : product)
         return (
             <div className="page-wrapper">
-                <PageHeading
-                    title="Product Left Image"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+               
                 <div className="page-content">
                     <div>
                         <section>

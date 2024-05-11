@@ -52,11 +52,7 @@ function PLLS() {
 
   return (
     <div className='page-wrapper'>
-      <PageHeading
-        title="Shop List Left Sidebar"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
+     
       <div className='page-content'>
         <section>
           <Container>
