@@ -11,8 +11,7 @@ import {
   Row
 } from "reactstrap";
 import { addToCart, removeCartItem, removeWishListItem } from "../../store/reducer/productReducer";
-import ShopDropdown from "./DropDownMenuBarTable";
-import DropdownMenuNavBar from "./DropDownMenuNavBar";
+
 export default function HeaderNavBar() {
   const wishListItems = useSelector((state) => state.products.wishList);
   const cartItems = useSelector((state) => state.products.cart);
@@ -81,12 +80,12 @@ export default function HeaderNavBar() {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                    <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Kurti</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Churidar</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Saree</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Kurti Set</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Churidar materials</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link" active>Home</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Kurti</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Churidar</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Saree</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Kurti Set</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link">Churidar Material</Link></li>
                     <li className="nav-item"><Link to="/contact-us" className="nav-link">Contact</Link></li>
                     </ul>
                   </div>
