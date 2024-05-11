@@ -16,15 +16,15 @@ const Banner = () => {
   const slides = [
     {
       bgImg: "assets/images/bg/01.jpg",
-      title: "A New Online Shop experience",
-      subtitle: "Welcome Ekocart",
+      title: "A New Online Shopping experience",
+      subtitle: "Welcome to dilHak",
       button: "Shop Now",
     },
     {
       bgImg: "assets/images/bg/02.jpg",
-      title: "Trending Men's Collection",
-      subtitle: "2020 Latest Style",
-      button: "View Collection",
+      title: "Trending Women's Collection",
+      subtitle: "2024 Latest Style Available",
+      button: "View Collections",
     },
   ];
 

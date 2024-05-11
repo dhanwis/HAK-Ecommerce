@@ -106,7 +106,6 @@ export default function HeaderNavBar() {
                       <span className="bg-white px-2 py-1 shadow-sm rounded" data-cart-items={cartItems1.length}>
                         <i className="las la-shopping-cart"></i>
                       </span>
-
                     </Link>
                     <div>
                       <div className="ml-4 d-none d-md-block"> <small className="d-block text-muted">My Cart</small>
@@ -119,10 +118,8 @@ export default function HeaderNavBar() {
               {/* <!--menu end--> */}
             </Row>
           </Container>
-
         </div>
       </header>
-
       <Modal
         isOpen={cartOpen}
         toggle={toggleCartList}
@@ -140,8 +137,7 @@ export default function HeaderNavBar() {
               {" "}
               <Button
                 className="btn btn-primary btn-sm mt-4 fs-3"
-                onClick={toggleCartList}
-              >
+                onClick={toggleCartList}>
                 <i className="las la-times"></i>
               </Button>
             </Col>
@@ -225,7 +221,6 @@ export default function HeaderNavBar() {
             </Col>
             <Col xs={3} className="align-items-center">
               {" "}
-
               <Button
                 className="btn btn-primary btn-sm mt-4 fs-3"
                 onClick={togglewWishList}
@@ -242,7 +237,6 @@ export default function HeaderNavBar() {
                 <div>
                   <Row className="align-items-center my-4">
                     <Col xs={5} className="d-flex align-items-center">
-
                       <div className="mr-4">
                         <Button
                           type="submit"
@@ -280,18 +274,14 @@ export default function HeaderNavBar() {
                     <Col xs={2} className="d-flex align-items-center mt-4">
                       <span
                         onClick={() => handleAddToCart(product)}
-                        className="mx-2 btn text-white fs-1 ms-auto "
-                      >
-                        {/* <BsFillCartCheckFill /> */}
+                        className="mx-2 btn text-white fs-1 ms-auto ">
                         <i className="las la-shopping-cart"></i>
-
                       </span>
                     </Col>
                   </Row>
                 </div>
               );
             }
-
             return null;
           })}
           <hr className="my-5" />
@@ -301,8 +291,7 @@ export default function HeaderNavBar() {
           </div>
           <Link
             to="/product-cart"
-            className="btn btn-primary btn-animated mr-2"
-          >
+            className="btn btn-primary btn-animated mr-2">
             <i className="las la-shopping-cart mr-1"></i>View Cart
           </Link>
           <Link to="/product-checkout" className="btn btn-dark">
