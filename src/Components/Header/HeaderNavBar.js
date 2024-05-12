@@ -76,13 +76,13 @@ export default function HeaderNavBar() {
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span className="navbar-toggler-icon"></span>
+                  <span className="navbar-toggler-icon"></span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item"><Link to="/" className="nav-link" active>Home</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link">Kurti</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link">Churidar</Link></li>
+                    <li className="nav-item"><Link to="/shop-grid-left-sidebar" className="nav-link">Kurti</Link></li>
+                    <li className="nav-item"><Link to="/shop-grid-right-sidebar" className="nav-link">Churidar</Link></li>
                     <li className="nav-item"><Link to="/" className="nav-link">Saree</Link></li>
                     <li className="nav-item"><Link to="/" className="nav-link">Kurti Set</Link></li>
                     <li className="nav-item"><Link to="/" className="nav-link">Churidar Material</Link></li>

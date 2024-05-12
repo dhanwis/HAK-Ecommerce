@@ -7,16 +7,11 @@ import {
   Container,
   Row
 } from "reactstrap";
-import PageHeading from '../Components/PageHeading/PageHeading';
 import ProductCardList from '../Components/PrductCardList';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
 function PLLS() {
-  const firstBreadcrumb = { label: "Pages" };
-  const secondBreadcrumb = {
-    label: "Shop List Left Sidebar",
-    active: true,
-  };
+
   const [selectedOption, setSelectedOption] = useState("1");
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
@@ -88,7 +83,7 @@ function PLLS() {
                     <div className="sort-filter ml-2 d-flex align-items-center">
                       <select className="custom-select" id="inputGroupSelect02" onChange={handleOptionChange} value={selectedOption}>
                         <option selected>Sort By</option>
-                        <option value="1">Newest Item</option>
+                        <option value="1">New Item</option>
                         <option value="2">High To Low</option>
                         <option value="3">Low To High</option>
                       </select>
