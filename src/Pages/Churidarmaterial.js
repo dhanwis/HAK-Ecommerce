@@ -11,7 +11,7 @@ import {
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
-function PGLS() {
+function PGLS4() {
   
   const [selectedOption, setSelectedOption] = useState("1");
   const handleOptionChange = (e) => {
@@ -53,6 +53,7 @@ function PGLS() {
     <div className='page-wrapper'>
       <div className='page-content'>
         <section>
+        <h1>Churidar material</h1>
           <Container>
             <Row>
               <Col lg={9} md={12} className="order-lg-1">
@@ -138,4 +139,4 @@ function PGLS() {
   )
 }
 
-export default PGLS
+export default PGLS4

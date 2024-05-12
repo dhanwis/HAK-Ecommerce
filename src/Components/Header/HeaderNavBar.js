@@ -81,11 +81,11 @@ export default function HeaderNavBar() {
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item"><Link to="/" className="nav-link" active>Home</Link></li>
-                    <li className="nav-item"><Link to="/shop-grid-left-sidebar" className="nav-link">Kurti</Link></li>
-                    <li className="nav-item"><Link to="/shop-grid-right-sidebar" className="nav-link">Churidar</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link">Saree</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link">Kurti Set</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link">Churidar Material</Link></li>
+                    <li className="nav-item"><Link to="/kurti" className="nav-link">Kurti</Link></li>
+                    <li className="nav-item"><Link to="/kurtiset" className="nav-link">Kurti Set</Link></li>
+                    <li className="nav-item"><Link to="/churidar" className="nav-link">Churidar</Link></li>
+                    <li className="nav-item"><Link to="/saree" className="nav-link">Saree</Link></li>
+                    <li className="nav-item"><Link to="/churidarmaterial" className="nav-link">Churidar Material</Link></li>
                     <li className="nav-item"><Link to="/contact-us" className="nav-link">Contact</Link></li>
                     </ul>
                   </div>

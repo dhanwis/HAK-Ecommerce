@@ -25,7 +25,11 @@ import Login from "./Pages/Login";
 import Login2 from "./Pages/Login2";
 import OrderComplete from "./Pages/OrderComplete";
 import PGFW from "./Pages/PGFW";
-import PGLS from "./Pages/PGLS";
+import PGLS from "./Pages/Kurti.js";
+import PGLS1 from "./Pages/Kurtiset.js";
+import PGLS2 from "./Pages/Churidar.js";
+import PGLS3 from "./Pages/Saree.js";
+import PGLS4 from "./Pages/Churidarmaterial.js";
 import PGNS from "./Pages/PGNS";
 import PGRS from "./Pages/PGRS";
 import PLFW from "./Pages/PLFW";
@@ -125,7 +129,11 @@ function App() {
           <Route path="/index4" element={<Index4 />} />
           <Route path="/index5" element={<Index5 />} />
           <Route path="/index6" element={<Index6 />} />
-          <Route path="/shop-grid-left-sidebar" element={<PGLS />} />
+          <Route path="/kurti" element={<PGLS />} />
+          <Route path="/kurtiset" element={<PGLS1 />} />
+          <Route path="/churidar" element={<PGLS2 />} />
+          <Route path="/saree" element={<PGLS3 />} />
+          <Route path="/churidarmaterial" element={<PGLS4 />} />
           <Route path="/shop-grid-right-sidebar" element={<PGRS />} />
           <Route path="/shop-grid-no-sidebar" element={<PGNS />} />
           <Route path="/shop-grid-fullwidth" element={<PGFW />} />
