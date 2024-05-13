@@ -98,7 +98,9 @@ function App() {
 `;
 
 if(showGif){
-  return (<h1>Heloo</h1>)
+  return ( <div className="loader clear-loader">
+  <img className="img-fluid" src="assets/images/loader.gif" alt="" />
+</div>)
 }
   return (
     <>
