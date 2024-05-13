@@ -5,7 +5,6 @@ import OwlCarousel from 'react-owl-carousel';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'reactstrap';
 
-
 function HeroBanner2() {
   const options = {
     items: 1,

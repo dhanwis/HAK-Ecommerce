@@ -95,26 +95,18 @@ button:focus { outline: none; }
     background-color:  rgb(250,143,143);
     border-color: rgb(250,143,143);
 }
-
-
 /* ------------------------
 text 
 ------------------------*/
-
 .text-dark { color: black !important; }
 .text-primary { color:  rgb(247, 29, 101)!important; }
 .text-muted { color:  white !important }
-
-
 /* ------------------------
 Background 
 ------------------------*/
-
 .bg-primary { background-color:  rgb(3, 3, 3) !important; }
-.bg-light { background-color: grey!important; }
+.bg-light { background-color: rgb(223, 218, 218)!important; }
 .bg-dark { background-color:   rgb(138, 100, 113) !important; }
-
-
 /* ------------------------
 Badge
 ------------------------*/
@@ -152,12 +144,12 @@ Shadow
 
 /*--navigation--*/
 .navbar { padding: 0; }
-.navbar-nav .nav-item.dropdown .dropdown-menu {min-width: 12rem; background: #ffffff; padding: 15px; border: none; margin-top: 0; -webkit-box-shadow: 0 0.5rem 1rem rgba(248, 84, 56, .15) !important; box-shadow: 0 0.5rem 1rem rgba(248, 84, 56, .15) !important; }
+.navbar-nav .nav-item.dropdown .dropdown-menu {min-width: 12rem; background: #f1c8c8; padding: 15px; border: none; margin-top: 0; -webkit-box-shadow: 0 0.5rem 1rem rgba(248, 84, 56, .15) !important; box-shadow: 0 0.5rem 1rem rgba(248, 84, 56, .15) !important; }
 .navbar-brand { margin: 0; padding: 0; }
 .navbar-brand img { height: 65px; }
 header .navbar-nav .nav-item { margin: 0 15px }
 .navbar-nav .nav-link { color: black; font-weight: 500; padding: 0 !important; border-radius: 0; text-transform: capitalize; position: relative; }
-.navbar-dark #header-wrap.fixed-header { background:  rgb(250,143,143) !important }
+.navbar-dark #header-wrap.fixed-header { background:   rgb(250,143,143)!important }
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .show > .nav-link, .dropdown-menu a:focus, .dropdown-menu a:hover { color: #fe4c1c; }
 
 .navbar .dropdown-menu .dropdown-item{padding: 5px 0}
@@ -226,7 +218,7 @@ Tab
 ------------------------*/
 .nav-tabs .nav-item{display: inline-block;}
 .nav-tabs .nav-item .nav-link { display: inline-block; padding: 0 0.7rem 0.3rem; color: black; border-radius: 0; border: none; border-bottom: 3px solid transparent; margin-bottom: -1px; }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover { color:  rgb(250,143,143); border-bottom: 3px solid  rgb(250,143,143) }
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover { color:  rgb(250, 17, 153); border-bottom: 3px solid  rgb(250, 17, 153);cursor:pointer }
 @media (max-width:575.98px) {
     .nav-tabs .nav-item .nav-link { padding: .5rem 1rem; width: 100%;}
 }
@@ -341,24 +333,6 @@ Insta
 .insta-item:hover .insta-icon { opacity: 1; transform: scale(1); }
 
 
-/* ------------------------
-Modal Popup
-------------------------*/
-.modal .modal-dialog.cart-modal { margin: 0 0 0 auto; height: 100%; max-width: 450px; }
-.modal .modal-content { border: none; border-radius: 0; height: inherit; overflow-y: auto; }
-.modal.fade .modal-dialog.cart-modal { -webkit-transform: translateX(100%); transform: translateX(100%); }
-.modal.show .modal-dialog.cart-modal { -webkit-transform: translateX(0); transform: translateX(0); }
-.modal.view-modal .modal-dialog.cart-modal { max-width: 1200px; }
-
-#mailchimpModal.show{display: flex !important; align-items: center;}
-#mailchimpModal .modal-dialog{width: 700px; max-width: inherit;}
-#mailchimpModal .modal-body{padding: 3rem}
-.modal-header .close {background: rgb(250,143,143); color: #fff; opacity: 1;}
-
-
-/* ------------------------
-    Accordion
-------------------------*/
 .accordion {border: none; border-radius: 0}
 .accordion__item{margin-bottom: 1.5rem}
 .accordion__item + .accordion__item {border-top: none;}
@@ -425,7 +399,7 @@ Modal Popup
 
 .owl-carousel .owl-controls .owl-dot { display: inline-block;}
 .owl-carousel .owl-dots {width: 100%; display: inline-block; position: absolute; line-height: 0; bottom:0; left: 50%; transform: translateX(-50%); cursor: pointer; text-align: center; }
-.owl-carousel .owl-dots .owl-dot span { background:rgb(252,164,164); border-radius: 50%; border:5px solid rgb(250,143,143); display: inline-block; width:15px; height:15px; margin: 0px 3px; transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; cursor: pointer; }
+.owl-carousel .owl-dots .owl-dot span { background:rgb(250,143,143); border-radius: 50%; border:5px solid rgb(250,143,143); display: inline-block; width:15px; height:15px; margin: 0px 3px; transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; cursor: pointer; }
 .dark-bg .owl-carousel .owl-dots .owl-dot span{background: #ffffff}
 .owl-carousel .owl-dots .owl-dot:hover span, .owl-carousel .owl-dots .owl-dot.active span{background:rgb(252,164,164); border-color: rgb(250,143,143);}
 

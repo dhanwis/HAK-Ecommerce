@@ -222,14 +222,14 @@ function PLI() {
                                             </div>
                                             <span className="product-price h4">
                                                 ${product.salePrice}
-                                                <del className="text-muted h6">${product.price}</del>
+                                                <del className="text-primary h6">${product.price}</del>
                                             </span>
                                             <ul className="list-unstyled my-4">
                                                 <li className="mb-2">
-                                                    Availibility: <span className="text-muted">{product.stock}</span>
+                                                    Availibility: <span className="text-primary">{product.stock}</span>
                                                 </li>
                                                 <li>
-                                                    Categories: <span className="text-muted">{product.category}</span>
+                                                    Categories: <span className="text-primary">{product.category}</span>
                                                 </li>
                                             </ul>
                                             <p className="mb-4">{product.description}</p>

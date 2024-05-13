@@ -7,7 +7,6 @@ import {
   Container,
   Row
 } from "reactstrap";
-import PageHeading from '../Components/PageHeading/PageHeading';
 import ProductCard from '../Components/ProductCard';
 import CustomPagination from '../Components/pagination';
 
@@ -53,11 +52,7 @@ function PGNS() {
   };
   return (
     <div className='page-wrapper'>
-      <PageHeading
-        title="Shop Grid No Sidebar"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
+     
       <div className='page-content'>
         <section>
           <Container>
@@ -91,7 +86,7 @@ function PGNS() {
                 <div className="sort-filter ml-2 d-flex align-items-center">
                   <select className="custom-select" id="inputGroupSelect02" onChange={handleOptionChange} value={selectedOption}>
                     <option selected>Sort By</option>
-                    <option value="1">Newest Item</option>
+                    <option value="1">New Item</option>
                     <option value="2">High To Low</option>
                     <option value="3">Low To High</option>
                   </select>

@@ -25,7 +25,11 @@ import Login from "./Pages/Login";
 import Login2 from "./Pages/Login2";
 import OrderComplete from "./Pages/OrderComplete";
 import PGFW from "./Pages/PGFW";
-import PGLS from "./Pages/PGLS";
+import PGLS from "./Pages/Kurti.js";
+import PGLS1 from "./Pages/Kurtiset.js";
+import PGLS2 from "./Pages/Churidar.js";
+import PGLS3 from "./Pages/Saree.js";
+import PGLS4 from "./Pages/Churidarmaterial.js";
 import PGNS from "./Pages/PGNS";
 import PGRS from "./Pages/PGRS";
 import PLFW from "./Pages/PLFW";
@@ -98,38 +102,7 @@ function App() {
             <img className="img-fluid" src="assets/images/loader.gif" alt="" />
           </div>
         </div>
-      )}
-      {showModal && (<>
-
-        <div className="modal fade" id="mailchimpModal" tabIndex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content" data-bg-img="assets/images/bg/08.png" style={{ backgroundImage: 'assets/images/bg/08.png' }}>
-              <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body text-center">
-                <div className="mb-4">
-                  <h6 className="text-primary mb-1">
-                    — Newsletter
-                  </h6>
-                  <h2 className="mb-0">Subscribe get notified!</h2>
-                </div>
-                <div className="subscribe-form">
-                  <form id="mc-form1" className="row align-items-center no-gutters mb-3">
-                    <div className="col">
-                      <input value="" name="EMAIL" className="email form-control input-2 bg-white" id="mc-email1" placeholder="Email Address" required="" type="email" />
-                    </div>
-                    <div className="col-auto">
-                      <input className="btn btn-primary overflow-auto" name="subscribe" value="Subscribe" type="submit" />
-                    </div>
-                  </form> <small>Get started for 1 Month free trial No Purchace required.</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div></>
-      )}
+      )} 
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -156,7 +129,11 @@ function App() {
           <Route path="/index4" element={<Index4 />} />
           <Route path="/index5" element={<Index5 />} />
           <Route path="/index6" element={<Index6 />} />
-          <Route path="/shop-grid-left-sidebar" element={<PGLS />} />
+          <Route path="/kurti" element={<PGLS />} />
+          <Route path="/kurtiset" element={<PGLS1 />} />
+          <Route path="/churidar" element={<PGLS2 />} />
+          <Route path="/saree" element={<PGLS3 />} />
+          <Route path="/churidarmaterial" element={<PGLS4 />} />
           <Route path="/shop-grid-right-sidebar" element={<PGRS />} />
           <Route path="/shop-grid-no-sidebar" element={<PGNS />} />
           <Route path="/shop-grid-fullwidth" element={<PGFW />} />

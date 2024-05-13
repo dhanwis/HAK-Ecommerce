@@ -11,13 +11,14 @@ import {
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
-function PGFW() {
-
+function PGLS2() {
+  
   const [selectedOption, setSelectedOption] = useState("1");
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
     setActivePage(1);
   };
+
   const filteredProducts = useSelector((state) => {
     const option = parseInt(selectedOption);
     switch (option) {
@@ -47,12 +48,13 @@ function PGFW() {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
   };
+
   return (
     <div className='page-wrapper'>
-     
       <div className='page-content'>
         <section>
-          <Container fluid>
+        <h1>Churidar</h1>
+          <Container>
             <Row>
               <Col lg={9} md={12} className="order-lg-1">
                 <Row className="">
@@ -70,17 +72,15 @@ function PGFW() {
                           className="d-flex align-items-center justify-content-md-end"
                         >
                           <div className="view-filter">
-
-
                             <Link
-                              to="/shop-grid-fullwidth"
+                              to="/shop-grid-left-sidebar"
                               className={`me-2 ${activeFilter === 'grid' ? 'active text-primary' : ''}`}
                               onClick={() => handleFilterClick('grid')}
                             >
                               <i className="lab la-buromobelexperte"></i>
                             </Link>
                             <Link
-                              to="/shop-list-fullwidth"
+                              to="/shop-list-left-sidebar"
                               className={`text-dark ${activeFilter === 'list' ? 'active text-primary' : ''}`}
                               onClick={() => handleFilterClick('list')}
                             >
@@ -90,7 +90,7 @@ function PGFW() {
                           <div className="sort-filter ml-2 d-flex align-items-center">
                             <select className="custom-select" id="inputGroupSelect02" onChange={handleOptionChange} value={selectedOption}>
                               <option selected>Sort By</option>
-                              <option value="1">New Item</option>
+                              <option value="1">Newest Item</option>
                               <option value="2">High To Low</option>
                               <option value="3">Low To High</option>
                             </select>
@@ -139,4 +139,4 @@ function PGFW() {
   )
 }
 
-export default PGFW;
+export default PGLS2

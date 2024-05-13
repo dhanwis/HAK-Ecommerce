@@ -8,16 +8,11 @@ import {
   Container,
   Row
 } from "reactstrap";
-import PageHeading from '../Components/PageHeading/PageHeading';
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
-function PGLS() {
-  const firstBreadcrumb = { label: "Pages" };
-  const secondBreadcrumb = {
-    label: "Shop Grid Left Sidebar",
-    active: true,
-  };
+function PGLS4() {
+  
   const [selectedOption, setSelectedOption] = useState("1");
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
@@ -56,9 +51,9 @@ function PGLS() {
 
   return (
     <div className='page-wrapper'>
-      
       <div className='page-content'>
         <section>
+        <h1>Churidar material</h1>
           <Container>
             <Row>
               <Col lg={9} md={12} className="order-lg-1">
@@ -77,7 +72,6 @@ function PGLS() {
                           className="d-flex align-items-center justify-content-md-end"
                         >
                           <div className="view-filter">
-
                             <Link
                               to="/shop-grid-left-sidebar"
                               className={`me-2 ${activeFilter === 'grid' ? 'active text-primary' : ''}`}
@@ -145,4 +139,4 @@ function PGLS() {
   )
 }
 
-export default PGLS
+export default PGLS4
