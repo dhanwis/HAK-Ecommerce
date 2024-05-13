@@ -47,6 +47,7 @@ import ContatctUs from "./Pages/contact/ContatctUs";
 
 function App() {
   const location = useLocation();
+  const [showGif, setShowGif] = useState(true);
 
   const isSpecialRoute =
     location.pathname.includes("maintenance") ||
@@ -67,46 +68,47 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top when the component mounts
   }, [location.pathname]);
-  const [showModal, setShowModal] = useState(false);
-  const [showGif, setShowGif] = useState(true);
+
+  //const [showModal, setShowModal] = useState(false);
+ 
 
   useEffect(() => {
     // Show the GIF for 3 seconds, then show the modal
     const timeout = setTimeout(() => {
       setShowGif(false);
-      setShowModal(true);
-    }, 5000);
+      //setShowModal(true);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    // Show the modal when the page refreshes or changes
-    setShowModal(true);
+  // useEffect(() => {
+    
+  //   setShowModal(true);
 
-    return () => {
-      // Hide the modal when the component unmounts
-      setShowModal(false);
-    };
-  }, [location.pathname]);
+  //   return () => {
+      
+  //     setShowModal(false);
+  //   };
+  // }, [location.pathname]);
   const scrollbarStyle = `
   ::-webkit-scrollbar {
     display: none;
   }
 `;
+
+if(showGif){
+  return ( <div className="loader clear-loader">
+  <img className="img-fluid" src="assets/images/loader.gif" alt="" />
+</div>)
+}
   return (
     <>
-      <style>{scrollbarStyle}</style>
-      {showGif && (
-        <div id="ht-preloader">
-          <div className="loader clear-loader">
-            <img className="img-fluid" src="assets/images/loader.gif" alt="" />
-          </div>
-        </div>
-      )} 
+      {/* <style>{scrollbarStyle}</style> */}
+       
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
