@@ -44,6 +44,7 @@ import SignUp from "./Pages/SignUp";
 import TAndC from "./Pages/tAndC";
 import ContatctUs from "./Pages/contact/ContatctUs";
 
+
 function App() {
   const location = useLocation();
 
