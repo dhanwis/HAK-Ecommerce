@@ -19,7 +19,7 @@ const BackToTop = () => {
                 setVisible(false);
             }
         };
-
+        
         window.addEventListener("scroll", handleScroll);
 
         return () => {

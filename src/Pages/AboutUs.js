@@ -43,11 +43,7 @@ function AboutUs() {
     ];
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="About Us"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className='page-content'>
                 <section className="p-0">
                     <Container>

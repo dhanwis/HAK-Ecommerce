@@ -39,11 +39,7 @@ function BlogSingle() {
     if (blog === undefined ? (blog = blogList[0]) : blog)
         return (
             <div className="page-wrapper">
-                <PageHeading
-                    title="Blog Card"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+              
                 <section>
                     <Container>
                         <Row className="justify-content-center">

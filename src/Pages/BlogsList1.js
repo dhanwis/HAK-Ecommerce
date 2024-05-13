@@ -32,11 +32,7 @@ function BlogsList1() {
     const blogsToShow = blogs.slice(startIndex, endIndex);
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="Blog Listing "
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className='page-content'>
                 <section>
                     <Container>

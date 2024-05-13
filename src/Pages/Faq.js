@@ -49,11 +49,7 @@ function Faq() {
     ];
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="Frequently Asked Questions"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <div className="page-content">
                 <section>
                     <Container>
