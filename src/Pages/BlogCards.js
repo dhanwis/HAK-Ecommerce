@@ -28,11 +28,7 @@ function BlogCards() {
     const blogsToShow = blogs.slice(startIndex, endIndex);
     return (
         <div className='page-wrapper'>
-            <PageHeading
-                title="Blog Card"
-                firstBreadcrumb={firstBreadcrumb}
-                secondBreadcrumb={secondBreadcrumb}
-            />
+           
             <section>
                 <Container>
                     <Row>

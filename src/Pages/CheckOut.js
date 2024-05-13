@@ -44,11 +44,7 @@ function CheckOut() {
     return (
         <div>
             <div className="page-wrapper">
-                <PageHeading
-                    title="Product Checkout"
-                    firstBreadcrumb={firstBreadcrumb}
-                    secondBreadcrumb={secondBreadcrumb}
-                />
+               
                 <div className="page-content">
                     <section>
                         <Container>
