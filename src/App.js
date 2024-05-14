@@ -22,7 +22,6 @@ import Index3 from "./Pages/Fashion3";
 import Index5 from "./Pages/Furniture";
 import Index6 from "./Pages/Kids";
 import Login from "./Pages/Login";
-import Login2 from "./Pages/Login2";
 import OrderComplete from "./Pages/OrderComplete";
 import PGFW from "./Pages/PGFW";
 import PGLS from "./Pages/Kurti.js";
@@ -43,6 +42,7 @@ import ProductCart from "./Pages/ProductCart";
 import SignUp from "./Pages/SignUp";
 import TAndC from "./Pages/tAndC";
 import ContatctUs from "./Pages/contact/ContatctUs";
+import SendOtp from "./Pages/SendOtp.js";
 
 
 function App() {
@@ -152,8 +152,7 @@ if(showGif){
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/login-2" element={<Login2 />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/send-otp" element={<SendOtp />} />
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/terms-and-conditions" element={<TAndC />} />
           <Route path="/blog-card" element={<BlogCards />} />
