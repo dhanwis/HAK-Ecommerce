@@ -95,6 +95,46 @@ button:focus { outline: none; }
     background-color:  rgb(250,143,143);
     border-color: rgb(250,143,143);
 }
+/* otp */
+.card1 {
+    width: 350px;
+    border-radius: 20px;
+    background: #fff;
+    border: none;
+    height: 550px;
+
+  }
+  .otpInput {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .cont {
+    height: 100vh;
+  }
+  
+  .frm {
+    display:inline-block;
+    width:50px;
+    height:50px;
+    text-align:center;
+    margin-right: 12px;
+  }
+  
+  .frm:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ff8880;
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+
 /* ------------------------
 text 
 ------------------------*/
