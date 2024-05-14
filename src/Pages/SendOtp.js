@@ -23,41 +23,13 @@ function Login() {
                                 <img className="img-fluid" src="assets/images/login.png" alt="" width="300px" height="300px" style={{borderRadius:"60px"}}/>
                             </div>
                             <div className="col-lg-6 col-12">
-                                <div>
-                                    <h3 className="text-center mb-3 text-uppercase">Otp Verification</h3>
-                                    {isOtpSent ? (
-                                        <form id="otp-form" onSubmit={handleSubmit}>
-                                            <div className="form-group">
-                                                <input
-                                                    id="form_otp"
-                                                    type="text"
-                                                    name="otp"
-                                                    className="form-control"
-                                                    placeholder="Enter OTP"
-                                                    required
-                                                />
-                                                <div className="help-block with-errors"></div>
-                                            </div>
-                                            <button className="btn btn-primary btn-block" style={{width:"200px",marginLeft:"180px"}}>Verify OTP</button>
-                                        </form>
-                                    ) : (
-                                        <form id="contact-form" onSubmit={handleSubmit}>
-                                            <div className="messages"></div>
-                                            <div className="form-group">
-                                                <input
-                                                    id="form_name"
-                                                    type="text"
-                                                    name="number"
-                                                    className="form-control"
-                                                    placeholder="Mobile Number"
-                                                    required
-                                                />
-                                                <div className="help-block with-errors"></div>
-                                            </div>   
-                                            <button className="btn btn-primary btn-block" style={{width:"200px",marginLeft:"180px"}}>Send OTP</button>
-                                        </form>
-                                    )}
-                                </div>
+                            <div class="d-flex justify-content-center align-items-center container">
+        <div class="card1 py-5 px-3">
+            <h5 class="m-0">Otp Verification</h5><span class="mobile-text">Enter the code we just send on your mobile phone </span>
+            <div class="d-flex flex-row mt-5"><input type="text" class="frm" autofocus=""/><input type="text" class="frm"/><input type="text" class="frm"/><input type="text" class="frm"/></div>
+            <div class="text-center mt-5"><span class="d-block mobile-text">Don't receive the code?</span><span class="font-weight-bold text-danger cursor">Resend</span></div>
+        </div>
+    </div>
                             </div>
                         </div>
                     </div>
