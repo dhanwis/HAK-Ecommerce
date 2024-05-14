@@ -146,7 +146,7 @@ Background
 ------------------------*/
 .bg-primary { background-color:  rgb(3, 3, 3) !important; }
 .bg-light { background-color: rgb(223, 218, 218)!important; }
-.bg-dark { background-color:   rgb(138, 100, 113) !important; }
+.bg-dark { background-color:   black !important; }
 /* ------------------------
 Badge
 ------------------------*/

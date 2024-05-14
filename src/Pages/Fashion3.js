@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import BlogSection from "../Components/Blog/BlogSection";
 import CountDown3 from "../Components/Countdown/CountDown3";
 import HeroBanner3 from "../Components/Hero Banner/HeroBanner3";
-import InstagramSection from "../Components/InstagramSection/InstagramSection";
 import LogoSection2 from "../Components/LogoSection/LogoSection2";
 import NewCollection3 from "../Components/Our Products/NewCollection3";
 import ProductAds from "../Components/Section/ProductAds";
@@ -36,7 +35,6 @@ function Index3() {
       <ProductAds />
       <LogoSection2 logos={logos} />
       <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
-      <InstagramSection />
     </div>
   </div>;
 }

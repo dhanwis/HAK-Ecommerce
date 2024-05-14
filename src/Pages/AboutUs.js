@@ -3,7 +3,6 @@ import { Col, Container, Row } from 'reactstrap';
 import { useSelector } from 'react-redux';
 import AboutUsTestimonial from '../Components/AboutUsTestimonial';
 import BlogSection from '../Components/Blog/BlogSection';
-import InstagramSection from '../Components/InstagramSection/InstagramSection';
 import PageHeading from '../Components/PageHeading/PageHeading';
 
 function AboutUs() {
@@ -124,7 +123,6 @@ function AboutUs() {
                 </section>
                 <AboutUsTestimonial />
                 <BlogSection blogs={filteredBlogs} title={"Fashion Blogs"} />
-                <InstagramSection />
             </div>
         </div>
     )

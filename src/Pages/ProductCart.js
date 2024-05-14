@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import PageHeading from "../Components/PageHeading/PageHeading";
 import {
     Col,
     Row,

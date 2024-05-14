@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import BlogSection from "../Components/Blog/BlogSection";
 import Countdown2 from "../Components/Countdown/CountDown2";
 import HeroBanner2 from "../Components/Hero Banner/HeroBanner2";
-import InstagramSection from "../Components/InstagramSection/InstagramSection";
 import NewCollection2 from "../Components/Our Products/NewCollection2";
 import Section2 from "../Components/Section/Section2";
 import ProductIndex2 from "../Components/Trending/ProductIndex2";
@@ -23,7 +22,6 @@ function Index2() {
       <NewCollection2 />
       <Countdown2 />
       <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
-      <InstagramSection />
     </div>
   </div>;
 }
