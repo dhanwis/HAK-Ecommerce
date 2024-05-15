@@ -103,21 +103,21 @@ export default function Footer() {
                   <i className="las la-envelope ic-2x text-primary"></i>
                 </div>
                 <div>
-                  <h6 className="mb-1 text-light">Email Us</h6>
+                  <h6 className="mb-1 text-light">Email Us :::</h6>
                   <Link className="text-muted" to="mailto:skytouchinfotech01@gmail.com">
                     {" "}
-                    skytouchinfotech01@gmail.com                  </Link>
+                    dhanwisproduction@gmail.com                  </Link>
                 </div>
               </div>
               <div className="d-flex mb-3">
                 <div className="mr-2">
                   {" "}
-                  <i className="las la-mobile ic-2x text-primary"></i>
+                  <i className="las la-mobile ic-2x text-primary"></i>``
                 </div>
                 <div>
                   <h6 className="mb-1 text-light">Phone Number</h6>
                   <Link className="text-muted" to="tel:+912345678900">
-                    +91-234-567-8900
+                    +098765432
                   </Link>
                 </div>
               </div>
