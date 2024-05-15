@@ -135,7 +135,7 @@ function ContatctUs() {
           <div className="row">
             <div className="col">
               <div className="map" style={{ height: '500px' }}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.840108181602!2d144.95373631539215!3d-37.8172139797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1497005461921" allowfullscreen="" title="Contact Map" className="w-100 h-100 border-0"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31236.411059032405!2d75.3492632101403!3d11.866643604783054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba422b9b2aca753%3A0x380605a11ce24f6c!2sKannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1715765073247!5m2!1sen!2sin" allowfullscreen="" title="Contact Map" className="w-100 h-100 border-0"></iframe>
               </div>
             </div>
           </div>

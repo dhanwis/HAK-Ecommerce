@@ -21,7 +21,7 @@ import Index2 from "./Pages/Fashion2";
 import Index3 from "./Pages/Fashion3";
 import Index5 from "./Pages/Furniture";
 import Index6 from "./Pages/Kids";
-import Login from "./Pages/Login";
+import Login from "./Pages/Login.jsx";
 import OrderComplete from "./Pages/OrderComplete";
 import PGFW from "./Pages/PGFW";
 import PGLS from "./Pages/Kurti.js";
@@ -122,46 +122,42 @@ if(showGif){
           <Route path="/error-404" element={<ErrorPage />} />
         </Routes>) : (
         <div className="page-wrapper"> 
-        <Header />
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/index2" element={<Index2 />} />
-          <Route path="/index3" element={<Index3 />} />
-          <Route path="/index4" element={<Index4 />} />
-          <Route path="/index5" element={<Index5 />} />
-          <Route path="/index6" element={<Index6 />} />
-          <Route path="/kurti" element={<PGLS />} />
-          <Route path="/kurtiset" element={<PGLS1 />} />
-          <Route path="/churidar" element={<PGLS2 />} />
-          <Route path="/saree" element={<PGLS3 />} />
-          <Route path="/churidarmaterial" element={<PGLS4 />} />
-          <Route path="/shop-grid-right-sidebar" element={<PGRS />} />
-          <Route path="/shop-grid-no-sidebar" element={<PGNS />} />
-          <Route path="/shop-grid-fullwidth" element={<PGFW />} />
-          <Route path="/shop-list-left-sidebar" element={<PLLS />} />
-          <Route path="/shop-list-right-sidebar" element={<PLRS />} />
-          <Route path="/shop-list-no-sidebar" element={<PLNS />} />
-          <Route path="/shop-list-fullwidth" element={<PLFW />} />
-          <Route path="/product-left-image" element={<PLI />} />
-          <Route path="/product-right-image" element={<PRI />} />
-          <Route path="/product-cart" element={<ProductCart />} />
-          <Route path="/product-checkout" element={<CheckOut />} />
-          <Route path="/order-complete" element={<OrderComplete />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/faq" element={<Faq />} />
+          <Route path="/" element={<><Header/><Index /><Footer/><BackToTop/></>} />
+          <Route path="/index2" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
+          <Route path="/index3" element={<><Header/><Index3 /><Footer/><BackToTop/></>} />
+          <Route path="/index4" element={<><Header/><Index4 /><Footer/><BackToTop/></>} />
+          <Route path="/index5" element={<><Header/><Index5 /><Footer/><BackToTop/></>} />
+          <Route path="/index6" element={<><Header/><Index6 /><Footer/><BackToTop/></>} />
+          <Route path="/kurti" element={<><Header/><PGLS /><Footer/><BackToTop/></>} />
+          <Route path="/kurtiset" element={<><Header/><PGLS1 /><Footer/><BackToTop/></>} />
+          <Route path="/churidar" element={<><Header/><PGLS2 /><Footer/><BackToTop/></>} />
+          <Route path="/saree" element={<><Header/><PGLS3 /><Footer/><BackToTop/></>} />
+          <Route path="/churidarmaterial" element={<><Header/><PGLS4 /><Footer/><BackToTop/></>} />
+          <Route path="/shop-grid-right-sidebar" element={<><Header/><PGRS /><Footer/><BackToTop/></>} />
+          <Route path="/shop-grid-no-sidebar" element={<><Header/><PGNS /><Footer/><BackToTop/></>} />
+          <Route path="/shop-grid-fullwidth" element={<><Header/><PGFW /><Footer/><BackToTop/></>} />
+          <Route path="/shop-list-left-sidebar" element={<><Header/><PLLS /><Footer/><BackToTop/></>} />
+          <Route path="/shop-list-right-sidebar" element={<><Header/><PLRS /><Footer/><BackToTop/></>} />
+          <Route path="/shop-list-no-sidebar" element={<><Header/><PLNS /><Footer/><BackToTop/></>} />
+          <Route path="/shop-list-fullwidth" element={<><Header/><PLFW /><Footer/><BackToTop/></>} />
+          <Route path="/product-left-image" element={<><Header/><PLI /><Footer/><BackToTop/></>} />
+          <Route path="/product-right-image" element={<><Header/><PRI /><Footer/><BackToTop/></>} />
+          <Route path="/product-cart" element={<><Header/><ProductCart /><Footer/><BackToTop/></>} />
+          <Route path="/product-checkout" element={<><Header/><CheckOut /><Footer/><BackToTop/></>} />
+          <Route path="/order-complete" element={<><Header/><OrderComplete /><Footer/><BackToTop/></>} />
+          <Route path="/about-us" element={<><Header/><AboutUs /><Footer/><BackToTop/></>} />
+          <Route path="/faq" element={<><Header/><Faq /><Footer/><BackToTop/></>} />
           <Route path="/login" element={<Login />} />
           <Route path="/send-otp" element={<SendOtp />} />
-          <Route path="/privacy-policy" element={<PrivacyPage />} />
-          <Route path="/terms-and-conditions" element={<TAndC />} />
-          <Route path="/blog-card" element={<BlogCards />} />
-          <Route path="/blog-listing" element={<BlogsList1 />} />
-          <Route path="/blog-listing-2" element={<BlogsList2 />} />
-          <Route path="/blog-single" element={<BlogSingle />} />
-          <Route path="/contact-us" element={<ContatctUs />} />
+          <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
+          <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
+          <Route path="/blog-card" element={<><Header/><BlogCards /><Footer/><BackToTop/></>} />
+          <Route path="/blog-listing" element={<><Header/><BlogsList1 /><Footer/><BackToTop/></>} />
+          <Route path="/blog-listing-2" element={<><Header/><BlogsList2 /><Footer/><BackToTop/></>} />
+          <Route path="/blog-single" element={<><Header/><BlogSingle /><Footer/><BackToTop/></>} />
+          <Route path="/contact-us" element={<><Header/><ContatctUs /><Footer/><BackToTop/></>} />
         </Routes>
-        <Footer />
-
-        <BackToTop />
       </div>
       
     )
