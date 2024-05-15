@@ -38,4 +38,4 @@ const BlogCard = ({ date, image, category, title }) => {
   );
 };
 
-export default BlogCard;
+export default BlogCard ;

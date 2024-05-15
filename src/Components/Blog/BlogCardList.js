@@ -40,6 +40,8 @@ const BlogCardList = ({ date, imageSrc, category, title, content }) => {
                 </CardBody>
             </Card>
             <hr className="my-8"></hr>
+
+            
         </>
     );
 };
