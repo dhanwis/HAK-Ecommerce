@@ -93,7 +93,7 @@ export default function Footer() {
                 <div>
                   <h6 className="mb-1 text-light">Store address</h6>
                   <p className="mb-0 text-muted">
-                    423B, Road Wordwide Country, USA
+                    423B, Road Wordwide Kannur, USA
                   </p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Footer() {
                   <i className="las la-envelope ic-2x text-primary"></i>
                 </div>
                 <div>
-                  <h6 className="mb-1 text-light">Email Us</h6>
+                  <h6 className="mb-1 text-light">Email Us::::</h6>
                   <Link className="text-muted" to="mailto:skytouchinfotech01@gmail.com">
                     {" "}
                     skytouchinfotech01@gmail.com                  </Link>
