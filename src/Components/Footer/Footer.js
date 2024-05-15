@@ -93,7 +93,7 @@ export default function Footer() {
                 <div>
                   <h6 className="mb-1 text-light">Store address</h6>
                   <p className="mb-0 text-muted">
-                    423B, Road Wordwide Country, USA
+                    423B, Road Wordwide Kannur, USA
                   </p>
                 </div>
               </div>
