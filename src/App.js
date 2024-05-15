@@ -104,8 +104,6 @@ if(showGif){
 }
   return (
     <>
-      {/* <style>{scrollbarStyle}</style> */}
-       
       <ToastContainer
         position="top-right"
         autoClose={1000}
@@ -164,7 +162,10 @@ if(showGif){
         <Footer />
 
         <BackToTop />
-      </div>)}
+      </div>
+      
+    )
+    }
 
     </>
   );

@@ -109,7 +109,7 @@ export default function HeaderNavBar() {
                     </Link>
                     <div>
                       <div className="ml-4 d-none d-md-block"> <small className="d-block text-muted">My Cart</small>
-                        <span className="text-dark">{cartItems1.length} Items - ${calculateTotal()}</span>
+                        <span className="text-dark">{cartItems1.length} Items - ₹{calculateTotal()}</span>
                       </div>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default function HeaderNavBar() {
                       </div>
                       <Link>
                         <img
-                          className="img"
+                          className="img-fluid"
                           src={`assets/images/${product.pictures[0]}`}
                           alt="..."
                         />
@@ -251,7 +251,7 @@ export default function HeaderNavBar() {
                       </div>
                       <div>
                         <img
-                          className="img"
+                          className="img-fluid"
                           src={`assets/images/${product.pictures[0]}`}
                           alt="..."
                         />
