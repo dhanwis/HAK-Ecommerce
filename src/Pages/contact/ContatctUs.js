@@ -63,7 +63,7 @@ function ContatctUs() {
                   </div>
                   <div>
                     <h6 className="mb-1 text-dark">Store address</h6>
-                    <p className="mb-0 text-muted">423B, Road Wordwide Country, USA</p>
+                    <p className="mb-0 text-primary">423B, Road Wordwide Country, USA</p>
                   </div>
                 </div>
                 <div className="d-flex mb-3">
@@ -72,7 +72,7 @@ function ContatctUs() {
                   </div>
                   <div>
                     <h6 className="mb-1 text-dark">Email Us</h6>
-                    <Link className="text-muted" href="mailto:themeht23@gmail.com"> themeht23@gmail.com</Link>
+                    <Link className="text-primary" href="mailto:themeht23@gmail.com"> themeht23@gmail.com</Link>
                   </div>
                 </div>
                 <div className="d-flex mb-3">
@@ -81,7 +81,7 @@ function ContatctUs() {
                   </div>
                   <div>
                     <h6 className="mb-1 text-dark">Phone Number</h6>
-                    <Link className="text-muted" href="tel:+912345678900">+91-234-567-8900</Link>
+                    <Link className="text-primary" href="tel:+912345678900">+91-234-567-8900</Link>
                   </div>
                 </div>
                 <div className="d-flex mb-5">
@@ -90,7 +90,7 @@ function ContatctUs() {
                   </div>
                   <div>
                     <h6 className="mb-1 text-dark">Working Hours</h6>
-                    <span className="text-muted">Mon - Fri: 10AM - 7PM</span>
+                    <span className="text-primary">Mon - Fri: 10AM - 7PM</span>
                   </div>
                 </div>
                 <ul className="list-inline">
