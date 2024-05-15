@@ -11,11 +11,6 @@ function ContatctUs() {
   };
   return (
     <div className="page-wrapper">
-      <PageHeading
-        title="Contact Us"
-        firstBreadcrumb={firstBreadcrumb}
-        secondBreadcrumb={secondBreadcrumb}
-      />
       <section>
         <div className="container">
           <div className="row mb-5">

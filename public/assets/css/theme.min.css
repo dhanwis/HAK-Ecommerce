@@ -548,8 +548,9 @@ button:focus {
 } */
 .frm-lg .btlg {
   margin-top: 20px;
+  margin-left: 10px;
   position: relative;
-  padding: 12px;
+  padding: 10px;
   background: linear-gradient(90deg, #03a9f4, #f441a5);
   color: white;
   border-radius: 0.9em;
@@ -647,8 +648,9 @@ button:focus {
     width: 50%;
     /* Occupy 50% of the container */
     padding: 3rem;
+    
   }
-
+  
   .right {
     width: 50%;
     /* Occupy 50% of the container */
