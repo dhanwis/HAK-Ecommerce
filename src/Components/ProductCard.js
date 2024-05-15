@@ -198,10 +198,10 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
         </div>
         <ModalBody>
           <Row className="align-items-center">
-            <Col lg="5" className="col-12">
+            <Col lg="7" className="col-12">
               <img className="img-fluid rounded" src={`assets/images/${selectedProduct.pictures[0]}`} alt="" />
             </Col>
-            <Col lg="7" className="col-12 mt-5 mt-lg-0">
+            <Col lg="5" className="col-12 mt-5 mt-lg-0">
               <div className="product-details">
                 <h3 className="mb-0">{selectedProduct.name}</h3>
                 <div className="star-rating mb-4">
@@ -270,15 +270,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
                       </option>
                     ))}
                   </Input>
-                  <div className="d-flex  ml-sm-4 mt-3 mt-sm-0">
-                    {selectedProduct.colors.map((col) => (
-
-                      <div className="form-check pl-0" >
-                        <input type="checkbox" value={col} onChange={() => handleColorClick(col)} className="form-check-input" id={col} />
-                        <label className="form-check-label" style={{ background: col }} htmlFor={col} />
-                      </div>
-                    ))}
-                  </div>
+                 
                 </div>
                 <div className="product-link d-flex align-items-center mt-4">
                   <Button
@@ -297,26 +289,6 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
                   >
                     <i className="lar la-heart mr-1"></i>Add To Wishlist
                   </Button>
-                </div>
-                <div className="d-sm-flex align-items-center border-top pt-4 mt-5">
-                  <h6 className="mb-sm-0 mr-sm-4">Share It:</h6>
-                  <ul className="list-inline">
-                    <li className="list-inline-item"><Link className="bg-white shadow-sm rounded p-2" to="#"><i
-                      className="la la-facebook"></i></Link>
-                    </li>
-                    <li className="list-inline-item"><Link className="bg-white shadow-sm rounded p-2" to="#"><i
-                      className="la la-dribbble"></i></Link>
-                    </li>
-                    <li className="list-inline-item"><Link className="bg-white shadow-sm rounded p-2" to="#"><i
-                      className="la la-instagram"></i></Link>
-                    </li>
-                    <li className="list-inline-item"><Link className="bg-white shadow-sm rounded p-2" to="#"><i
-                      className="la la-twitter"></i></Link>
-                    </li>
-                    <li className="list-inline-item"><Link className="bg-white shadow-sm rounded p-2" to="#"><i
-                      className="la la-linkedin"></i></Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </Col>

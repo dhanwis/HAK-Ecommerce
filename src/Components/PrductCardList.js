@@ -189,10 +189,10 @@ function ProductCardList({ id, imgBackSrc, imgFrontSrc, title, price, actualPric
         </div>
         <ModalBody>
           <Row className="align-items-center">
-            <Col lg="5" className="col-12">
+            <Col lg="6" className="col-12">
               <img className="img-fluid rounded" src={`assets/images/${selectedProduct.pictures[0]}`} alt="" />
             </Col>
-            <Col lg="7" className="col-12 mt-5 mt-lg-0">
+            <Col lg="6" className="col-12 mt-5 mt-lg-0">
               <div className="product-details">
                 <h3 className="mb-0">{selectedProduct.name}</h3>
                 <div className="star-rating mb-4">
@@ -261,14 +261,7 @@ function ProductCardList({ id, imgBackSrc, imgFrontSrc, title, price, actualPric
                       </option>
                     ))}
                   </Input>
-                  <div className="d-flex  ml-sm-4 mt-3 mt-sm-0">
-                    {selectedProduct.colors.map((col) => (
-                      <div className="form-check pl-2">
-                        <input type="checkbox" value={col} onChange={() => handleColorClick(col)} className="form-check-input" id={col} />
-                        <label className="form-check-label" style={{ background: col }} htmlFor={col} />
-                      </div>
-                    ))}
-                  </div>
+                 
                 </div>
                 <div className="product-link d-flex align-items-center mt-4">
                   <Button
