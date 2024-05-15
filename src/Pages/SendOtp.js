@@ -3,20 +3,25 @@ import { Link } from 'react-router-dom';
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
+    const [error, setError] = useState('');
 
-    const handleChange = (index, value) => {
-        const newOtp = [...otp];
-        newOtp[index] = value.replace(/\D/g, ''); // Remove non-numeric characters
-        setOtp(newOtp);
+    const handleChange = (index, value, e) => {
+        if (!isNaN(value)) {
+            const newOtp = [...otp];
+            newOtp[index] = value.replace(/\D/g, ''); // Remove non-numeric characters
+            setOtp(newOtp);
 
-        // Move focus to the next input field on digit input
-        if (value && index < 3) {
-            document.getElementById(`otp-${index + 1}`).focus();
-        }
+            if (value && index < 3) {
+                document.getElementById(`otp-${index + 1}`).focus();
+            }
 
-        // Move focus to the previous input field on backspace
-        if (!value && index > 0) {
-            document.getElementById(`otp-${index - 1}`).focus();
+            if (!value &&  index > 0) {
+                document.getElementById(`otp-${index - 1}`).focus();
+            }
+
+            setError('');
+        } else {
+            setError('Please enter numbers only.');
         }
     };
 
@@ -54,9 +59,10 @@ function SendOtp() {
                                                     maxLength="1"
                                                     id={`otp-${index}`}
                                                     className="otpInput"
-                                                    onChange={(e) => handleChange(index, e.target.value)}
+                                                    onChange={(e) => handleChange(index, e.target.value, e)}
                                                 />
                                             ))}
+                                            {error && <div className="text-danger">{error}</div>}
                                             <div className="mt-3">
                                                 <Link to="#" onClick={handleResendCode}>Resend Code</Link>
                                             </div>
