@@ -86,7 +86,6 @@ export default function HeaderNavBar() {
                     <li className="nav-item"><Link to="/churidar" className="nav-link">Churidar</Link></li>
                     <li className="nav-item"><Link to="/saree" className="nav-link">Saree</Link></li>
                     <li className="nav-item"><Link to="/churidarmaterial" className="nav-link">Churidar Material</Link></li>
-                    <li className="nav-item"><Link to="/contact-us" className="nav-link">Contact</Link></li>
                     </ul>
                   </div>
                   <div className="right-nav align-items-center d-flex justify-content-end">

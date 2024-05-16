@@ -16,14 +16,12 @@ const Banner = () => {
   const slides = [
     {
       bgImg: "assets/images/bg/01.jpg",
-      title: "A New Online Shopping experience",
-      subtitle: "Welcome to dilHak",
+      subtitle: "Welcome to diLhak",
       button: "Shop Now",
     },
     {
       bgImg: "assets/images/bg/02.jpg",
-      title: "Trending Women's Collection",
-      subtitle: "2024 Latest Style Available",
+      subtitle: "Trending Collections Available",
       button: "View Collections",
     },
   ];
@@ -45,16 +43,14 @@ const Banner = () => {
             <div className="container h-100">
               <div className="row h-100 align-items-center">
                 <div className="col-lg-7 col-md-12 custom-py-1 position-relative z-index-1">
-                  <h6 className="font-w-6 text-primary animated3">
+                  <h3 className="font-w-10 text-dark animated3">
                     {slide.subtitle}
-                  </h6>
-                  <h1 className="mb-4 animated3">{slide.title}</h1>
+                  </h3>
                   <div className="animated3">
                     <Link className="btn btn-primary btn-animated" to="#">
                       {slide.button}
                     </Link>
                   </div>
-                  <div className="hero-circle animated4"></div>
                 </div>
               </div>
             </div>

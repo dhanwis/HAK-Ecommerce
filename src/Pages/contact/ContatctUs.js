@@ -3,12 +3,6 @@ import PageHeading from "../../Components/PageHeading/PageHeading";
 import { Link } from "react-router-dom";
 
 function ContatctUs() {
-  const firstBreadcrumb = { label: "Pages", link: "/contact-us" };
-  const secondBreadcrumb = {
-    label: "Contatct Us",
-    link: "/contact-us",
-    active: true,
-  };
   return (
     <div className="page-wrapper">
       <section>
