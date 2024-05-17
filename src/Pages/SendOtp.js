@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import otpbg  from "../api/flower.avif";
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
@@ -38,15 +39,15 @@ function SendOtp() {
     };
 
     return (
-        <div className='page-wrapper'>
+        <div className='page-wrapper'  style={{backgroundImage: `url(${otpbg})`,  backgroundRepeat:'no-repeat',backgroundSize:'100% 100%',overflow:'hidden',height:'100vh'}}>
             <div className='page-content'>
                 <section>
-                    <div className="container">
+                    <div className="container" style={{borderRadius:'20px',background:'rgba(255,255,255,0.5)',height:'500px',width:'800px',marginTop:'80px'}}>
                         <div className="row justify-content-md-center">
                             <div className="col-md-4 text-center">
                                 <div className="row">
-                                    <div className="col-sm-12 mt-5 bgWhite">
-                                        <div className="title" style={{fontSize:"28px",fontWeight:"bold"}}>
+                                    <div className="col-sm-12">
+                                        <div className="title" style={{fontSize:"28px",fontWeight:"bold",marginTop:'80px'}}>
                                             OTP VERIFICATION
                                         </div>
 
