@@ -39,7 +39,6 @@ import PLRS from "./Pages/PLRS";
 import PRI from "./Pages/PRI.js";
 import PrivacyPage from "./Pages/PrivacyPage";
 import ProductCart from "./Pages/ProductCart";
-import SignUp from "./Pages/SignUp";
 import TAndC from "./Pages/tAndC";
 import ContatctUs from "./Pages/contact/ContatctUs";
 import SendOtp from "./Pages/SendOtp.js";

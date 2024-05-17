@@ -40,6 +40,47 @@ export default function Footer() {
             </div>
             <div className="col-12 col-lg-6 mt-6 mt-lg-0">
               <div className="row">
+              <div className="col-12 col-sm-4 navbar-dark">
+                  <h5 className="mb-1 text-white">Quick Links</h5>
+                  <ul className="navbar-nav list-unstyled mb-0">
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="/">
+                        Home
+                      </Link>
+                    </li>
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="about-us">
+                        About
+                      </Link>
+                    </li>
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="faq">
+                        FAQ
+                      </Link>
+                    </li>
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="faq">
+                        Terms & Conditions
+                      </Link>
+                    </li>
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="faq">
+                        Return Policy
+                      </Link>
+                    </li>
+                    <li className="mb-3 nav-item">
+                      <Link className="nav-link" to="faq">
+                        Refund Policy
+                      </Link>
+                    </li>
+                    
+                    <li className="nav-item">
+                      <Link className="nav-link" to="contact-us">
+                        Contact Us
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
                 <div className="col-12 col-sm-4 navbar-dark">
                   <h5 className="mb-1 text-white">Quick Links</h5>
                   <ul className="navbar-nav list-unstyled mb-0">
@@ -55,7 +96,7 @@ export default function Footer() {
                     </li>
                     <li className="mb-3 nav-item">
                       <Link className="nav-link" to="faq">
-                        F&Q
+                        FAQ
                       </Link>
                     </li>
                     <li className="mb-3 nav-item">
