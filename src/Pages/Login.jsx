@@ -24,7 +24,8 @@ setPhonenumber(x.target.value);
     try {
       const response = await axios.post('https://hak.pythonanywhere.com/auth/customer/', { phone_number: phonenumber });
       if (response.status === 201) {
-        navigate('/send-otp');
+        console.log(response.data);
+        navigate(`/send-otp/${response.data.id}`);
       } else {
         console.log('Unexpected response status:', response.status);
       }
