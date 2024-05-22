@@ -2,8 +2,11 @@ import React from 'react'
 import './Userregistration.css';
 import { useState } from 'react';
 import signupbg from '../login.jpg';
+import { useParams } from 'react-router-dom';
 
 function Userregistration() {
+    const { id } = useParams();
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
