@@ -38,7 +38,7 @@ const Banner = () => {
           <div
             key={index}
             className="item bg-pos-rt"
-            style={{ backgroundImage: `url(${slide.bgImg})` }}
+            style={{ backgroundImage: `url(${slide.bgImg})`,height:'600px' }}
           >
             <div className="container h-100">
               <div className="row h-100 align-items-center">

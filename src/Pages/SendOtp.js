@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import otpbg  from "../api/flower.avif";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [error, setError] = useState('');
+
+    const { id } = useParams(); // Get the product ID from the route parameters 
+  console.log(id)
 
     const handleChange = (index, value, e) => {
         if (!isNaN(value)) {
@@ -28,9 +33,12 @@ function SendOtp() {
 
     const handleVerifyOtp = () => {
         // Implement your OTP verification logic here
+         
         const enteredOtp = otp.join('');
-        console.log("Entered OTP:", enteredOtp);
+        //console.log("Entered OTP:", enteredOtp);
+        const userotp = axios.patch(`https://hak.pythonanywhere.com/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})
         // Example logic: compare enteredOtp with the actual OTP
+        console.log(userotp)
     };
 
     const handleResendCode = () => {
