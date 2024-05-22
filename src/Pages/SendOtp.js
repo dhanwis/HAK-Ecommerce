@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import otpbg  from "../api/flower.avif";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [error, setError] = useState('');
+
+    const navigate = useNavigate()
 
     const { id } = useParams(); // Get the product ID from the route parameters 
   console.log(id)
@@ -31,14 +34,34 @@ function SendOtp() {
         }
     };
 
-    const handleVerifyOtp = () => {
+    const handleVerifyOtp = async(y) => {
         // Implement your OTP verification logic here
          
         const enteredOtp = otp.join('');
+        
+        try {
+            const userotp = await axios.patch(`https://hak.pythonanywhere.com/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})          
+              if (userotp.status === 201) {
+                console.log(userotp)
+                console.log(userotp.status);
+                navigate(`/Userregistration/${userotp.data.id}`);
+            } 
+            else if( userotp.status === 200){
+                navigate('/')
+                console.log(userotp)
+                console.log(userotp.status)
+            }
+            else {
+                console.log(userotp)
+              console.log('Unexpected userotp status:', userotp.status);
+            }
+          } catch (error) {
+            console.error('There was an error!', error);
+          }
         //console.log("Entered OTP:", enteredOtp);
-        const userotp = axios.patch(`https://hak.pythonanywhere.com/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})
+       
         // Example logic: compare enteredOtp with the actual OTP
-        console.log(userotp)
+        
     };
 
     const handleResendCode = () => {

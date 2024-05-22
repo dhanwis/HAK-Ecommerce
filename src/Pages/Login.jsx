@@ -13,12 +13,6 @@ function Login() {
 setPhonenumber(x.target.value);
   }
 
-  // const  Handlesubmit=(y) =>{
-  //   y.preventDefault()
-  //   //request to server
-  // axios.post('https://hak.pythonanywhere.com/auth/customer/',{phone_number:phonenumber}).then((response)=>console.log(response))
-
-
   const Handlesubmit = async (y) => {
     y.preventDefault();
     try {
