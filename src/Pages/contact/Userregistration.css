@@ -1,6 +1,8 @@
 body {
   background-color: #f9e6e6;
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .signup-container {
@@ -8,10 +10,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: #f9e6e6;
 }
 
-.signup-image {
-  margin-right: 20px;
+.signup-image img {
+  width: 350px;
+  height: 520px;
+  display: block;
 }
 
 .signup-form {
@@ -91,12 +96,11 @@ body {
 
 @media (max-width: 768px) {
   .signup-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .signup-image {
-      margin-right: 0;
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }

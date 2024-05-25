@@ -10,9 +10,7 @@ function Userregistration() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        password: '',
-        newPassword: '',
-        confirmPassword: '',
+        
         address: '',
         pincode: '',
         altAddress: '',
@@ -46,9 +44,17 @@ function Userregistration() {
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        name="name"
-                        placeholder="Username"
-                        value={formData.name}
+                        name="firstname"
+                        placeholder="Firstname"
+                        value={formData.firstname}
+                        onChange={handleChange}
+                        required
+                    />
+                     <input
+                        type="text"
+                        name="lastname"
+                        placeholder="Lastname"
+                        value={formData.lastname}
                         onChange={handleChange}
                         required
                     />
@@ -83,12 +89,7 @@ function Userregistration() {
                         
                     </div>
                     <button type="submit">REGISTER</button>
-                    <p>
-                        Already Have account?{' '}
-                        <a href="/login" className="login-link">
-                            Login
-                        </a>
-                    </p>
+                   
                 </form>
             </div>
         </div>
