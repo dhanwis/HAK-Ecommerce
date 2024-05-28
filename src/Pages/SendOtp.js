@@ -14,25 +14,29 @@ function SendOtp() {
     const { id } = useParams(); // Get the product ID from the route parameters 
   console.log(id)
 
-    const handleChange = (index, value, e) => {
-        if (!isNaN(value)) {
-            const newOtp = [...otp];
-            newOtp[index] = value.replace(/\D/g, ''); // Remove non-numeric characters
-            setOtp(newOtp);
+  const handleChange = (index, value, e) => {
+    if (!isNaN(value)) {
+        const newOtp = [...otp];
+        newOtp[index] = value.replace(/\D/g, ''); // Remove non-numeric characters
+        setOtp(newOtp);
 
-            if (value && index < 3) {
-                document.getElementById(`otp-${index + 1}`).focus();
-            }
-
-            if (!value &&  index > 0) {
-                document.getElementById(`otp-${index - 1}`).focus();
-            }
-
-            setError('');
-        } else {
-            setError('Please enter numbers only.');
+        if (value && index < 3) {
+            document.getElementById(`otp-${index + 1}`).focus();
         }
-    };
+
+        setError('');
+    } else {
+        setError('Please enter numbers only.');
+    }
+};
+
+const handleKeyDown = (index, e) => {
+    if (e.key === 'Backspace' && otp[index] === '') {
+        if (index > 0) {
+            document.getElementById(`otp-${index - 1}`).focus();
+        }
+    }
+};
 
     const handleVerifyOtp = async(y) => {
         // Implement your OTP verification logic here
@@ -92,6 +96,7 @@ function SendOtp() {
                                                     id={`otp-${index}`}
                                                     className="otpInput"
                                                     onChange={(e) => handleChange(index, e.target.value, e)}
+                                                    onKeyDown={(e) => handleKeyDown(index, e)}
                                                 />
                                             ))}
                                             {error && <div className="text-danger">{error}</div>}
