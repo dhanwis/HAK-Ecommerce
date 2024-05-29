@@ -5,14 +5,11 @@ import axios from 'axios'
 
 function Login() {
   const [phonenumber,setPhonenumber] = useState();
-
   const navigate = useNavigate()
-
   const Handlechange=(x)=>{
 // console.log(x.target.value)
 setPhonenumber(x.target.value);
   }
-
   const Handlesubmit = async (y) => {
     y.preventDefault();
     try {
