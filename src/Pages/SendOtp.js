@@ -45,19 +45,14 @@ const handleKeyDown = (index, e) => {
         
         try {
             const userotp = await axios.patch(`https://hak.pythonanywhere.com/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})          
-              if (userotp.status === 201) {
-                console.log(userotp)
-                console.log(userotp.status);
+            if (userotp.status === 201) {
                 navigate(`/Userregistration/${userotp.data.id}`);
-            } 
-            else if( userotp.status === 200){
-                navigate('/')
-                console.log(userotp)
-                console.log(userotp.status)
-            }
-            else {
-                console.log(userotp)
-              console.log('Unexpected userotp status:', userotp.status);
+            } else if (userotp.status === 200) {
+                navigate(`/user/${userotp.data.id}`);
+            } else if (userotp.status === 202) {
+                navigate(`/Userregistration/${userotp.data.id}`);
+            } else {
+                console.log('Unexpected userotp status:', userotp.status);
             }
           } catch (error) {
             console.error('There was an error!', error);

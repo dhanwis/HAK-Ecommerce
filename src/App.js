@@ -42,7 +42,7 @@ import ProductCart from "./Pages/ProductCart";
 import TAndC from "./Pages/tAndC";
 import ContatctUs from "./Pages/contact/ContatctUs";
 import SendOtp from "./Pages/SendOtp.js";
-import Userregistration from "./Pages/contact/Userregistration.js";
+import Userregistration from "./Pages/Userregistration.js"
 
 
 function App() {
@@ -124,7 +124,6 @@ if(showGif){
         <div className="page-wrapper"> 
         <Routes>
           <Route path="/" element={<><Header/><Index /><Footer/><BackToTop/></>} />
-          <Route path="/index2" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/index3" element={<><Header/><Index3 /><Footer/><BackToTop/></>} />
           <Route path="/index4" element={<><Header/><Index4 /><Footer/><BackToTop/></>} />
           <Route path="/index5" element={<><Header/><Index5 /><Footer/><BackToTop/></>} />
@@ -151,6 +150,7 @@ if(showGif){
           <Route path="/login" element={<Login />} />      
           <Route path="/Userregistration/:id" element={<Userregistration/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
+          <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
           <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
           <Route path="/blog-card" element={<><Header/><BlogCards /><Footer/><BackToTop/></>} />
@@ -158,13 +158,10 @@ if(showGif){
           <Route path="/blog-listing-2" element={<><Header/><BlogsList2 /><Footer/><BackToTop/></>} />
           <Route path="/blog-single" element={<><Header/><BlogSingle /><Footer/><BackToTop/></>} />
           <Route path="/contact-us" element={<><Header/><ContatctUs /><Footer/><BackToTop/></>} />
-
         </Routes>
-      </div>
-      
+      </div>      
     )
     }
-
     </>
   );
 }
