@@ -1,0 +1,69 @@
+
+.otpInput {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .page-wrapper1 {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../Pages/bestbg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .page-wrapper1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+  }
+  
+  .page-content1 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .title1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .otpInput {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .customBtn {
+    width: 100%;
+  }
+  
+  @media (max-width: 576px) {
+    .otpInput {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+  
+    .title1 {
+        font-size: 24px;
+    }
+  }

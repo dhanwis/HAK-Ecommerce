@@ -149,7 +149,7 @@ if(showGif){
           <Route path="/faq" element={<><Header/><Faq /><Footer/><BackToTop/></>} />
           <Route path="/login" element={<Login />} />      
           <Route path="/Userregistration/:id" element={<Userregistration/>} />
-          <Route path="/send-otp/:id" element={<SendOtp />} />
+          <Route path="/send-otp" element={<SendOtp />} />
           <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
           <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
