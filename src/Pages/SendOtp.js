@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import otpbg  from "../api/flower.avif";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -44,7 +43,7 @@ const handleKeyDown = (index, e) => {
         const enteredOtp = otp.join('');
         
         try {
-            const userotp = await axios.patch(`https://hak.pythonanywhere.com/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})          
+            const userotp = await axios.patch(`http://127.0.0.1:8000/auth/customer/${id}/verify-otp/`,{otp:enteredOtp})          
             if (userotp.status === 201) {
                 navigate(`/Userregistration/${userotp.data.id}`);
             } else if (userotp.status === 200) {
@@ -69,7 +68,7 @@ const handleKeyDown = (index, e) => {
     };
 
     return (
-        <div className='page-wrapper'  style={{backgroundImage: `url(${otpbg})`,  backgroundRepeat:'no-repeat',backgroundSize:'100% 100%',overflow:'hidden',height:'100vh'}}>
+        <div className='page-wrapper'  style={{backgroundRepeat:'no-repeat',backgroundSize:'100% 100%',overflow:'hidden',height:'100vh'}}>
             <div className='page-content'>
                 <section>
                     <div className="container" style={{borderRadius:'20px',background:'rgba(255,255,255,0.5)',height:'500px',width:'800px',marginTop:'80px'}}>

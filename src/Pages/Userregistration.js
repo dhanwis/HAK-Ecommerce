@@ -9,7 +9,8 @@ function UserRegistration() {
  
     const onSubmit = async (data) => {
         try {
-            const response = await axios.post('https://hak.pythonanywhere.com/auth/user/customer/profile/add/', data);
+            //backend to be done
+            const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
             if (response.status === 201 || response.status === 200 ) {
                 console.log(response.data.id);
                 window.location.href=`/user/${response.data.id}`;
