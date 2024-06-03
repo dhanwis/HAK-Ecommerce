@@ -482,13 +482,11 @@ button:focus {
   flex: 1;
   transition: 1s;
   background-color: white;
-<<<<<<< HEAD
+
   background-image: url("../images/loginside.jpeg");
   background-size: 100% 100%;;
-=======
-  background-image: url("../images/login.jpg");
+
   background-size: cover;
->>>>>>> 7c54cb27d17f8c37ac937b2fd3eaa9b5f1cd9fba
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1229,12 +1227,13 @@ Tab
   border: none;
   padding-bottom: 20px;
   overflow: hidden;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 }
 
 .product-card:hover {
   box-shadow: 0 10px 55px 5px rgba(137, 173, 255, .15) !important;
 }
+
 
 .product-card .btn-wishlist {
   position: absolute;
@@ -1291,7 +1290,8 @@ Tab
 }
 
 .product-card img {
-  max-width: 100%
+  max-width: 100%;
+  height: 600px;
 }
 
 .product-card:hover .card-info {
@@ -1352,13 +1352,19 @@ Tab
   display: block;
 }
 
+.card-img-top .card-img-front{
+  width: 1000px;
+}
+
 .card-img-hover .card-img-front {
   margin-left: -100%;
 }
 
 .card-img-hover .card-img-top {
   -webkit-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;  
+  width:950px;
+
 }
 
 .card-img-hover .card-img-front {
@@ -1371,6 +1377,8 @@ Tab
 
 .product-card:hover .card-img-hover .card-img-back {
   opacity: 0;
+  width:950px;
+
 }
 
 .product-card .card-body {

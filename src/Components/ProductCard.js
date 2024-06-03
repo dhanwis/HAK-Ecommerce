@@ -17,6 +17,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
   const selectedId = useSelector((state) => state.products.selectedProduct);
   const selectedProduct = allProducts.find((product) => product.id === selectedId);
   const product = allProducts.find((product) => product.id === id);
+ 
   const handleAddToCart = (product) => {
     const size = product.size[0];
     const color = product.colors[0];
@@ -30,6 +31,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
 
     dispatch(addToCart(productToAdd));
   };
+
   const handleAddToWishList = (product) => {
     const size = product.size[0];
     const color = product.colors[0];
@@ -43,6 +45,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
 
     dispatch(addToWishList(productToAdd));
   };
+  
   const renderRating = () => {
     const stars = [];
     for (let i = 0; i < rating; i++) {

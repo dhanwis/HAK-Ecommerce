@@ -41,7 +41,9 @@ export default function NewCollection() {
         {/* Rest of the ProductCard component code */}
         <ProductCard
           id={product.id}
+          
           imgBackSrc={`assets/images/${product.pictures[0]}`}
+          imgBackStyle={{ height: '200px' }} // Inline style object
           imgFrontSrc={`assets/images/${product.pictures[1]}`}
           title={product.name}
           price={product.salePrice}

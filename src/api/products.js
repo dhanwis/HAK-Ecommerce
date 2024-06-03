@@ -5,16 +5,16 @@
 export default [
     {
         "id": 1,
-        "name": "Women Lather Jacket",
+        "name": "Chiffon Sarees",
         "pictures": ["product/main/01.jpg", "product/main/02.jpg"],
         "stock": 32,
         "price": 3500,
         "discount": 1000,
         "salePrice": 2500,
-        "description": "Adjustable and removable wide shoulder strap. Lined interior. Magnetic clasp closure.",
+        "description": " Colour Of The Actual Product May Slightly Vary Due To Different Photographic Lighting Sources Or Your Display Color Settings Or Screen Type..",
         "rating": 5,
         "tags": ["Women"],
-        "size": ["M", "XL"],
+        "size": ["Free Size"],
         "category": "Women",
         "colors": ["Red"]
     },
