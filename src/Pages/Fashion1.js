@@ -24,7 +24,7 @@ export default function Index() {
         <CountDown />
         <NewCollection />
         <Section />
-        <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
+        {/* <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} /> */}
       </div>
     </div>
   );

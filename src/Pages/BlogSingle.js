@@ -39,7 +39,7 @@ function BlogSingle() {
     if (blog === undefined ? (blog = blogList[0]) : blog)
         return (
             <div className="page-wrapper">
-              
+{/*               
                 <section>
                     <Container>
                         <Row className="justify-content-center">
@@ -55,7 +55,7 @@ function BlogSingle() {
 
                                     </CardBody>
                                 </Card>
-                                <p>Consequat dolor sit amet, consectetur adipiscing elit. Maecenas lobortis quam id lectus aliquet euismod. Ut sagittis et augue dui gravida Cras ultricies ligula sed magna dictum porta, Sed ut perspiciatis unde omnis iste natus error sit voluptat erci tation ullamco laboris nisi ut aliq uip.eiu smod tempor the incidi dunt ut labore et dolore magna aliqua. Phasellus eget purus id felis dignissim convallis Suspendisse et augue dui gravida Cras ultricies ligula sed magna dictum porta, Sed ut perspiciatis unde omnis iste natus error sit voluptat erci tation ullamco laboris nisi ut aliq uip.eiu smod tempor the incidi dunt ut labore et dolore magna aliqua. Ut atenim ad minim veniam, quis nostrud exerci tation abore et dolore magna aliqua. Uhbt atenim</p>
+                                <p>Consequat dolor sit amet, consectetu=================r adipiscing elit. Maecenas lobortis quam id lectus aliquet euismod. Ut sagittis et augue dui gravida Cras ultricies ligula sed magna dictum porta, Sed ut perspiciatis unde omnis iste natus error sit voluptat erci tation ullamco laboris nisi ut aliq uip.eiu smod tempor the incidi dunt ut labore et dolore magna aliqua. Phasellus eget purus id felis dignissim convallis Suspendisse et augue dui gravida Cras ultricies ligula sed magna dictum porta, Sed ut perspiciatis unde omnis iste natus error sit voluptat erci tation ullamco laboris nisi ut aliq uip.eiu smod tempor the incidi dunt ut labore et dolore magna aliqua. Ut atenim ad minim veniam, quis nostrud exerci tation abore et dolore magna aliqua. Uhbt atenim</p>
                                 <blockquote className="card border p-5 mt-5 h6 text-center">" lights dominion divide years for fourth have don't stars is that saying. serspiciatis unde omnis iste natus error. The expert team at Brightscout specializes in building innovative technology solutions for enterprises. " <span className="text-primary mt-2 h5">- Marlo Jensen</span>
                                 </blockquote>
                                 <div className="d-md-flex justify-content-between mt-5 mb-8 shadow-sm p-4">
@@ -214,7 +214,7 @@ function BlogSingle() {
                             </Col>
                         </Row>
                     </Container>
-                </section>
+                </section> */}
             </div>
         );
 }
