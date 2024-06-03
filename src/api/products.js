@@ -5,7 +5,7 @@
 export default [
     {
         "id": 1,
-        "name": "Women Lather Jacket",
+        "name": "Chiffon Sarees",
         "pictures": ["product/main/01.jpg", "product/main/02.jpg"],
         "stock": 32,
         "price": 3500,
