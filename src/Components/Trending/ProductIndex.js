@@ -24,7 +24,7 @@ function ProductIndex() {
 
               <div className="col-xl-3 col-lg-4 col-md-6" key={product.id}>
                 <ProductCard
-                  id={product.id}
+                  id={product.id} 
                   imgBackSrc={`assets/images/${product.pictures[0]}`}
                   imgFrontSrc={`assets/images/${product.pictures[1]}`}
                   title={product.name}
