@@ -434,13 +434,7 @@ button:focus {
 
 /* otp */
 
-.otpInput {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  text-align: center;
-  font-size: 1.2em;
-}
+
 
 /*login*/
 .login {
@@ -483,29 +477,28 @@ button:focus {
   font-size: 1rem;
   font-weight: normal;
 }
-
 .right {
 
   flex: 1;
   transition: 1s;
   background-color: white;
+<<<<<<< HEAD
   background-image: url("../images/loginside.jpeg");
   background-size: 100% 100%;;
+=======
+  background-image: url("../images/login.jpg");
+  background-size: cover;
+>>>>>>> 7c54cb27d17f8c37ac937b2fd3eaa9b5f1cd9fba
   background-repeat: no-repeat;
   background-position: center;
 }
-
-
-
 .frm-lg {
   display: flex;
   flex-direction: column;
 }
-
 .frm-lg p {
   text-align: right;
 }
-
 .frm-lg p a {
   color: #fff;
   font-size: 0.875rem;
@@ -529,7 +522,6 @@ button:focus {
   color: rgb(237,133,159);
   
 }
-
 .input-field:focus {
   border-color: #d93280;
 }
@@ -2141,6 +2133,13 @@ Insta
   }
 
   .owl-carousel.owl-2 .owl-nav button.owl-prev {
+    left: 0;
+  }
+
+  .owl-carousel.owl-2 .owl-nav button.owl-next {
+    right: 0;
+  }
+} .owl-carousel.owl-2 .owl-nav button.owl-prev {
     left: 0;
   }
 
