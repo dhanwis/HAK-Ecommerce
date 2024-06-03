@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import otpbg  from "../api/flower.avif";
+import otpbg  from "../api/flower.jpg";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -48,7 +48,8 @@ const handleKeyDown = (index, e) => {
             if (userotp.status === 201) {
                 navigate(`/Userregistration/${userotp.data.id}`);
             } else if (userotp.status === 200) {
-                navigate(`/user/${userotp.data.id}`);
+                navigate(`/Userregistration/${userotp.data.id}`);
+                //navigate(`/user/${userotp.data.id}`);
             } else if (userotp.status === 202) {
                 navigate(`/Userregistration/${userotp.data.id}`);
             } else {
