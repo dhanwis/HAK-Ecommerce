@@ -1,5 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
+import otpbg  from "../api/flower.jpg";
+=======
+>>>>>>> 7c54cb27d17f8c37ac937b2fd3eaa9b5f1cd9fba
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -65,7 +69,8 @@ function SendOtp() {
             if (userotp.status === 201) {
                 navigate(`/Userregistration/${userotp.data.id}`);
             } else if (userotp.status === 200) {
-                navigate(`/user/${userotp.data.id}`);
+                navigate(`/Userregistration/${userotp.data.id}`);
+                //navigate(`/user/${userotp.data.id}`);
             } else if (userotp.status === 202) {
                 navigate(`/Userregistration/${userotp.data.id}`);
             } else {

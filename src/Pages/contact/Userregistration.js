@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Userregistration.css';
-import { useState } from 'react';
 import signupbg from '../login.jpg';
 import { useParams } from 'react-router-dom';
 
@@ -8,13 +7,10 @@ function Userregistration() {
     const { id } = useParams();
 
     const [formData, setFormData] = useState({
-        name: '',
+        firstname: '',
+        lastname: '',
         email: '',
-        
         address: '',
-        pincode: '',
-        altAddress: '',
-        altEmail: '',
         terms: false,
     });
 
@@ -28,17 +24,15 @@ function Userregistration() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.password !== formData.confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }
+        // Handle form submission logic
         console.log('Form data submitted:', formData);
-        // You can handle form submission here, e.g., send data to an API
     };
 
     return (
         <div className="signup-container">
-            <div className='signup-image'><img src={signupbg} width="350px" height="505px" alt="Signup Background" /></div>
+            <div className="signup-image">
+                <img src={signupbg} alt="Signup Background" />
+            </div>
             <div className="signup-form">
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
@@ -50,7 +44,7 @@ function Userregistration() {
                         onChange={handleChange}
                         required
                     />
-                     <input
+                    <input
                         type="text"
                         name="lastname"
                         placeholder="Lastname"
@@ -66,8 +60,6 @@ function Userregistration() {
                         onChange={handleChange}
                         required
                     />
-                    
-                   
                     <input
                         type="text"
                         name="address"
@@ -76,8 +68,6 @@ function Userregistration() {
                         onChange={handleChange}
                         required
                     />
-                   
-                   
                     <div className="terms">
                         <input
                             type="checkbox"
@@ -86,10 +76,9 @@ function Userregistration() {
                             onChange={handleChange}
                             required
                         />
-                        
+                        <label htmlFor="terms">I agree to the terms and conditions</label>
                     </div>
                     <button type="submit">REGISTER</button>
-                   
                 </form>
             </div>
         </div>

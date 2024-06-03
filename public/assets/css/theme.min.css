@@ -460,11 +460,10 @@ button:focus {
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-delay: 1s;
-
+  width: 500px;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-
   overflow: hidden;
 }
 
@@ -483,8 +482,13 @@ button:focus {
   flex: 1;
   transition: 1s;
   background-color: white;
+<<<<<<< HEAD
+  background-image: url("../images/loginside.jpeg");
+  background-size: 100% 100%;;
+=======
   background-image: url("../images/login.jpg");
   background-size: cover;
+>>>>>>> 7c54cb27d17f8c37ac937b2fd3eaa9b5f1cd9fba
   background-repeat: no-repeat;
   background-position: center;
 }
