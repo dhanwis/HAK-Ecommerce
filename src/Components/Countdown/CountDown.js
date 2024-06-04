@@ -5,10 +5,7 @@ export default function CountDown() {
     <section className="p-0">
       <div className="container-fluid pl-0">
         <div className="row">
-          <div
-            className="col-md-6 col-sm-5 "
-           
-          ><img src="../assets/images/loginside.avif"></img></div>
+          <div className="col-md-6 col-sm-5 "><img src="../assets/images/loginside.avif"></img></div>
           <div className="col-md-6 col-sm-7">
               <span className="bg-primary py-1 px-2 d-inline-block rounded mb-3 text-white text-uppercase">
                 Limited Offer

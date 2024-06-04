@@ -21,7 +21,10 @@ export default function Index() {
       <BannerSliderIndex />
       <div className="page-content">
         <ProductIndex />
-        <CountDown />
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <NewCollection />
         <Section />
         {/* <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} /> */}
