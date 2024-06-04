@@ -1,6 +1,5 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import otpbg  from "../api/flower.jpg";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -9,8 +8,10 @@ import './SendOtp.css'; // Ensure you have the CSS file linked
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [error, setError] = useState('');
-    const [timer, setTimer] = useState(60); // 10 minutes in seconds
+    const [timer, setTimer] = useState(10); // 1 minute in seconds
     const [canResend, setCanResend] = useState(false);
+    const [resendCount, setResendCount] = useState(0); // Track the number of resends
+    const [maxAttemptsReached, setMaxAttemptsReached] = useState(false);
 
     const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ function SendOtp() {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [timer]);
 
     const handleChange = (index, value, e) => {
         if (!isNaN(value)) {
@@ -81,11 +82,20 @@ function SendOtp() {
         // Example logic: compare enteredOtp with the actual OTP
     };
 
-    const handleResendCode = () => {
-        if (canResend) {
-            console.log("Resend code requested.");
-            setTimer(60);
-            setCanResend(false);
+    const handleResendCode = async () => {
+        if (canResend && resendCount < 3) {
+            try {
+                await axios.patch(`http://127.0.0.1:8000/auth/customer/${id}/regenerate-otp/`);
+                console.log("Resend code requested.");
+                setTimer(10); // Reset timer to 1 minute
+                setCanResend(false); // Disable resend button
+                setResendCount(prevCount => prevCount + 1);
+            } catch (error) {
+                console.error('Error resending OTP:', error);
+            }
+        } else if (resendCount >= 3) {
+            setMaxAttemptsReached(true);
+            setTimer(20)
         }
     };
 
@@ -120,11 +130,12 @@ function SendOtp() {
                                         />
                                     ))}
                                     {error && <div className="text-danger">{error}</div>}
+                                    {maxAttemptsReached && <div className="text-danger">Maximum OTP attempts reached.</div>}
                                     <div className="mt-3">
-                                    <Link 
+                                        <Link 
                                             to="#" 
                                             onClick={handleResendCode} 
-                                            style={{ color: canResend ? 'orange' : 'grey', pointerEvents: canResend ? 'auto' : 'none' }}
+                                            style={{ color: canResend && resendCount < 3 ? 'deeppink' : 'grey', pointerEvents: canResend && resendCount < 3 ? 'auto' : 'none' }}
                                         >
                                             Resend Code {canResend ? '' : `(${formatTime(timer)})`}
                                         </Link>
