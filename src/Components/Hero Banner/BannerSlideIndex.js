@@ -15,7 +15,7 @@ const Banner = () => {
 
   const slides = [
     {
-      bgImg: "assets/images/bg/01.jpeg",
+      bgImg: "assets/images/bg/01.jpg",
       subtitle: "Welcome to diLhak",
       button: "Shop Now",
     },
