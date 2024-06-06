@@ -20,7 +20,7 @@ const Banner = () => {
       button: "Shop Now",
     },
     {
-      bgImg: "assets/images/bg/01.webp",
+      bgImg: "assets/images/bg/02.webp",
       subtitle: "Trending Collections Available",
       button: "View Collections",
     },
