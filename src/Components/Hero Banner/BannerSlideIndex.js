@@ -16,13 +16,9 @@ const Banner = () => {
   const slides = [
     {
       bgImg: "assets/images/bg/01.jpg",
-      subtitle: "Welcome to diLhak",
-      button: "Shop Now",
     },
     {
-      bgImg: "assets/images/bg/02.webp",
-      subtitle: "Trending Collections Available",
-      button: "View Collections",
+      bgImg: "assets/images/bg/05.jpg",
     },
   ];
 
@@ -38,22 +34,8 @@ const Banner = () => {
           <div
             key={index}
             className="item bg-pos-rt"
-            style={{ backgroundImage: `url(${slide.bgImg})`,height:'600px' }}
+            style={{ backgroundImage: `url(${slide.bgImg})`,backgroundSize:'100% 100%',height:'600px' }}
           >
-            <div className="container h-100">
-              <div className="row h-100 align-items-center">
-                <div className="col-lg-7 col-md-12 custom-py-1 position-relative z-index-1">
-                  <h3 className="font-w-10 text-light animated3">
-                    {slide.subtitle}
-                  </h3>
-                  <div className="animated3">
-                    <Link className="btn btn-primary btn-animated" to="#">
-                      {slide.button}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         ))}
       </OwlCarousel>
