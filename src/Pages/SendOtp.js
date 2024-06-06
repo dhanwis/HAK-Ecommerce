@@ -8,7 +8,7 @@ import './SendOtp.css'; // Ensure you have the CSS file linked
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [error, setError] = useState('');
-    const [timer, setTimer] = useState(10); // 1 minute in seconds
+    const [timer, setTimer] = useState(60); // 1 minute in seconds
     const [canResend, setCanResend] = useState(false);
     const [resendCount, setResendCount] = useState(0); // Track the number of resends
     const [maxAttemptsReached, setMaxAttemptsReached] = useState(false);
@@ -87,7 +87,7 @@ function SendOtp() {
             try {
                 await axios.patch(`http://127.0.0.1:8000/auth/customer/${id}/regenerate-otp/`);
                 console.log("Resend code requested.");
-                setTimer(10); // Reset timer to 1 minute
+                setTimer(60); // Reset timer to 1 minute
                 setCanResend(false); // Disable resend button
                 setResendCount(prevCount => prevCount + 1);
             } catch (error) {
