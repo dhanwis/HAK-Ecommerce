@@ -5,12 +5,8 @@ export default function CountDown() {
     <section className="p-0">
       <div className="container-fluid pl-0">
         <div className="row">
-          <div
-            className="col-md-6 col-sm-5 parallaxie custom-py-3 rounded"
-            data-bg-img="assets/images/bg/03.jpg"
-          ></div>
-          <div className="col-md-6 col-sm-7 py-sm-0 py-5">
-            <div className="pl-lg-6 pr-lg-8 p-2 pt-sm-10">
+          <div className="col-md-6 col-sm-5 "><img src="../assets/images/loginside.avif"></img></div>
+          <div className="col-md-6 col-sm-7">
               <span className="bg-primary py-1 px-2 d-inline-block rounded mb-3 text-white text-uppercase">
                 Limited Offer
               </span>
@@ -26,7 +22,6 @@ export default function CountDown() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
