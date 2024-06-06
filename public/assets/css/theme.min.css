@@ -1291,7 +1291,11 @@ Tab
 
 .product-card img {
   max-width: 100%;
+
   height: 400px;
+
+  height: 500px;
+
 }
 
 .product-card:hover .card-info {
