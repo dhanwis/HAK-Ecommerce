@@ -20,6 +20,9 @@ const Banner = () => {
     {
       bgImg: "assets/images/bg/05.jpg",
     },
+    {
+      bgImg: "assets/images/bg/08.webp",
+    },
   ];
 
   return (
@@ -34,7 +37,7 @@ const Banner = () => {
           <div
             key={index}
             className="item bg-pos-rt"
-            style={{ backgroundImage: `url(${slide.bgImg})`,backgroundSize:'100% 100%',height:'600px' }}
+            style={{ backgroundImage: `url(${slide.bgImg})`,backgroundSize:'100% 100%',height:'600px',backgroundRepeat:'no-repeat'}}
           >
           </div>
         ))}

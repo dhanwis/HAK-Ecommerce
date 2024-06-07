@@ -2151,7 +2151,7 @@ Insta
   .owl-carousel.owl-2 .owl-nav button.owl-next {
     right: 0;
   }
-} .owl-carousel.owl-2 .owl-nav button.owl-prev {
+ .owl-carousel.owl-2 .owl-nav button.owl-prev {
     left: 0;
   }
 
@@ -2159,3 +2159,4 @@ Insta
     right: 0;
   }
 }
+

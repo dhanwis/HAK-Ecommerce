@@ -38,7 +38,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-lg-6 d-flex justify-content-between">
+            <div className="col-12 col-lg-6 d-flex justify-content-between" >
               <div className="navbar-dark justify-content-between">
                 <h5 className="mb-1 text-white">Quick Links</h5>
                 <ul className="navbar-nav list-unstyled mb-0">
@@ -65,7 +65,7 @@ export default function Footer() {
                 </ul>
               </div>
               
-              <div className="navbar-dark">
+              <div className="navbar-dark mb-3" style={{marginRight: '100px'}}>
                 <h5 className="mb-1 text-white">Quick Links</h5>
                 <ul className="navbar-nav list-unstyled mb-0">
                   <li className="mb-3 nav-item">
@@ -88,7 +88,7 @@ export default function Footer() {
             </div>
             <div className="col-12 col-lg-3 d-flex flex-column">
               {/* WhatsApp Chat Button */}
-              <p className="mb-5" style={{fontSize:'20px',color:'white',fontWeight:'bold'}}>Click the icon to chat with us on WhatsApp</p>
+              <p className="mb-5" style={{fontSize:'20px',color:'white',fontWeight:'bold', marginLeft: '20px'}}>Click the icon to chat with us on WhatsApp</p>
               <a
                 href="https://api.whatsapp.com/send?phone=777777777"
                 className="whatsapp-chat text-center"
