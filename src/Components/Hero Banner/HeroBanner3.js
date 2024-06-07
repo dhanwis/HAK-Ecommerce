@@ -18,7 +18,7 @@ const HeroBanner3 = () => {
     // </section>
     
      
-      <img src='../assets/images/bg/05.jpg' width='100%' height='700px'></img>
+      <img src='../assets/images/bg/07.webp' width='100%' height='700px'></img>
      
   );
 }
