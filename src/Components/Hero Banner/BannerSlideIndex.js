@@ -30,15 +30,12 @@ const Banner = () => {
       <OwlCarousel
         className="banner-slider owl-carousel no-pb owl-2"
         {...options}
-        navText={["<span class='las la-arrow-left'><span></span></span>","<span class='las la-arrow-right'><span></span></span>"]}
-
-      >
+        navText={["<span class='las la-arrow-left'><span></span></span>","<span class='las la-arrow-right'><span></span></span>"]}>
         {slides.map((slide, index) => (
           <div
             key={index}
             className="item bg-pos-rt"
-            style={{ backgroundImage: `url(${slide.bgImg})`,backgroundSize:'100% 100%',height:'600px',backgroundRepeat:'no-repeat'}}
-          >
+            style={{ backgroundImage: `url(${slide.bgImg})`,backgroundSize:'100% 100%',height:'600px',backgroundRepeat:'no-repeat'}}>
           </div>
         ))}
       </OwlCarousel>

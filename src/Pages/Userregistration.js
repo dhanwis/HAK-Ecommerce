@@ -2,8 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faLock, faPhone, faAddressCard, faCity, faMapMarkedAlt, faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import './Userregistration.css'; // Import the CSS file for custom styling
 
 function UserRegistration() {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -38,119 +37,142 @@ function UserRegistration() {
     };
 
     return (
-        <div className="container" style={{ marginTop: '50px' }}>
-            <h2>User Registration</h2>
-            <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '400px', margin: 'auto' }}>
-                <div className="form-group position-relative">
-                    <FontAwesomeIcon icon={faUser} className="form-icon text-muted" />
-                    <input
-                        id="firstname"
-                        className="form-control form-control-with-icon"
-                        placeholder="First Name"
-                        {...register('firstname', { required: 'First name is required' })}
-                    />
-                    {errors.firstname && <span className="text-danger">{errors.firstname.message}</span>}
+        <div className="container-fluid registration-container">
+            <div className="row">
+                <div className="col-md-4 welcome-section">
+                    <div className="welcome-content">
+                        <h1 style={{color:'pink'}}>User Registration</h1>
+                        <p style={{color:'white'}}>Register for experiencing more features in the online.</p>
+                    </div>
                 </div>
+                <div className="col-md-8 form-section">
+                    <div className="form-container">
+                        <form onSubmit={handleSubmit(onSubmit)} className="registration-form">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="firstname"
+                                            className="form-control"
+                                            placeholder="First Name"
+                                            {...register('firstname', { required: 'First name is required' })}
+                                        />
+                                        {errors.firstname && <span className="text-danger">{errors.firstname.message}</span>}
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="lastname"
+                                            className="form-control"
+                                            placeholder="Last Name"
+                                            {...register('lastname', { required: 'Last name is required' })}
+                                        />
+                                        {errors.lastname && <span className="text-danger">{errors.lastname.message}</span>}
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faUser} className="form-icon text-muted" />
-                    <input
-                        id="lastname"
-                        className="form-control form-control-with-icon"
-                        placeholder="Last Name"
-                        {...register('lastname', { required: 'Last name is required' })}
-                    />
-                    {errors.lastname && <span className="text-danger">{errors.lastname.message}</span>}
+                            <div className="row mt-3">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="email"
+                                            type="email"
+                                            className="form-control"
+                                            placeholder="Email"
+                                            {...register('email', {
+                                                required: 'Email is required',
+                                                pattern: {
+                                                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                                                    message: 'Email is not valid'
+                                                }
+                                            })}
+                                        />
+                                        {errors.email && <span className="text-danger">{errors.email.message}</span>}
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="phonenumber"
+                                            type="tel"
+                                            className="form-control"
+                                            placeholder="Phone Number"
+                                            {...register('phonenumber', {
+                                                required: 'Phone number is required',
+                                                pattern: {
+                                                    value: /^[0-9]{10}$/,
+                                                    message: 'Phone number is not valid'
+                                                }
+                                            })}
+                                        />
+                                        {errors.phonenumber && <span className="text-danger">{errors.phonenumber.message}</span>}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="row mt-3">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="street"
+                                            className="form-control"
+                                            placeholder="Street"
+                                            {...register('street', { required: 'Street is required' })}
+                                        />
+                                        {errors.street && <span className="text-danger">{errors.street.message}</span>}
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="city"
+                                            className="form-control"
+                                            placeholder="City"
+                                            {...register('city', { required: 'City is required' })}
+                                        />
+                                        {errors.city && <span className="text-danger">{errors.city.message}</span>}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="row mt-3">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="state"
+                                            className="form-control"
+                                            placeholder="State"
+                                            {...register('state', { required: 'State is required' })}
+                                        />
+                                        {errors.state && <span className="text-danger">{errors.state.message}</span>}
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input
+                                            id="pincode"
+                                            className="form-control"
+                                            placeholder="Pincode"
+                                            {...register('pincode', {
+                                                required: 'Pincode is required',
+                                                pattern: {
+                                                    value: /^[0-9]{6}$/,
+                                                    message: 'Pincode is not valid'
+                                                }
+                                            })}
+                                        />
+                                        {errors.pincode && <span className="text-danger">{errors.pincode.message}</span>}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" className="btn btn-primary mt-3 w-100">Register</button>
+                        </form>
+                    </div>
                 </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faEnvelope} className="form-icon text-muted" />
-                    <input
-                        id="email"
-                        type="email"
-                        className="form-control form-control-with-icon"
-                        placeholder="Email"
-                        {...register('email', {
-                            required: 'Email is required',
-                            pattern: {
-                                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                                message: 'Email is not valid'
-                            }
-                        })}
-                    />
-                    {errors.email && <span className="text-danger">{errors.email.message}</span>}
-                </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faPhone} className="form-icon text-muted" />
-                    <input
-                        id="phonenumber"
-                        type="tel"
-                        className="form-control form-control-with-icon"
-                        placeholder="Phone Number"
-                        {...register('phonenumber', {
-                            required: 'Phone number is required',
-                            pattern: {
-                                value: /^[0-9]{10}$/,
-                                message: 'Phone number is not valid'
-                            }
-                        })}
-                    />
-                    {errors.phonenumber && <span className="text-danger">{errors.phonenumber.message}</span>}
-                </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faAddressCard} className="form-icon text-muted" />
-                    <input
-                        id="street"
-                        className="form-control form-control-with-icon"
-                        placeholder="Street"
-                        {...register('street', { required: 'Street is required' })}
-                    />
-                    {errors.street && <span className="text-danger">{errors.street.message}</span>}
-                </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faCity} className="form-icon text-muted" />
-                    <input
-                        id="city"
-                        className="form-control form-control-with-icon"
-                        placeholder="City"
-                        {...register('city', { required: 'City is required' })}
-                    />
-                    {errors.city && <span className="text-danger">{errors.city.message}</span>}
-                </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faMapMarkedAlt} className="form-icon text-muted" />
-                    <input
-                        id="state"
-                        className="form-control form-control-with-icon"
-                        placeholder="State"
-                        {...register('state', { required: 'State is required' })}
-                    />
-                    {errors.state && <span className="text-danger">{errors.state.message}</span>}
-                </div>
-
-                <div className="form-group position-relative mt-3">
-                    <FontAwesomeIcon icon={faMailBulk} className="form-icon text-muted" />
-                    <input
-                        id="pincode"
-                        className="form-control form-control-with-icon"
-                        placeholder="Pincode"
-                        {...register('pincode', {
-                            required: 'Pincode is required',
-                            pattern: {
-                                value: /^[0-9]{6}$/,
-                                message: 'Pincode is not valid'
-                            }
-                        })}
-                    />
-                    {errors.pincode && <span className="text-danger">{errors.pincode.message}</span>}
-                </div>
-
-                <button type="submit" className="btn btn-primary mt-3 w-100">Register</button>
-            </form>
+            </div>
         </div>
     );
 }
