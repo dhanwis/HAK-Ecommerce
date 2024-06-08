@@ -9,7 +9,7 @@ function UserRegistration() {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        try {
+       
             const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
             if (response.status === 201 || response.status === 200) {
                 console.log(response.data.id);
@@ -17,23 +17,7 @@ function UserRegistration() {
             } else {
                 console.log('Unexpected registration status:', response.status);
             }
-        } catch (error) {
-            if (error.response && error.response.status === 409) {
-                try {
-                    const loginResponse = await axios.post('https://hak.pythonanywhere.com/auth/customer/login/', data);
-                    if (loginResponse.status === 200) {
-                        console.log(loginResponse.data.id);
-                        navigate(`/user/${loginResponse.data.id}`);
-                    } else {
-                        console.log('Unexpected login status:', loginResponse.status);
-                    }
-                } catch (loginError) {
-                    console.error('There was an error logging in!', loginError);
-                }
-            } else {
-                console.error('There was an error registering the user!', error);
-            }
-        }
+        
     };
 
     return (

@@ -107,9 +107,6 @@ export default function HeaderNavBar() {
                       </span>
                     </Link>
                     <div>
-                      <div className="ml-4 d-none d-md-block"> <small className="d-block text-muted">My Cart</small>
-                        <span className="text-dark">{cartItems1.length} Items - ₹{calculateTotal()}</span>
-                      </div>
                     </div>
                   </div>
                 </nav>
