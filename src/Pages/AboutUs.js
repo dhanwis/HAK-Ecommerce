@@ -49,13 +49,14 @@ function AboutUs() {
                         <div className="row align-items-center justify-content-between">
                             <Col lg="7" mb="6" mbLg="0">
                                 <Row className="align-items-center">
-                                    <Col md="6">
-                                        <img src="assets/images/about/01.jpg" className="img-fluid rounded shadow" alt="..." />
+                                    <Col md="6" >
+                                        <img src="assets/images/about/01.jpg" style={{height:'500px'}} className="img-fluid rounded shadow" alt="..." />
+                                        
                                     </Col>
-                                    {/* <Col md="6">
-                                        <img src="assets/images/about/02.jpg" className="img-fluid rounded shadow mb-5" alt="..." />
-                                        <img src="assets/images/about/03.jpg" className="img-fluid rounded shadow" alt="..." />
-                                    </Col> */}
+                                    <Col md="6">
+                                        <img src="assets/images/about/02.jpg"  style={{height:'600px'}} className="img-fluid rounded shadow mb-5" alt="..." />
+                                        {/* <img src="assets/images/about/03.jpg" className="img-fluid rounded shadow" alt="..." /> */}
+                                    </Col>
                                 </Row>
                             </Col>
                             <Col lg="5">
