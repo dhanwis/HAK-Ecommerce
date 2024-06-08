@@ -52,10 +52,10 @@ function AboutUs() {
                                     <Col md="6">
                                         <img src="assets/images/about/01.jpg" className="img-fluid rounded shadow" alt="..." />
                                     </Col>
-                                    <Col md="6">
+                                    {/* <Col md="6">
                                         <img src="assets/images/about/02.jpg" className="img-fluid rounded shadow mb-5" alt="..." />
                                         <img src="assets/images/about/03.jpg" className="img-fluid rounded shadow" alt="..." />
-                                    </Col>
+                                    </Col> */}
                                 </Row>
                             </Col>
                             <Col lg="5">

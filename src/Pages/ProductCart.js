@@ -189,11 +189,11 @@ function ProductCart() {
                                     <div className="rounded-4 p-5 bg-white">
                                         <h4 className="text-dark text-center mb-2">Cart Totals</h4>
                                         <div className="d-flex justify-content-between align-items-center border-bottom py-3">
-                                            <span className="text-muted">Subtotal</span>
+                                            <span className="text">Subtotal</span>
                                             <span className="text-dark">${calculateTotal()}</span>
                                         </div>
                                         <div className="d-flex justify-content-between align-items-center border-bottom py-3">
-                                            <span className="text-muted">Tax</span>
+                                            <span className="text">Tax</span>
                                             <span className="text-dark">{Tax}%</span>
                                         </div>
                                         <div className="d-flex justify-content-between align-items-center pt-3 mb-5">
