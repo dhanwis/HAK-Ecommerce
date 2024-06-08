@@ -69,8 +69,11 @@
     left: 0;
 }
 
-.btn-primary {
+.btn-primary1 {
     width:50px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
     background: linear-gradient(to right, #ff758c, #ff7eb3);
     border: none;
 }

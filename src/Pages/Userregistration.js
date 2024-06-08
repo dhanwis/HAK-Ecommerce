@@ -168,7 +168,7 @@ function UserRegistration() {
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn btn-primary mt-3 w-100">Register</button>
+                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
                         </form>
                     </div>
                 </div>
