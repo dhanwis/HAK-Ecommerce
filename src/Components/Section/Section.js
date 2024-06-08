@@ -30,7 +30,7 @@ const Section = () => {
               <div className="position-relative rounded overflow-hidden">
                 <img className="img-fluid w-100 hover-zoom" src="assets/images/product-ad/02.webp" alt="" style={{height:'470px'}}/>
                 <div className="position-absolute top-50 pl-5" >
-                  <h4 className="mb-0 text-light" >New kurti <br /> Collection</h4>
+                  <h4 className="mb-0 text-dark" >New kurti <br /> Collection</h4>
                 </div>
               </div>
               <div className="position-relative rounded overflow-hidden mt-2 shadow-sm">
