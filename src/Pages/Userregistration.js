@@ -41,8 +41,8 @@ function UserRegistration() {
             <div className="row">
                 <div className="col-md-4 welcome-section">
                     <div className="welcome-content">
-                        <h1 style={{color:'pink'}}>User Registration</h1>
-                        <p style={{color:'white'}}>Register for experiencing more features in the online.</p>
+                        <h1 style={{color:'white'}}>User Registration</h1>
+                        <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
                     </div>
                 </div>
                 <div className="col-md-8 form-section">
