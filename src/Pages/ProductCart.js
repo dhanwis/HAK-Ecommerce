@@ -35,7 +35,7 @@ function ProductCart() {
     const Tax = 1.0;
 
     return (
-        <div style={{ backgroundColor: "#f5f5f5"}}>
+        <div style={{ backgroundColor: "#f5f5f5" }}>
             <div>
                 <section>
                     <Container>
@@ -55,7 +55,6 @@ function ProductCart() {
                                                 borderRadius: "5px",
                                                 display: "flex",
                                                 alignItems: "center",
-                                                
                                             }}
                                         >
                                             <div className="col-md-3">
@@ -68,32 +67,23 @@ function ProductCart() {
                                                     />
                                                 </Link>
                                             </div>
-                                            <div className="col-md-8">
-                                                <div className="d-flex justify-content-between">
-                                                    <div>
-                                                        <div
-                                                            onClick={() => navigate(`/product-single/${item.id}`)}
-                                                            style={{
-                                                                cursor: "pointer",
-                                                                color: "hotpink",
-                                                                textDecoration: "none",
-                                                            }}
-                                                            className="product-name link-title h4"
-                                                        >
-                                                            {item.name}
-                                                        </div>
-                                                       
-                                                        {/* <div className="">{item.description}</div> */}
-                                                        {/* <div className="product-name link-title h6" style={{fontSize:"13px"}}>{item.description}</div> */}
-                                                        <div className="product-price">₹{item.salePrice}</div>
-                                                    </div>
-                                                    <Button
-                                                        type="button"
-                                                        onClick={() => handleDeleteItem(item.id)}
-                                                        className="btn btn-danger btn-sm" style={{fontSize:'15px',borderRadius:'7px',marginTop:'36px',height:'40px',width:"120px"}}
+                                            <div className="col-md-6 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <div
+                                                        onClick={() => navigate(`/product-single/${item.id}`)}
+                                                        style={{
+                                                            cursor: "pointer",
+                                                            color: "hotpink",
+                                                            textDecoration: "none",
+                                                        }}
+                                                        className="product-name link-title h4"
                                                     >
-                                                        Remove
-                                                    </Button>
+                                                        {item.name}
+                                                    </div>
+                                                    <div className="product-description" style={{ marginBottom: "10px" }}>
+                                                        {item.description}
+                                                    </div>
+                                                    <div className="product-price">₹{item.salePrice}</div>
                                                 </div>
                                                 <div className="d-flex align-items-center mt-2">
                                                     <Button
@@ -139,6 +129,21 @@ function ProductCart() {
                                                         <i className="las la-plus" style={{ fontSize: "14px" }}></i>
                                                     </Button>
                                                 </div>
+                                            </div>
+                                            <div className="col-md-3 d-flex flex-column align-items-end">
+                                                <Button
+                                                    type="button"
+                                                    onClick={() => handleDeleteItem(item.id)}
+                                                    className="btn btn-danger btn-sm"
+                                                    style={{
+                                                        fontSize: '15px',
+                                                        borderRadius: '7px',
+                                                        height: '40px',
+                                                        width: "120px",
+                                                    }}
+                                                >
+                                                    Remove
+                                                </Button>
                                             </div>
                                         </div>
                                     ))}
