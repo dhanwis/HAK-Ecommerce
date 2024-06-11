@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -7,17 +7,17 @@ import './Userregistration.css'; // Import the CSS file for custom styling
 function UserRegistration() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const [userId, setUserId] = useState(null);
 
     const onSubmit = async (data) => {
-       
-            const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
-            if (response.status === 201 || response.status === 200) {
-                console.log(response.data.id);
-                window.location.href = `/user/${response.data.id}`;
-            } else {
-                console.log('Unexpected registration status:', response.status);
-            }
-        
+        // Send the registration data to the backend
+        const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
+        if (response.status === 201 || response.status === 200) {
+            setUserId(response.data.id);
+            navigate(`/user/${response.data.id}`);
+        } else {
+            console.log('Unexpected registration status:', response.status);
+        }
     };
 
     return (
@@ -152,7 +152,9 @@ function UserRegistration() {
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
+                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">
+                                Register
+                            </button>
                         </form>
                     </div>
                 </div>
