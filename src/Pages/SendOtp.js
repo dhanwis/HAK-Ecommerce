@@ -110,6 +110,7 @@ function SendOtp() {
             <div className='page-content1'>
                 <section>
                     <div className="container">
+                       <img className="img-fluid" src="assets/images/logo.png" alt="" style={{height:"110px"}} />
                         <div className="row justify-content-md-center">
                             <div className="col-md-12 text-center">
                                 <div className="title1">
