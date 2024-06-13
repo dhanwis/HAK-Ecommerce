@@ -1,5 +1,4 @@
-import React from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -8,19 +7,27 @@ import './Userregistration.css'; // Import the CSS file for custom styling
 function UserRegistration() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const [userId, setUserId] = useState(null);
 
     const onSubmit = async (data) => {
-       
-            const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
+        try {
+            // Simulate getting user_id from some user context or login response
+            const user_id = 1; // Replace with actual logic to get user_id
+
+            const response = await axios.post(`http://127.0.0.1:8000/auth/user/customer/${user_id}/profile/add/`, {
+                ...data,
+                user_id: user_id
+            });
+
             if (response.status === 201 || response.status === 200) {
-                console.log(response.data.id);
-                window.location.href = `/user/${response.data.id}`;
-                console.log(response.data.id);
-                window.location.href = `/user/${response.data.id}`;
+                setUserId(response.data.user_id);
+                navigate(`/user/${response.data.user_id}`);
             } else {
                 console.log('Unexpected registration status:', response.status);
             }
-        
+        } catch (error) {
+            console.error('There was an error during registration:', error);
+        }
     };
 
     return (
@@ -29,8 +36,7 @@ function UserRegistration() {
                 <div className="col-md-4 welcome-section">
                     <div className="welcome-content">
                         <h1 style={{color:'white'}}>User Registration</h1>
-                        <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
-                        <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
+                        <p style={{color:'grey'}}>Register to experience more features online.</p>
                     </div>
                 </div>
                 <div className="col-md-8 form-section">
@@ -156,8 +162,9 @@ function UserRegistration() {
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
-                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
+                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">
+                                Register
+                            </button>
                         </form>
                     </div>
                 </div>
