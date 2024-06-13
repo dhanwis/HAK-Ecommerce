@@ -1,4 +1,5 @@
 import React from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -14,6 +15,8 @@ function UserRegistration() {
             if (response.status === 201 || response.status === 200) {
                 console.log(response.data.id);
                 window.location.href = `/user/${response.data.id}`;
+                console.log(response.data.id);
+                window.location.href = `/user/${response.data.id}`;
             } else {
                 console.log('Unexpected registration status:', response.status);
             }
@@ -26,6 +29,7 @@ function UserRegistration() {
                 <div className="col-md-4 welcome-section">
                     <div className="welcome-content">
                         <h1 style={{color:'white'}}>User Registration</h1>
+                        <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
                         <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
                     </div>
                 </div>
@@ -152,6 +156,7 @@ function UserRegistration() {
                                 </div>
                             </div>
 
+                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
                             <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
                         </form>
                     </div>
