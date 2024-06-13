@@ -1,3 +1,5 @@
+/* UserRegistration.css */
+
 .registration-container {
     height: 100vh;
     display: flex;
@@ -68,60 +70,10 @@
 }
 
 .btn-primary1 {
-    width: 100%;
+    width:50px;
     height: 50px;
     border-radius: 5px;
     color: white;
     background: linear-gradient(to right, #ff758c, #ff7eb3);
     border: none;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .welcome-section {
-        width: 30%;
-    }
-}
-
-@media (max-width: 768px) {
-    .registration-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .welcome-section {
-        width: 100%;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .form-section {
-        padding: 50px 20px;
-    }
-
-    .form-container {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .welcome-content h1 {
-        font-size: 2rem;
-    }
-
-    .welcome-content p {
-        font-size: 1rem;
-    }
-
-    .form-section {
-        padding: 20px;
-    }
-
-    .registration-form .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .registration-form .text-danger {
-        font-size: 0.8rem;
-    }
 }
