@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import './Userregistration.css'; // Import the CSS file for custom styling
 function UserRegistration() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const [userId, setUserId] = useState(null);
 
     const onSubmit = async (data) => {
         try {
@@ -161,7 +162,9 @@ function UserRegistration() {
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">Register</button>
+                            <button type="submit" className="btn1 btn-primary1 mt-3 w-100">
+                                Register
+                            </button>
                         </form>
                     </div>
                 </div>
