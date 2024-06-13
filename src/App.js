@@ -43,7 +43,6 @@ import TAndC from "./Pages/tAndC";
 import ContatctUs from "./Pages/contact/ContatctUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
-import ProductSingle from "./Pages/ProductSingle.js";
 
 
 function App() {
@@ -143,7 +142,6 @@ if(showGif){
           <Route path="/shop-list-fullwidth" element={<><Header/><PLFW /><Footer/><BackToTop/></>} />
           <Route path="/product-left-image" element={<><Header/><PLI /><Footer/><BackToTop/></>} />
           <Route path="/product-right-image" element={<><Header/><PRI /><Footer/><BackToTop/></>} />
-          <Route path="/product-single/:id" element={<><Header/><ProductSingle/><Footer/><BackToTop/></>} />
           <Route path="/product-cart" element={<><Header/><ProductCart /><Footer/><BackToTop/></>} />
           <Route path="/product-checkout" element={<><Header/><CheckOut /><Footer/><BackToTop/></>} />
           <Route path="/order-complete" element={<><Header/><OrderComplete /><Footer/><BackToTop/></>} />
