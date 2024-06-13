@@ -10,13 +10,23 @@ function UserRegistration() {
     const [userId, setUserId] = useState(null);
 
     const onSubmit = async (data) => {
-        // Send the registration data to the backend
-        const response = await axios.post('http://127.0.0.1:8000/auth/user/customer/profile/add/', data);
-        if (response.status === 201 || response.status === 200) {
-            setUserId(response.data.id);
-            navigate(`/user/${response.data.id}`);
-        } else {
-            console.log('Unexpected registration status:', response.status);
+        try {
+            // Simulate getting user_id from some user context or login response
+            const user_id = 1; // Replace with actual logic to get user_id
+
+            const response = await axios.post(`http://127.0.0.1:8000/auth/user/customer/${user_id}/profile/add/`, {
+                ...data,
+                user_id: user_id
+            });
+
+            if (response.status === 201 || response.status === 200) {
+                setUserId(response.data.user_id);
+                navigate(`/user/${response.data.user_id}`);
+            } else {
+                console.log('Unexpected registration status:', response.status);
+            }
+        } catch (error) {
+            console.error('There was an error during registration:', error);
         }
     };
 
@@ -26,7 +36,7 @@ function UserRegistration() {
                 <div className="col-md-4 welcome-section">
                     <div className="welcome-content">
                         <h1 style={{color:'white'}}>User Registration</h1>
-                        <p style={{color:'grey'}}>Register for experiencing more features in the online.</p>
+                        <p style={{color:'grey'}}>Register to experience more features online.</p>
                     </div>
                 </div>
                 <div className="col-md-8 form-section">
