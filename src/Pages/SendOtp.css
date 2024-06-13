@@ -30,10 +30,10 @@
   .page-content1 {
     position: relative;
     z-index: 1;
-    max-width: 560px;
-    max-height: 540px;
+    width: 100%;
+    max-width: 600px;
     margin: 20px;
-    padding: 3px;
+    padding: 20px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.8);
   }
@@ -44,14 +44,17 @@
     margin-top: 20px;
   }
   
-  /* .otpInput {
+  .otpInput {
     width: 50px;
     height: 50px;
     margin: 10px;
     text-align: center;
     font-size: 24px;
-  } */
-
+  }
+  
+  .customBtn {
+    width: 100%;
+  }
   
   @media (max-width: 576px) {
     .otpInput {
