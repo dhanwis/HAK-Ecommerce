@@ -11,7 +11,7 @@ export default [
         "price": 3500,
         "discount": 1000,
         "salePrice": 2500,
-        "description": " Colour Of The Actual Product May Slightly Vary Due To Different Photographic Lighting Sources Or Your Display Color Settings Or Screen Type.",
+        "description": " Colour Of The Actual Product May Slightly Vary Due To Different Photographic Lighting Sources Or Your Display Color Settings Or Screen Type..",
         "rating": 5,
         "tags": ["Women"],
         "size": ["Free Size"],
