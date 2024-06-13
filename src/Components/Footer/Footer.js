@@ -87,10 +87,9 @@ export default function Footer() {
               </div>
             </div>
             <div className="col-12 col-lg-3 d-flex flex-column">
-              {/* WhatsApp Chat Button */}
               <p className="mb-5" style={{fontSize:'20px',color:'white',fontWeight:'bold', marginLeft: '20px'}}>Click the icon to chat with us on WhatsApp</p>
               <a
-                href="https://api.whatsapp.com/send?phone=777777777"
+                href="https://api.whatsapp.com/send?phone=94999999999"
                 className="whatsapp-chat text-center"
                 target="_blank"
                 rel="noopener noreferrer"
