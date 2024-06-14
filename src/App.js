@@ -40,7 +40,7 @@ import PRI from "./Pages/PRI.js";
 import PrivacyPage from "./Pages/PrivacyPage";
 import ProductCart from "./Pages/ProductCart";
 import TAndC from "./Pages/tAndC";
-import ContatctUs from "./Pages/contact/ContatctUs";
+import ContactUs from "./Pages/contact/ContactUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
 
@@ -157,7 +157,7 @@ if(showGif){
           <Route path="/blog-listing" element={<><Header/><BlogsList1 /><Footer/><BackToTop/></>} />
           <Route path="/blog-listing-2" element={<><Header/><BlogsList2 /><Footer/><BackToTop/></>} />
           <Route path="/blog-single" element={<><Header/><BlogSingle /><Footer/><BackToTop/></>} />
-          <Route path="/contact-us" element={<><Header/><ContatctUs /><Footer/><BackToTop/></>} />
+          <Route path="/contact-us" element={<><Header/><ContactUs /><Footer/><BackToTop/></>} />
         </Routes>
       </div>      
     )

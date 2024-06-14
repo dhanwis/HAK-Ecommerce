@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ProductCard from "../ProductCard";
 import { useSelector } from "react-redux/es";
 import { Button, Col, Row } from "reactstrap";
@@ -7,6 +7,8 @@ function ProductIndex2() {
   const trendingproducts = useSelector(
     (state) => state.products.allProducts
   ).slice(0, 4);
+
+  useEffect(()=>{console.log('1',trendingproducts);},[])
   return (
     <>
       <section className="pb-0">

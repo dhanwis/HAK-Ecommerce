@@ -2,6 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import products from "../../api/products";
 
+
+
+ 
+
 const productsSlice = createSlice({
   name: "products",
   initialState: {
@@ -107,6 +111,7 @@ const productsSlice = createSlice({
 
     filterProducts(state) {
       const { allProducts, filters } = state;
+      console.log('s',allProducts);
       const { category, colors, size, prices } = filters;
 
       const [minPrice, maxPrice] = prices;
