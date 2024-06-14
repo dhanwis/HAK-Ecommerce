@@ -17,6 +17,9 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
   const selectedId = useSelector((state) => state.products.selectedProduct);
   const selectedProduct = allProducts.find((product) => product.id === selectedId);
   const product = allProducts.find((product) => product.id === id);
+
+
+   
  
   const handleAddToCart = (product) => {
     const size = product.size[0];
