@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
@@ -43,11 +43,15 @@ import TAndC from "./Pages/tAndC";
 import ContactUs from "./Pages/contact/ContactUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
+import { AuthContext } from "./ContextApi/Authentication";
 
 
 function App() {
+  const {accessToken,refreshToken} = useContext(AuthContext)
   const location = useLocation();
   const [showGif, setShowGif] = useState(true);
+  console.log('access',accessToken)
+  console.log('refresh',refreshToken)
 
   const isSpecialRoute =
     location.pathname.includes("maintenance") ||
@@ -148,7 +152,7 @@ if(showGif){
           <Route path="/about-us" element={<><Header/><AboutUs /><Footer/><BackToTop/></>} />
           <Route path="/faq" element={<><Header/><Faq /><Footer/><BackToTop/></>} />
           <Route path="/login" element={<Login />} />      
-          <Route path="/Userregistration/:id" element={<Userregistration/>} />
+          <Route path="/Userregistration" element={<Userregistration accessToken = {accessToken}/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
           <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
