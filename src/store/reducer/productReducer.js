@@ -28,7 +28,6 @@ const productsSlice = createSlice({
       );
 
       if (existingProductIndex !== -1) {
-        // If the product already exists in the cart, replace it
         toast("Product goes to cart", {
           position: "top-right",
           autoClose: 2000,
@@ -108,7 +107,6 @@ const productsSlice = createSlice({
     setFilters(state, action) {
       state.filters = { ...state.filters, ...action.payload };
     },
-
     filterProducts(state) {
       const { allProducts, filters } = state;
       console.log('s',allProducts);
@@ -160,7 +158,6 @@ const productsSlice = createSlice({
         state.wishList.splice(index, 1);
       }
     },
-
     resetFilters(state) {
       state.filters = {
         category: [],

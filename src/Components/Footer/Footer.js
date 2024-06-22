@@ -48,17 +48,17 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/about-us">
+                    <Link className="nav-link" to="about-us">
                       About
                     </Link>
                   </li>
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/faq">
+                    <Link className="nav-link" to="faq">
                       FAQ
                     </Link>
                   </li>
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/terms">
+                    <Link className="nav-link" to="terms">
                       Terms & Conditions
                     </Link>
                   </li>
@@ -68,17 +68,17 @@ export default function Footer() {
                 <h5 className="mb-1 text-white">Quick Links</h5>
                 <ul className="navbar-nav list-unstyled mb-0">
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/contact-us">
+                    <Link className="nav-link" to="contact-us">
                       Contact Us
                     </Link>
                   </li>
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/return-policy">
+                    <Link className="nav-link" to="return-policy">
                       Return Policy
                     </Link>
                   </li>
                   <li className="mb-3 nav-item">
-                    <Link className="nav-link" to="/refund-policy">
+                    <Link className="nav-link" to="refund-policy">
                       Refund Policy
                     </Link>
                   </li>

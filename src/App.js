@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState  } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BackToTop from "./Components/BackToTop";
@@ -43,8 +43,8 @@ import TAndC from "./Pages/tAndC";
 import ContactUs from "./Pages/contact/ContactUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
+import ProductSingle from "./Pages/ProductSingle.js";
 import { AuthContext } from "./ContextApi/Authentication";
-
 
 function App() {
   const {accessToken,refreshToken} = useContext(AuthContext)
@@ -146,6 +146,7 @@ if(showGif){
           <Route path="/shop-list-fullwidth" element={<><Header/><PLFW /><Footer/><BackToTop/></>} />
           <Route path="/product-left-image" element={<><Header/><PLI /><Footer/><BackToTop/></>} />
           <Route path="/product-right-image" element={<><Header/><PRI /><Footer/><BackToTop/></>} />
+          <Route path="/product-single/:id" element={<><Header/><ProductSingle/><Footer/><BackToTop/></>} />
           <Route path="/product-cart" element={<><Header/><ProductCart /><Footer/><BackToTop/></>} />
           <Route path="/product-checkout" element={<><Header/><CheckOut /><Footer/><BackToTop/></>} />
           <Route path="/order-complete" element={<><Header/><OrderComplete /><Footer/><BackToTop/></>} />
