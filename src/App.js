@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState  } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BackToTop from "./Components/BackToTop";
@@ -44,7 +44,7 @@ import ContactUs from "./Pages/contact/ContactUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
 import ProductSingle from "./Pages/ProductSingle.js";
-
+import { AuthContext } from "./ContextApi/Authentication";
 
 function App() {
   const {accessToken,refreshToken} = useContext(AuthContext)
