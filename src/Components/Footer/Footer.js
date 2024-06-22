@@ -38,8 +38,8 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-lg-6 d-flex justify-content-between" >
-              <div className="navbar-dark justify-content-between">
+            <div className="col-12 col-lg-6 d-flex justify-content-between" style={{ gap: "50px" }}>
+              <div className="navbar-dark">
                 <h5 className="mb-1 text-white">Quick Links</h5>
                 <ul className="navbar-nav list-unstyled mb-0">
                   <li className="mb-3 nav-item">
@@ -64,8 +64,7 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-              
-              <div className="navbar-dark mb-3" style={{marginRight: '100px'}}>
+              <div className="navbar-dark">
                 <h5 className="mb-1 text-white">Quick Links</h5>
                 <ul className="navbar-nav list-unstyled mb-0">
                   <li className="mb-3 nav-item">
@@ -86,18 +85,6 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-lg-3 d-flex flex-column">
-              <p className="mb-5" style={{fontSize:'20px',color:'white',fontWeight:'bold', marginLeft: '20px'}}>Click the icon to chat with us on WhatsApp</p>
-              <a
-                href="https://api.whatsapp.com/send?phone=94999999999"
-                className="whatsapp-chat text-center"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-        
-                <img src={whatsappIcon} height="80px" alt="WhatsApp Chat" />
-              </a>
-            </div>
           </div>
           <hr className="my-3" />
           <div className="row text-muted">
@@ -107,6 +94,14 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+      <style jsx>{`
+        @media (max-width: 991px) {
+          .col-12.col-lg-6.d-flex.justify-content-between {
+            flex-direction: column;
+            gap: 30px;
+          }
+        }
+      `}</style>
     </>
   );
 }
