@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import BackToTop from "./Components/BackToTop";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import Header1 from "./Components/Header1/Header1";
 import AboutUs from "./Pages/AboutUs";
 import BlogCards from "./Pages/BlogCards";
 import BlogSingle from "./Pages/BlogSingle";
