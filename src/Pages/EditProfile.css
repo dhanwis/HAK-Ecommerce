@@ -1,0 +1,31 @@
+.edit-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/public/assets/images/bg/03.webp'); /* Update the path to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .edit-profile-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%; /* Set form width to half the page */
+    max-width: 600px; /* Optional max-width for better responsiveness */
+  }
+  
+  @media (max-width: 768px) {
+    .edit-profile-form {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .edit-profile-form {
+      width: 90%;
+    }
+  }
+  

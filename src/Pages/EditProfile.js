@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Button, Container, Form, FormGroup, Label, Input } from "reactstrap";
+import './EditProfile.css'; // Import the CSS file
 
 export default function EditProfile() {
   const [profile, setProfile] = useState({
@@ -38,7 +39,6 @@ export default function EditProfile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUpdating(true);
-    // Update profile data
     axios.put("/api/profile/", profile)
       .then(response => {
         toast.success("Profile updated successfully");
@@ -56,79 +56,81 @@ export default function EditProfile() {
   }
 
   return (
-    <Container>
-      <h2>Edit Profile</h2>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label for="first_name">First Name</Label>
-          <Input
-            type="text"
-            name="first_name"
-            id="first_name"
-            value={profile.first_name}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="last_name">Last Name</Label>
-          <Input
-            type="text"
-            name="last_name"
-            id="last_name"
-            value={profile.last_name}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="street">Street</Label>
-          <Input
-            type="text"
-            name="street"
-            id="street"
-            value={profile.street}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="city">City</Label>
-          <Input
-            type="text"
-            name="city"
-            id="city"
-            value={profile.city}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="state">State</Label>
-          <Input
-            type="text"
-            name="state"
-            id="state"
-            value={profile.state}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="pincode">Pincode</Label>
-          <Input
-            type="text"
-            name="pincode"
-            id="pincode"
-            value={profile.pincode}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-        <Button type="submit" color="primary" disabled={updating}>
-          {updating ? "Updating..." : "Update Profile"}
-        </Button>
-      </Form>
-    </Container>
+    <div className="edit-profile-container">
+      <Container>
+        <h2 className="text-center">Edit Profile</h2>
+        <Form onSubmit={handleSubmit} className="edit-profile-form">
+          <FormGroup>
+            <Label for="first_name">First Name</Label>
+            <Input
+              type="text"
+              name="first_name"
+              id="first_name"
+              value={profile.first_name}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="last_name">Last Name</Label>
+            <Input
+              type="text"
+              name="last_name"
+              id="last_name"
+              value={profile.last_name}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="street">Street</Label>
+            <Input
+              type="text"
+              name="street"
+              id="street"
+              value={profile.street}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="city">City</Label>
+            <Input
+              type="text"
+              name="city"
+              id="city"
+              value={profile.city}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="state">State</Label>
+            <Input
+              type="text"
+              name="state"
+              id="state"
+              value={profile.state}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="pincode">Pincode</Label>
+            <Input
+              type="text"
+              name="pincode"
+              id="pincode"
+              value={profile.pincode}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
+          <Button type="submit" color="primary" disabled={updating}>
+            {updating ? "Updating..." : "Update Profile"}
+          </Button>
+        </Form>
+      </Container>
+    </div>
   );
 }
