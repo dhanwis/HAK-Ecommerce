@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductCard from "../ProductCard";
 import { useSelector } from "react-redux/es";
+import all from '../../allproducts'
 
 function ProductIndex() {
   const trendingproducts = useSelector(
     (state) => state.products.allProducts
   ).slice(0, 8);
+
+  useEffect(()=>{console.log('1',trendingproducts);},[])
+
   return (
     <>
       <section>
@@ -20,7 +24,7 @@ function ProductIndex() {
           </div>
           <div className="row">
 
-            {trendingproducts.map((product) => (
+            {all.slice(0,8).map((product) => (
 
               <div className="col-xl-3 col-lg-4 col-md-6" key={product.id}>
                 <ProductCard

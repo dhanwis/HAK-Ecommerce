@@ -4,7 +4,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Userregistration.css'; // Import the CSS file for custom styling
 
-function UserRegistration() {
+function UserRegistration({accessToken}) {
+  
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const [userId, setUserId] = useState(null);
@@ -46,6 +47,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="firstname"
                                             id="firstname"
                                             className="form-control"
                                             placeholder="First Name"
@@ -57,6 +59,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="lastname"
                                             id="lastname"
                                             className="form-control"
                                             placeholder="Last Name"
@@ -71,6 +74,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="email"
                                             id="email"
                                             type="email"
                                             className="form-control"
@@ -89,6 +93,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="phone_number"
                                             id="phonenumber"
                                             type="tel"
                                             className="form-control"
@@ -110,6 +115,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="street"
                                             id="street"
                                             className="form-control"
                                             placeholder="Street"
@@ -121,6 +127,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="city"
                                             id="city"
                                             className="form-control"
                                             placeholder="City"
@@ -135,6 +142,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="state"
                                             id="state"
                                             className="form-control"
                                             placeholder="State"
@@ -146,6 +154,7 @@ function UserRegistration() {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <input
+                                            name="pincode"
                                             id="pincode"
                                             className="form-control"
                                             placeholder="Pincode"

@@ -15,9 +15,10 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post('http://127.0.0.1:8000/auth/customer/', { phone_number: phonenumber });
-      if (response.status === 201) {
-        console.log(response.data);
-        navigate(`/send-otp/${response.data.id}`);
+      if (response.status === 200) {
+        console.log(response);
+        
+        navigate(`/send-otp/${response.data.customer_id}`);
       } else {
         console.log('Unexpected response status:', response.status);
       }

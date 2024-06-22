@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
@@ -40,15 +40,18 @@ import PRI from "./Pages/PRI.js";
 import PrivacyPage from "./Pages/PrivacyPage";
 import ProductCart from "./Pages/ProductCart";
 import TAndC from "./Pages/tAndC";
-import ContatctUs from "./Pages/contact/ContatctUs";
+import ContactUs from "./Pages/contact/ContactUs";
 import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
 import ProductSingle from "./Pages/ProductSingle.js";
 
 
 function App() {
+  const {accessToken,refreshToken} = useContext(AuthContext)
   const location = useLocation();
   const [showGif, setShowGif] = useState(true);
+  console.log('access',accessToken)
+  console.log('refresh',refreshToken)
 
   const isSpecialRoute =
     location.pathname.includes("maintenance") ||
@@ -150,7 +153,7 @@ if(showGif){
           <Route path="/about-us" element={<><Header/><AboutUs /><Footer/><BackToTop/></>} />
           <Route path="/faq" element={<><Header/><Faq /><Footer/><BackToTop/></>} />
           <Route path="/login" element={<Login />} />      
-          <Route path="/Userregistration/:id" element={<Userregistration/>} />
+          <Route path="/Userregistration" element={<Userregistration accessToken = {accessToken}/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
           <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
@@ -159,7 +162,7 @@ if(showGif){
           <Route path="/blog-listing" element={<><Header/><BlogsList1 /><Footer/><BackToTop/></>} />
           <Route path="/blog-listing-2" element={<><Header/><BlogsList2 /><Footer/><BackToTop/></>} />
           <Route path="/blog-single" element={<><Header/><BlogSingle /><Footer/><BackToTop/></>} />
-          <Route path="/contact-us" element={<><Header/><ContatctUs /><Footer/><BackToTop/></>} />
+          <Route path="/contact-us" element={<><Header/><ContactUs /><Footer/><BackToTop/></>} />
         </Routes>
       </div>      
     )
