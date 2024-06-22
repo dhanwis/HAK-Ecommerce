@@ -155,7 +155,7 @@ if(showGif){
           <Route path="/login" element={<Login />} />      
           <Route path="/Userregistration" element={<Userregistration accessToken = {accessToken}/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
-          <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
+          <Route path="/user/:id" element={<><Header1/><Index2 /><Footer/><BackToTop/></>} />
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
           <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
           <Route path="/blog-card" element={<><Header/><BlogCards /><Footer/><BackToTop/></>} />
