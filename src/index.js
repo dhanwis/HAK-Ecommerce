@@ -9,6 +9,7 @@ import { PersistGate } from "redux-persist/integration/react"; // Import Persist
 import { persistStore, persistReducer } from "redux-persist"; // Import persistStore and persistReducer
 import storage from "redux-persist/lib/storage"; // Import the storage option
 import rootReducer from "./store/reducer/rootReducer";
+import AuthProvider from "./ContextApi/Authentication";
 
 const persistConfig = {
   key: "root",
@@ -33,7 +34,9 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <App />
+         <AuthProvider >
+           <App />
+         </AuthProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>

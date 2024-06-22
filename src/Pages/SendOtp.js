@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './SendOtp.css'; // Ensure you have the CSS file linked
+import { AuthContext } from '../ContextApi/Authentication';
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
@@ -12,6 +13,8 @@ function SendOtp() {
     const [canResend, setCanResend] = useState(false);
     const [resendCount, setResendCount] = useState(0); // Track the number of resends
     const [maxAttemptsReached, setMaxAttemptsReached] = useState(false);
+
+    const {setRefreshToken,setAccessToken} = useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -65,13 +68,19 @@ function SendOtp() {
         try {
             const userotp = await axios.patch(`http://127.0.0.1:8000/auth/customer/${id}/verify-otp/`, { otp: enteredOtp })
             if (userotp.status === 201) {
-                navigate(`/Userregistration/${userotp.data.id}`);
+                console.log(userotp)
+                setAccessToken(userotp.data.access)
+                setRefreshToken(userotp.data.refresh)
+                navigate(`/Userregistration`);
+                
             } else if (userotp.status === 200) {
-                navigate(`/Userregistration/${userotp.data.id}`);
+                console.log(userotp)
+                  setAccessToken(userotp.data.access)
+                setRefreshToken(userotp.data.refresh)
+                navigate(`/`);
+              
                 //navigate(`/user/${userotp.data.id}`);
-            } else if (userotp.status === 202) {
-                navigate(`/Userregistration/${userotp.data.id}`);
-            } else {
+            }   else {
                 console.log('Unexpected userotp status:', userotp.status);
             }
         } catch (error) {
