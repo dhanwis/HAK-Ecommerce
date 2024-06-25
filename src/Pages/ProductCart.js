@@ -18,13 +18,6 @@ function ProductCart() {
     const cartItems = useSelector((state) => state.products.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const firstBreadcrumb = { label: "Pages", link: "/product-cart" };
-    const secondBreadcrumb = {
-        label: "Product Cart",
-        link: "/product-cart",
-        active: true,
-    };
     const [quantities, setQuantities] = useState(
         cartItems.map((item) => item.quantity)
     );
@@ -55,7 +48,7 @@ function ProductCart() {
                         <Row>
                             <Col lg={8}>
                                 <div className="table-responsive">
-                                    <Table className="cart-table text-center mb-5 table-bordered">
+                                    <Table className="cart-table text-center mb-5">
                                         <thead>
                                             <tr>
                                                 <th className="h5 mb-0 py-3 font-w-6" scope="col">

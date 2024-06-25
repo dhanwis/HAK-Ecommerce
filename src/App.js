@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import BackToTop from "./Components/BackToTop";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import Header1 from "./Components/Header1/Header1";
 import AboutUs from "./Pages/AboutUs";
 import BlogCards from "./Pages/BlogCards";
 import BlogSingle from "./Pages/BlogSingle";
@@ -45,6 +46,8 @@ import SendOtp from "./Pages/SendOtp.js";
 import Userregistration from "./Pages/Userregistration.js"
 import ProductSingle from "./Pages/ProductSingle.js";
 import { AuthContext } from "./ContextApi/Authentication";
+import EditProfile from "./Pages/EditProfile.js";
+import Sidebar from "./Pages/Sidebar.js";
 
 function App() {
   const {accessToken,refreshToken} = useContext(AuthContext)
@@ -155,7 +158,8 @@ if(showGif){
           <Route path="/login" element={<Login />} />      
           <Route path="/Userregistration" element={<Userregistration accessToken = {accessToken}/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
-          <Route path="/user/:id" element={<><Header/><Index2 /><Footer/><BackToTop/></>} />
+          <Route path="/user" element={<><Header1/><Index2 /><Footer/><BackToTop/></>} />
+          <Route path="/edit-profile" element={<><Header1/><Sidebar/><EditProfile/><BackToTop/></>}/>
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
           <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
           <Route path="/blog-card" element={<><Header/><BlogCards /><Footer/><BackToTop/></>} />
