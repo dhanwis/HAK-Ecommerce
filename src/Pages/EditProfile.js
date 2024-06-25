@@ -39,7 +39,7 @@ const EditProfile = () => {
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <div className="section">
           <h4>Personal Information <a href="#" onClick={() => toggleEdit('personalInfo')}>Edit</a></h4>
-          <div className="form-row">
+          <div className={`form-row ${!isEditing.personalInfo ? 'disabled' : ''}`}>
             <label>
               First Name:
               <input
@@ -64,7 +64,7 @@ const EditProfile = () => {
         </div>
         <div className="section">
           <h4>Address Information <a href="#" onClick={() => toggleEdit('addressInfo')}>Edit</a></h4>
-          <div className="form-row">
+          <div className={`form-row ${!isEditing.addressInfo ? 'disabled' : ''}`}>
             <label>
               Street:
               <input
@@ -86,7 +86,7 @@ const EditProfile = () => {
               />
             </label>
           </div>
-          <div className="form-row">
+          <div className={`form-row ${!isEditing.addressInfo ? 'disabled' : ''}`}>
             <label>
               State:
               <input
@@ -111,7 +111,7 @@ const EditProfile = () => {
         </div>
         <div className="section">
           <h4>Contact Information <a href="#" onClick={() => toggleEdit('contactInfo')}>Edit</a></h4>
-          <div className="form-row">
+          <div className={`form-row ${!isEditing.contactInfo ? 'disabled' : ''}`}>
             <label>
               Email:
               <input
