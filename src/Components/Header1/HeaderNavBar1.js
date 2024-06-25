@@ -116,35 +116,29 @@ export default function HeaderNavBar() {
                         onMouseLeave={() => setDropdownOpen(false)}
                       >
                         <div className="login-btn btn-link" style={{ cursor: 'pointer' }}>
-                          <p style={{ paddingTop: "10px", fontSize: "24px", color: "black" }}>
-                            VIJITH E P
+                          <p style={{ paddingTop: "10px", fontSize: "24px"}}>
+                            <a href="/edit-profile" style={{color:"black",textDecoration:"none"}}>VIJITH E P</a>
                           </p>
                         </div>
-                        {dropdownOpen && (
-                          <div className="dropdown-menu show" style={{ position: 'absolute', top: '40px' }}>
-                            <Link to="/edit-profile" className="dropdown-item">
-                              Edit Profile
-                            </Link>
-                            <div className="dropdown-item" onClick={handleLogout}>
-                              Logout
-                            </div>
-                          </div>
-                        )}
+                    
                       </div>
                       <Link
                         className="wishlist-btn btn-link ms-3"
                         onClick={toggleWishList}
                       >
-                        <i className="lar la-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
                       </Link>
                       <Link
                         className="d-flex align-items-center ms-3 mx-1"
                         onClick={toggleCartList}
                       >
-                        <span className="bg-white px-2 py-1 shadow-sm rounded" data-cart-items={cartItems1.length}>
-                          <i className="las la-shopping-cart"></i>
+                        <span className="bg-white px-2 py-1 shadow-sm rounded" >
+                        <i class="fa-solid fa-cart-shopping"></i>
                         </span>
                       </Link>
+                      <Link className="login-btn btn-link " to="/login">
+                    <i class="fa-solid fa-power-off" style={{width:"20px"}}></i>
+                    </Link>
                       <div>
                         {/* <div className="ml-4 d-none d-md-block"> <small className="d-block text-muted">My Cart</small>
                           <span className="text-dark">{cartItems1.length} Items - ₹{calculateTotal()}</span>
