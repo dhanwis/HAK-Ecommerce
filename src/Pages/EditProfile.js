@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './EditProfile.css';
 
 const EditProfile = () => {
@@ -38,7 +39,7 @@ const EditProfile = () => {
       <h3 className='text-center'>Edit Profile</h3>
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <div className="section">
-          <h4>Personal Information <a href="#" onClick={() => toggleEdit('personalInfo')}>Edit</a></h4>
+          <h4>Personal Information <Link to="" onClick={() => toggleEdit('personalInfo')}>Edit</Link></h4>
           <div className={`form-row ${!isEditing.personalInfo ? 'disabled' : ''}`}>
             <label>
               First Name:
@@ -63,7 +64,7 @@ const EditProfile = () => {
           </div>
         </div>
         <div className="section">
-          <h4>Address Information <a href="#" onClick={() => toggleEdit('addressInfo')}>Edit</a></h4>
+          <h4>Address Information <Link to="" onClick={() => toggleEdit('addressInfo')}>Edit</Link></h4>
           <div className={`form-row ${!isEditing.addressInfo ? 'disabled' : ''}`}>
             <label>
               Street:
@@ -110,7 +111,7 @@ const EditProfile = () => {
           </div>
         </div>
         <div className="section">
-          <h4>Contact Information <a href="#" onClick={() => toggleEdit('contactInfo')}>Edit</a></h4>
+          <h4>Contact Information <Link to="" onClick={() => toggleEdit('contactInfo')}>Edit</Link></h4>
           <div className={`form-row ${!isEditing.contactInfo ? 'disabled' : ''}`}>
             <label>
               Email:
