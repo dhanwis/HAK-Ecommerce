@@ -11,7 +11,7 @@ function UserRegistration({accessToken}) {
 
     const onSubmit = async (data) => {
      
-         console.log(accessToken);
+        // console.log(accessToken);
        
             const response = await axios.post('http://127.0.0.1:8000/auth/customer/profile/add/', data,{headers : {'Authorization' : `Bearer ${accessToken}`}});
             if ( response.status === 201) {
