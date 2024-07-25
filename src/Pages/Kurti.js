@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../services/baseurl';
+
 import {
   Card,
   CardText,
@@ -11,6 +13,7 @@ import {
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
+import axios from 'axios';
 function PGLS() {
   
   const [selectedOption, setSelectedOption] = useState("1");
@@ -48,6 +51,20 @@ function PGLS() {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
   };
+
+// get kurti
+
+const [KurtiData,setKurtiData]=useState([])    
+
+  useEffect(()=>{
+
+axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
+.then(response=>{
+  console.log(response);
+setKurtiData(response.data)
+})
+
+  },[])
 
   return (
     <div className='page-wrapper'>
@@ -101,16 +118,17 @@ function PGLS() {
                   </Col>
                 </Row>
                 <Row className="text-center">
-                  {productsToShow.map((product) => (
+                  {KurtiData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
                       <ProductCard
                         id={product.id}
-                        imgBackSrc={`assets/images/${product.pictures[0]}`}
-                        imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                        title={product.name}
-                        price={product.salePrice}
-                        actualPrice={product.price}
-                        rating={product.rating}
+                        imgBackSrc={`http://localhost:8000${product.color.image}`}
+                        imgFrontSrc={`http://localhost:8000${product.color.image}`}
+                        // imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                        title={product.product.name}
+                        price={product.discount_price}
+                        actualPrice={product.actual_price}
+                        //  rating={product.rating}
 
                       />
                     </Col>

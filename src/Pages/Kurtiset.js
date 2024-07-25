@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -11,6 +11,8 @@ import {
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
+import { BASE_URL } from '../services/baseurl';
+import axios from 'axios';
 function PGLS1() {
   
   const [selectedOption, setSelectedOption] = useState("1");
@@ -48,6 +50,20 @@ function PGLS1() {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
   };
+
+
+  // get kurtiset data
+  const [KurtiSetData,setKurtiSetData]=useState([])    
+
+  useEffect(()=>{
+
+axios.get(`${BASE_URL}/client/product/sort/?category=kurtiset`)
+.then(response=>{
+  console.log(response);
+setKurtiSetData(response.data)
+})
+
+  },[])
 
   return (
     <div className='page-wrapper'>

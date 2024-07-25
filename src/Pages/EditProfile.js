@@ -4,7 +4,7 @@ import './EditProfile.css';
 
 const EditProfile = () => {
   const [formData, setFormData] = useState({
-    firstname: '',
+    first_name: '',
     lastname: '',
     street: '',
     city: '',
@@ -46,7 +46,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="firstname"
-                value={formData.firstname}
+                value={formData.first_name}
                 onChange={handleChange}
                 disabled={!isEditing.personalInfo}
               />

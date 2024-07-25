@@ -10,6 +10,8 @@ function UserRegistration({accessToken}) {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
+
+        console.log(data);
      
          console.log(accessToken);
        
@@ -49,7 +51,7 @@ function UserRegistration({accessToken}) {
                                             placeholder="First Name"
                                             {...register('firstname', { required: 'First name is required' })}
                                         />
-                                        {errors.firstname && <span className="text-danger">{errors.firstname.message}</span>}
+                                        {errors.first_name && <span className="text-danger">{errors.first_name.message}</span>}
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -94,7 +96,7 @@ function UserRegistration({accessToken}) {
                                             type="tel"
                                             className="form-control"
                                             placeholder="Phone Number"
-                                            {...register('phonenumber', {
+                                            {...register('phone_number', {
                                                 required: 'Phone number is required',
                                                 pattern: {
                                                     value: /^[0-9]{10}$/,
@@ -102,7 +104,7 @@ function UserRegistration({accessToken}) {
                                                 }
                                             })}
                                         />
-                                        {errors.phonenumber && <span className="text-danger">{errors.phonenumber.message}</span>}
+                                        {errors.phone_number && <span className="text-danger">{errors.phone_number.message}</span>}
                                     </div>
                                 </div>
                             </div>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Input, Modal, ModalBody, Row } from 'reactstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, addToWishList, setSelectedProduct } from "../store/reducer/productReducer";
+import axios from "axios";
+import { BASE_URL } from "../services/baseurl";
 
 function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, rating }) {
   const dispatch = useDispatch();
@@ -98,6 +100,21 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
     dispatch(addToWishList(productToAdd));
   };
 
+  const [KurtiData,setKurtiData]=useState([])    
+
+  useEffect(()=>{
+
+axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
+.then(response=>{
+  console.log("hii",response);
+setKurtiData(response.data)
+})
+
+  },[])
+
+
+
+
   return (
     <>
       <div className="card product-card">
@@ -180,7 +197,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
         </div>
       </div>
 
-      {selectedProduct && <Modal className="" style={{ maxWidth: '50%' }} isOpen={modalOpen} toggle={toggleModal}>
+     <Modal className="" style={{ maxWidth: '50%' }} isOpen={modalOpen} toggle={toggleModal}>
 
         <div>
           <Row>
@@ -203,104 +220,112 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
           </Row>
         </div>
         <ModalBody>
+        {KurtiData.length > 0 ? (
+          KurtiData.map((item)=>(
           <Row className="align-items-center">
-            <Col lg="7" className="col-12">
-              <img className="img-fluid rounded" src={`assets/images/${selectedProduct.pictures[0]}`} alt="" />
-            </Col>
-            <Col lg="5" className="col-12 mt-5 mt-lg-0">
-              <div className="product-details">
-                <h3 className="mb-0">{selectedProduct.name}</h3>
-                <div className="star-rating mb-4">
-                  {renderSelectedRating()}
-                </div>
-                <span className="product-price h4">${selectedProduct.salePrice} <del className="text-muted h6">${selectedProduct.price}</del></span>
-                <ul className="list-unstyled my-4">
-                  <li className="mb-2">Availibility: <span className="text-muted"> {selectedProduct.stock}</span>
-                  </li>
-                  <li>Categories: <span className="text-muted">{selectedProduct.category}</span>
-                  </li>
-                </ul>
-                <p className="mb-4">{selectedProduct.description}</p>
-                <div className="d-sm-flex align-items-center mb-5">
-                  <div className="d-sm-flex align-items-center mr-sm-4">
-                    <div className="d-flex align-items-center mr-sm-4">
-                      <Button
-                        className="btn-product btn-product-up"
-                        onClick={() => {
-                          if (quantity > 1) setQuantity(quantity - 1);
-                        }}
-                      >
-                        <i className="las la-minus"></i>
-                      </Button>
-                      <Input
-                        className="form-product"
-                        type="number"
-                        name="form-product"
-                        value={quantity}
-                        onChange={(e) => {
-                          const newQuantity = parseInt(e.target.value);
-                          if (
-                            newQuantity >= 1 &&
-                            newQuantity <= product.stock
-                          ) {
-                            setQuantity(newQuantity);
-                          }
-                        }}
-                        max={product.stock}
-                      />
-                      <Button
-                        className="btn-product btn-product-down"
-                        onClick={() => {
-                          if (quantity < product.stock)
-                            setQuantity(quantity + 1);
-                        }}
-                      >
-                        <i className="las la-plus"></i>
-                      </Button>
-                    </div>
-                  </div>
-                  <Input
-                    type="select"
-                    className="custom-select mt-3 mt-sm-0"
-                    name="size"
-                    id="size"
-                    placeholder="Size"
-                    onChange={handleSizeChange}
-                  >
-                    <option disabled selected hidden>
-                      Size
-                    </option>
-                    {selectedProduct.size.map((size) => (
-                      <option key={size} value={size}>
-                        {size}
-                      </option>
-                    ))}
-                  </Input>
-                 
-                </div>
-                <div className="product-link d-flex align-items-center mt-4">
-                  <Button
-                    className="btn btn-primary btn-animated mr-sm-4 mb-3 mb-sm-0"
-                    type="button"
-                    onClick={() => handleSelectedAddToCart(product)}
-                  >
-                    <i className="las la-shopping-cart mr-1"></i>Add To Cart
-                  </Button>
-                  <Button
-                    className="btn btn-dark btn-animated"
-                    type="button"
-                    onClick={() => {
-                      handleSelectedAddToWishList(product);
-                    }}
-                  >
-                    <i className="lar la-heart mr-1"></i>Add To Wishlist
-                  </Button>
-                </div>
+          <Col lg="7" className="col-12">
+            <img className="img-fluid rounded"  alt="" />
+          </Col>
+          <Col lg="5" className="col-12 mt-5 mt-lg-0">
+            <div className="product-details">
+              <h3 className="mb-0"></h3>
+              <div className="star-rating mb-4">
+                {renderSelectedRating()}
               </div>
-            </Col>
-          </Row>
+              <span className="product-price h4">${selectedProduct.salePrice} <del className="text-muted h6">${selectedProduct.price}</del></span>
+              <ul className="list-unstyled my-4">
+                <li className="mb-2">Availibility: <span style={{color:'black'}} className="text-muted"> {item.stock}</span>
+                </li>
+                <li>Categories: <span className="text-muted">{selectedProduct.category}</span>
+                </li>
+                {/* heyyyy */}
+              </ul>
+              <p className="mb-4">{selectedProduct.description}</p>
+              <div className="d-sm-flex align-items-center mb-5">
+                <div className="d-sm-flex align-items-center mr-sm-4">
+                  <div className="d-flex align-items-center mr-sm-4">
+                    <Button
+                      className="btn-product btn-product-up"
+                      onClick={() => {
+                        if (quantity > 1) setQuantity(quantity - 1);
+                      }}
+                    >
+                      <i className="las la-minus"></i>
+                    </Button>
+                    <Input
+                      className="form-product"
+                      type="number"
+                      name="form-product"
+                      value={quantity}
+                      onChange={(e) => {
+                        const newQuantity = parseInt(e.target.value);
+                        if (
+                          newQuantity >= 1 &&
+                          newQuantity <= product.stock
+                        ) {
+                          setQuantity(newQuantity);
+                        }
+                      }}
+                      max={product.stock}
+                    />
+                    <Button
+                      className="btn-product btn-product-down"
+                      onClick={() => {
+                        if (quantity < product.stock)
+                          setQuantity(quantity + 1);
+                      }}
+                    >
+                      <i className="las la-plus"></i>
+                    </Button>
+                  </div>
+                </div>
+                <Input
+                  type="select"
+                  className="custom-select mt-3 mt-sm-0"
+                  name="size"
+                  id="size"
+                  placeholder="Size"
+                  onChange={handleSizeChange}
+                >
+                  <option disabled selected hidden>
+                    Size
+                  </option>
+                  {selectedProduct.size.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </Input>
+                
+              </div>
+              <div className="product-link d-flex align-items-center mt-4">
+                <Button
+                  className="btn btn-primary btn-animated mr-sm-4 mb-3 mb-sm-0"
+                  type="button"
+                  onClick={() => handleSelectedAddToCart(product)}
+                >
+                  <i className="las la-shopping-cart mr-1"></i>Add To Cart
+                </Button>
+                <Button
+                  className="btn btn-dark btn-animated"
+                  type="button"
+                  onClick={() => {
+                    handleSelectedAddToWishList(product);
+                  }}
+                >
+                  {/* heree */}
+                  <i className="lar la-heart mr-1"></i>Add To Wishlist
+                </Button>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        ) ))
+      
+      :null}
         </ModalBody>
-      </Modal >}
+      </Modal >
+      
 
     </>
 

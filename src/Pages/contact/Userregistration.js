@@ -7,7 +7,7 @@ function Userregistration() {
     const { id } = useParams();
 
     const [formData, setFormData] = useState({
-        firstname: '',
+        first_name: '',
         lastname: '',
         email: '',
         address: '',
@@ -40,7 +40,7 @@ function Userregistration() {
                         type="text"
                         name="firstname"
                         placeholder="Firstname"
-                        value={formData.firstname}
+                        value={formData.first_name}
                         onChange={handleChange}
                         required
                     />
