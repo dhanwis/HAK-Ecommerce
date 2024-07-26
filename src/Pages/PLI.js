@@ -5,7 +5,7 @@ import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import OwlCarousel from "react-owl-carousel";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
     Button,
     Col,
@@ -25,11 +25,57 @@ import {
 import PageHeading from "../Components/PageHeading/PageHeading";
 import ProductCard from "../Components/ProductCard";
 import { addToCart, addToWishList } from "../store/reducer/productReducer";
+import { BASE_URL } from "../services/baseurl";
+import axios from "axios";
 
 
 
 
 function PLI() {
+
+
+ const [Product,setProduct]=useState([])
+// useEffect(()=>{
+//     axios.get(`${BASE_URL}/client/product/${pid}/`)
+//     .then(response=>{
+//         console.log(response);
+//         setProduct(response.data)
+//     })
+// },[])
+
+
+// const {pid}=useParams()
+// console.log('Component PLI rendered');
+
+// console.log('idd',pid);
+
+
+
+const {anotherid}=useParams()
+console.log("id",anotherid);
+
+
+// useEffect(() => {
+//   handleEditCategory(anotherid);
+// }, [anotherid]);
+
+
+const handleEditCategory = (productid) => {
+  axios.get(`${BASE_URL}/client/product/${productid}/`)
+    .then(response => {
+      console.log(response);    
+      setProduct({
+        id:response.data.id,
+        name: response.data.name,
+        description: response.data.description
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching category:', error);
+    });
+};
+
+
     const dispatch = useDispatch();
     const allProducts = useSelector((state) => state.products.allProducts);
 
@@ -47,10 +93,10 @@ function PLI() {
     } else {
         cat = product.category;
     }
-    const firstBreadcrumb = { label: "Pages", link: "/product-left-image" };
+    const firstBreadcrumb = { label: "Pages", link: "/product-left-image/:id" };
     const secondBreadcrumb = {
         label: "Product Left Image",
-        link: "/product-left-image",
+        link: "/product-left-image/:id",
         active: true,
     };
     const [quantity, setQuantity] = useState(1);
@@ -189,7 +235,13 @@ function PLI() {
 
         dispatch(addToWishList(productToAdd));
     };
+
+
+
     if (product === undefined ? (product = allProducts[0]) : product)
+
+
+        
         return (
             <div className="page-wrapper">
                 

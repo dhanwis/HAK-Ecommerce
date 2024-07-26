@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Input, Modal, ModalBody, Row } from 'reactstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { addToCart, addToWishList, setSelectedProduct } from "../store/reducer/productReducer";
 import axios from "axios";
 import { BASE_URL } from "../services/baseurl";
@@ -100,18 +100,35 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
     dispatch(addToWishList(productToAdd));
   };
 
-  const [KurtiData,setKurtiData]=useState([])    
+  // const { pid } = useParams()
+  // console.log('id',pid);   
 
-  useEffect(()=>{
 
-axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
-.then(response=>{
-  console.log("hii",response);
-setKurtiData(response.data)
-})
 
-  },[])
+// to get kurtidata
+  const [KurtiData,setKurtiData]=useState([])   
+  
+  const [ViewKurtiData,setViewKurtiData]=useState([])
 
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
+      .then(response => {
+        console.log("hii", response);
+        setKurtiData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data", error);
+      });
+  }, []);
+
+//   useEffect((productidd)=>{
+//     axios.get(`${BASE_URL}/client/product/${productidd}/`)
+// .then(response=>{
+//   console.log("hello",response);
+// setViewKurtiData(response.data)
+// })
+
+//   },[pid])
 
 
 
@@ -128,28 +145,22 @@ setKurtiData(response.data)
         >
           <i className="lar la-heart"></i>
         </button>
-        <Link className="card-img-hover d-block" to="/product-left-image" onClick={() => {
-          dispatch(setSelectedProduct(id));
-        }}>
+        
           <img className="card-img-top card-img-back" src={imgBackSrc} alt="..." />
-          <img className="card-img-top card-img-front" src={imgFrontSrc} alt="..." />
-        </Link>
+          {/* <img className="card-img-top card-img-front" src={imgFrontSrc} alt="..." /> */}
+        
+       
         <div className="card-info">
+       
           <div className="card-body">
             <div className="product-title">
-              <Link
-                to="/product-left-image"
-                onClick={() => {
-                  dispatch(setSelectedProduct(id));
-                }}
-                className="mt-4 mb-2 d-block link-title h6"
-              >
+             
                 {title}
-              </Link>
+            
             </div>
             <div className="mt-1">
-              <span className="product-price">
-                <del className="text-muted pr-1">${actualPrice}</del>
+              <span style={{color:'#f85438'}} className="product-price ">
+                <del className="text-danger pr-1 ">${actualPrice}</del>
                 ${price}
               </span>
               <div className="star-rating">
@@ -157,6 +168,7 @@ setKurtiData(response.data)
               </div>
             </div>
           </div>
+          
           <div className="card-footer bg-transparent border-0" style={{ border: 'none' }}>
             <div className="product-link d-flex align-items-center justify-content-center">
               <button

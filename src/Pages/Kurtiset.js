@@ -55,15 +55,16 @@ function PGLS1() {
   // get kurtiset data
   const [KurtiSetData,setKurtiSetData]=useState([])    
 
-  useEffect(()=>{
-
-axios.get(`${BASE_URL}/client/product/sort/?category=kurtiset`)
-.then(response=>{
-  console.log(response);
-setKurtiSetData(response.data)
-})
-
-  },[])
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/product/sort/?category=kurtiset`)
+      .then(response => {
+        console.log("hii", response);
+        setKurtiSetData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data", error);
+      });
+  }, []);
 
   return (
     <div className='page-wrapper'>
@@ -117,18 +118,18 @@ setKurtiSetData(response.data)
                   </Col>
                 </Row>
                 <Row className="text-center">
-                  {productsToShow.map((product) => (
+                  {KurtiSetData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
-                      <ProductCard
+                    <Link to={`/product-left-image/${product.id}`}>   <ProductCard
                         id={product.id}
-                        imgBackSrc={`assets/images/${product.pictures[0]}`}
-                        imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                        title={product.name}
-                        price={product.salePrice}
-                        actualPrice={product.price}
+                        imgBackSrc={`${BASE_URL}${product.color.image_url}`}
+                        imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
+                        title={product.product.name}
+                        price={product.discount_price}
+                        actualPrice={product.actual_price}
                         rating={product.rating}
 
-                      />
+                      /> </Link>
                     </Col>
                   ))}
 

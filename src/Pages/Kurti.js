@@ -56,15 +56,16 @@ function PGLS() {
 
 const [KurtiData,setKurtiData]=useState([])    
 
-  useEffect(()=>{
-
-axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
-.then(response=>{
-  console.log(response);
-setKurtiData(response.data)
-})
-
-  },[])
+useEffect(() => {
+  axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
+    .then(response => {
+      console.log("hii", response);
+      setKurtiData(response.data);
+    })
+    .catch(error => {
+      console.error("Error fetching data", error);
+    });
+}, []);   
 
   return (
     <div className='page-wrapper'>
@@ -120,17 +121,19 @@ setKurtiData(response.data)
                 <Row className="text-center">
                   {KurtiData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
-                      <ProductCard
-                        id={product.id}
-                        imgBackSrc={`http://localhost:8000${product.color.image}`}
-                        imgFrontSrc={`http://localhost:8000${product.color.image}`}
-                        // imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                        title={product.product.name}
-                        price={product.discount_price}
-                        actualPrice={product.actual_price}
-                        //  rating={product.rating}
-
-                      />
+                     <Link to={`/product-left-image/${product.id}`}>
+                        <ProductCard
+                          id={product.id}
+                          imgBackSrc={`${BASE_URL}${product.color.image_url}`}
+                          imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
+                          // imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                          title={product.product.name}
+                          price={product.discount_price}
+                          actualPrice={product.actual_price}
+                          //  rating={product.rating}
+  
+                        />
+                     </Link>
                     </Col>
                   ))}
 

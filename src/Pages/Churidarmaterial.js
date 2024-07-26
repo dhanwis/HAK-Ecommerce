@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -11,6 +11,8 @@ import {
 import ProductCard from '../Components/ProductCard';
 import SideBar from '../Components/Sidebar/SideBar';
 import CustomPagination from '../Components/pagination';
+import axios from 'axios';
+import { BASE_URL } from '../services/baseurl';
 function PGLS4() {
   
   const [selectedOption, setSelectedOption] = useState("1");
@@ -48,6 +50,22 @@ function PGLS4() {
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
   };
+
+
+  // get churidarmaterial data
+  const [MateriakData,setMaterialData]=useState([])    
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/product/sort/?category=churidar-material`)
+      .then(response => {
+        console.log("hii", response);
+        setMaterialData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data", error);
+      });
+  }, []);
+
 
   return (
     <div className='page-wrapper'>
@@ -101,18 +119,18 @@ function PGLS4() {
                   </Col>
                 </Row>
                 <Row className="text-center">
-                  {productsToShow.map((product) => (
+                  {MateriakData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
-                      <ProductCard
+                   <Link to={`/product-left-image/${product.id}`}>    <ProductCard
                         id={product.id}
-                        imgBackSrc={`assets/images/${product.pictures[0]}`}
-                        imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                        title={product.name}
-                        price={product.salePrice}
-                        actualPrice={product.price}
+                        imgBackSrc={`${BASE_URL}${product.color.image_url}`}
+                        imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
+                        title={product.product.name}
+                        price={product.discount_price}
+                        actualPrice={product.actual_price}
                         rating={product.rating}
 
-                      />
+                      />  </Link>
                     </Col>
                   ))}
 

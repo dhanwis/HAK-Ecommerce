@@ -147,7 +147,7 @@ if(showGif){
           <Route path="/shop-list-right-sidebar" element={<><Header/><PLRS /><Footer/><BackToTop/></>} />
           <Route path="/shop-list-no-sidebar" element={<><Header/><PLNS /><Footer/><BackToTop/></>} />
           <Route path="/shop-list-fullwidth" element={<><Header/><PLFW /><Footer/><BackToTop/></>} />
-          <Route path="/product-left-image" element={<><Header/><PLI /><Footer/><BackToTop/></>} />
+          <Route path="/product-left-image/:id" element={<><Header/><PLI /><Footer/><BackToTop/></>} />
           <Route path="/product-right-image" element={<><Header/><PRI /><Footer/><BackToTop/></>} />
           <Route path="/product-single/:id" element={<><Header/><ProductSingle/><Footer/><BackToTop/></>} />
           <Route path="/product-cart" element={<><Header/><ProductCart /><Footer/><BackToTop/></>} />
