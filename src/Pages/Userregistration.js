@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Userregistration.css'; // Import the CSS file for custom styling
+import { BASE_URL } from '../services/baseurl';
 
 function UserRegistration({accessToken}) {
   
@@ -15,7 +16,7 @@ function UserRegistration({accessToken}) {
      
         // console.log(accessToken);
        
-            const response = await axios.post('http://127.0.0.1:8000/auth/customer/profile/add/', data,{headers : {'Authorization' : `Bearer ${accessToken}`}});
+            const response = await axios.post(`${BASE_URL}/auth/customer/profile/add/`, data,{headers : {'Authorization' : `Bearer ${accessToken}`}});
             if ( response.status === 201) {
                 
             window.location.href = '/'

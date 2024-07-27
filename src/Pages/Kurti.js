@@ -121,7 +121,7 @@ useEffect(() => {
                 <Row className="text-center">
                   {KurtiData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
-                     <Link to={`/product-left-image/${product.id}`}>
+                    
                         <ProductCard
                           id={product.id}
                           imgBackSrc={`${BASE_URL}${product.color.image_url}`}
@@ -130,10 +130,14 @@ useEffect(() => {
                           title={product.product.name}
                           price={product.discount_price}
                           actualPrice={product.actual_price}
-                          //  rating={product.rating}
+                           rating={product.rating}
+                           stock={product.stock}
+                           description={product.product.description}
+                           category={product.category.name}
+                           size={product.size.name}
   
                         />
-                     </Link>
+                
                     </Col>
                   ))}
 

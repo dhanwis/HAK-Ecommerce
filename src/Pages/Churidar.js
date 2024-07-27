@@ -120,16 +120,21 @@ function PGLS2() {
                 <Row className="text-center">
                   {ChuridarData.map((product) => (
                     <Col lg="4" md="6" className="mt-5">
-                  <Link to={`/product-left-image/${product.id}`}><ProductCard
-                        id={product.id}
-                        imgBackSrc={`${BASE_URL}${product.color.image_url}`}
-                        imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
-                        title={product.product.name}
-                        price={product.discount_price}
-                        actualPrice={product.actual_price}
-                        rating={product.rating}
-
-                      /> </Link>
+                  <ProductCard
+                          id={product.id}
+                          imgBackSrc={`${BASE_URL}${product.color.image_url}`}
+                          imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
+                          // imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                          title={product.product.name}
+                          price={product.discount_price}
+                          actualPrice={product.actual_price}
+                           rating={product.rating}
+                           stock={product.stock}
+                           description={product.product.description}
+                           category={product.category.name}
+                           size={product.size.name}
+  
+                        />
                     </Col>
                   ))}
 

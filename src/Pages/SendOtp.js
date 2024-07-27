@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './SendOtp.css'; // Ensure you have the CSS file linked
 import { AuthContext } from '../ContextApi/Authentication';
+import { BASE_URL } from '../services/baseurl';
 
 function SendOtp() {
     const [otp, setOtp] = useState(['', '', '', '']);
@@ -66,7 +67,7 @@ function SendOtp() {
         const enteredOtp = otp.join('');
 
         try {
-            const userotp = await axios.patch(`http://127.0.0.1:8000/auth/customer/${id}/verify-otp/`, { otp: enteredOtp })
+            const userotp = await axios.patch(`${BASE_URL}/auth/customer/${id}/verify-otp/`, { otp: enteredOtp })
             if (userotp.status === 201) {
                 console.log(userotp)
                 setAccessToken(userotp.data.access)
@@ -77,7 +78,7 @@ function SendOtp() {
                 console.log(userotp)
                   setAccessToken(userotp.data.access)
                 setRefreshToken(userotp.data.refresh)
-                navigate(`/`);
+                navigate(`/user`);
               
                 //navigate(`/user/${userotp.data.id}`);
             }   else {

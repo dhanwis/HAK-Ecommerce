@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../Components/Footer/giphy.gif';
 import axios from 'axios';
+import { BASE_URL } from '../services/baseurl';
 
 function Login() {
   const [phonenumber, setPhonenumber] = useState('');
@@ -14,7 +15,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/customer/', { phone_number: phonenumber });
+      const response = await axios.post(`${BASE_URL}/auth/customer/`, { phone_number: phonenumber });
       if (response.status === 200) {
         console.log(response);
         

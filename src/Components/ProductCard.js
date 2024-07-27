@@ -6,7 +6,7 @@ import { addToCart, addToWishList, setSelectedProduct } from "../store/reducer/p
 import axios from "axios";
 import { BASE_URL } from "../services/baseurl";
 
-function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, rating }) {
+function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, rating,stock,description,category ,size}) {
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -100,26 +100,27 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
     dispatch(addToWishList(productToAdd));
   };
 
-  // const { pid } = useParams()
-  // console.log('id',pid);   
+   
 
 
 
 // to get kurtidata
   const [KurtiData,setKurtiData]=useState([])   
   
-  const [ViewKurtiData,setViewKurtiData]=useState([])
+  
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/client/product/sort/?category=kurti`)
+    axios.get(`${BASE_URL}/client/product/${id}/`)
       .then(response => {
-        console.log("hii", response);
+        // console.log("hii", response);
         setKurtiData(response.data);
       })
       .catch(error => {
-        console.error("Error fetching data", error);
+        // console.error("Error fetching data", error);
       });
   }, []);
+  
+  // console.log("id",KurtiData);
 
 //   useEffect((productidd)=>{
 //     axios.get(`${BASE_URL}/client/product/${productidd}/`)
@@ -232,30 +233,33 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
           </Row>
         </div>
         <ModalBody>
-        {KurtiData.length > 0 ? (
-          KurtiData.map((item)=>(
+       
           <Row className="align-items-center">
           <Col lg="7" className="col-12">
-            <img className="img-fluid rounded"  alt="" />
+         
+              <img className="img-fluid rounded" src={imgFrontSrc} alt="" />
+            
           </Col>
           <Col lg="5" className="col-12 mt-5 mt-lg-0">
             <div className="product-details">
-              <h3 className="mb-0"></h3>
-              <div className="star-rating mb-4">
-                {renderSelectedRating()}
-              </div>
-              <span className="product-price h4">${selectedProduct.salePrice} <del className="text-muted h6">${selectedProduct.price}</del></span>
+            <h3 className="mb-0">{title}</h3>
+                <div className="star-rating mb-4">
+                  {/* {renderSelectedRating()} */}
+                </div>
+              <span className="product-price h4">${actualPrice} <del className="h6">${price}</del></span>
               <ul className="list-unstyled my-4">
-                <li className="mb-2">Availibility: <span style={{color:'black'}} className="text-muted"> {item.stock}</span>
+                <li className="mb-2">Availibility: <span style={{color:'black'}} > {stock}</span>
                 </li>
-                <li>Categories: <span className="text-muted">{selectedProduct.category}</span>
+                <li>Categories: <span >{category}</span>
+                
                 </li>
+                <li>Size: <span >{size}</span> </li>
                 {/* heyyyy */}
               </ul>
-              <p className="mb-4">{selectedProduct.description}</p>
+              <p className="mb-4">{description}</p>
               <div className="d-sm-flex align-items-center mb-5">
                 <div className="d-sm-flex align-items-center mr-sm-4">
-                  <div className="d-flex align-items-center mr-sm-4">
+                  {/* <div className="d-flex align-items-center mr-sm-4">
                     <Button
                       className="btn-product btn-product-up"
                       onClick={() => {
@@ -289,9 +293,9 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
                     >
                       <i className="las la-plus"></i>
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
-                <Input
+                {/* <Input
                   type="select"
                   className="custom-select mt-3 mt-sm-0"
                   name="size"
@@ -307,7 +311,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
                       {size}
                     </option>
                   ))}
-                </Input>
+                </Input> */}
                 
               </div>
               <div className="product-link d-flex align-items-center mt-4">
@@ -332,9 +336,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
             </div>
           </Col>
         </Row>
-        ) ))
-      
-      :null}
+       
         </ModalBody>
       </Modal >
       
