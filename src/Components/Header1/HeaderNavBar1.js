@@ -65,6 +65,11 @@ export default function HeaderNavBar() {
     }, 0);
   };
 
+
+  let existinguser = JSON.parse(sessionStorage.getItem("existuser"));
+console.log("Parsed user:", existinguser);
+
+  console.log(existinguser);
   return (
     <>
       <div>
@@ -89,9 +94,11 @@ export default function HeaderNavBar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                       <ul className="navbar-nav">
-                        <li className="nav-item">
-                          <Link to="/" className="nav-link" active>Home</Link>
-                        </li>
+                      <li className="nav-item">
+    <Link to={existinguser ? "/user" : "/"} className="nav-link" active>
+      Home
+    </Link>
+  </li>
                         <li className="nav-item">
                           <Link to="/kurti" className="nav-link">Kurti</Link>
                         </li>
@@ -116,8 +123,8 @@ export default function HeaderNavBar() {
                         onMouseLeave={() => setDropdownOpen(false)}
                       >
                         <div className="login-btn btn-link" style={{ cursor: 'pointer' }}>
-                          <p style={{ paddingTop: "10px", fontSize: "24px"}}>
-                            <a href="/edit-profile" style={{color:"black",textDecoration:"none"}}>VIJITH E P</a>
+                          <p style={{ paddingTop: "10px", fontSize: "15px"}}>
+                            <a href="/edit-profile" style={{color:"black",textDecoration:"none"}}>{existinguser}</a>
                           </p>
                         </div>
                     

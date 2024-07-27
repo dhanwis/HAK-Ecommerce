@@ -60,6 +60,8 @@ export default function HeaderNavBar() {
 
   const getActiveStyle = (path) => location.pathname === path ? { color: 'rgb(250, 17, 153)' } : {};
 
+  const existinguser = JSON.parse(sessionStorage.getItem("existuser"));
+
   return (
     <>
       <header className="site-header">
@@ -83,9 +85,11 @@ export default function HeaderNavBar() {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link" style={getActiveStyle('/')}>Home</Link>
-                      </li>
+                    <li className="nav-item">
+    <Link to={existinguser ? "/user" : "/"} className="nav-link" active>
+      Home
+    </Link>
+  </li>
                       <li className="nav-item">
                         <Link to="/kurti" className="nav-link" style={getActiveStyle('/kurti')}>Kurti</Link>
                       </li>
