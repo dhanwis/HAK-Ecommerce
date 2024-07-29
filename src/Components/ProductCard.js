@@ -10,6 +10,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [token,setoken]=useState("")
 
   const toggleModal = () => {
     setModalOpen(!modalOpen);
@@ -22,41 +23,51 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
 
 
    
- 
- 
+  useEffect(()=>{
+    if(sessionStorage.getItem("token")){
+      setoken(sessionStorage.getItem("token"))
 
-    const handleAddToCart = async () => {
-      const userId = sessionStorage.getItem('userId'); // Assuming you've stored the user ID in session storage
+    }
+    else{
+      setoken("")
+    }
+
+
+  },[])
   
-      const data = {
-        product: id,
-        user: userId,
-      };
+ 
 
-      
+  const handleAddToWishList = async () => {
+    const userId = sessionStorage.getItem('userId');
+    console.log("userid:", userId); // Assuming you've stored the user ID in session storage
   
-      try {
-
-
-        const reqheaders= {
-          "Content-Type":"application/json",
-        
+    const data = {
+      product: id,
+      user: userId,
+    }; 
+  
+    try {
+      const reqheaders = {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         }
-        const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}`, data,reqheaders);
-        console.log(response.data);
-        // Handle success response here
-      } catch (error) {
-        console.error('There was an error adding the product to the cart:', error);
-        // Handle error here
-      }
-    };
-    
+      };
+  
+      const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}/`, data, reqheaders);
+      console.log(response.data);
+      // Handle success response here
+    } catch (error) {
+      console.error('There was an error adding the product to the cart:', error);
+      // Handle error here
+    }
+  };
   
 
 
  
 
-  const handleAddToWishList = (product) => {
+  const handleAddToCart = (product) => {
     const size = product.size[0];
     const color = product.colors[0];
 

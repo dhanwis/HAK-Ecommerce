@@ -79,7 +79,8 @@ function SendOtp() {
                   setAccessToken(userotp.data.access)
                 setRefreshToken(userotp.data.refresh)
                 sessionStorage.setItem("existuser", JSON.stringify(userotp.data.name));
-                sessionStorage.setItem("token", JSON.stringify(userotp.data.access));
+                sessionStorage.setItem("token",JSON.stringify(userotp.data.access));
+                sessionStorage.setItem("userId", (userotp.data.id));
                 console.log("Stored user:", sessionStorage.getItem("existuser"));
 
 
