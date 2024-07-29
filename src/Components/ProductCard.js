@@ -23,19 +23,38 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
 
    
  
-  const handleAddToCart = (product) => {
-    const size = product.size[0];
-    const color = product.colors[0];
+ 
 
-    const productToAdd = {
-      ...product,
-      size,
-      colors: color,
-      quantity: 1,
+    const handleAddToCart = async () => {
+      const userId = sessionStorage.getItem('userId'); // Assuming you've stored the user ID in session storage
+  
+      const data = {
+        product: id,
+        user: userId,
+      };
+
+      
+  
+      try {
+
+
+        const reqheaders= {
+          "Content-Type":"application/json",
+        
+        }
+        const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}`, data,reqheaders);
+        console.log(response.data);
+        // Handle success response here
+      } catch (error) {
+        console.error('There was an error adding the product to the cart:', error);
+        // Handle error here
+      }
     };
+    
+  
 
-    dispatch(addToCart(productToAdd));
-  };
+
+ 
 
   const handleAddToWishList = (product) => {
     const size = product.size[0];
