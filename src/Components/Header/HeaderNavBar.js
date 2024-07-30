@@ -11,6 +11,8 @@ import {
   Row
 } from "reactstrap";
 import { addToCart, removeCartItem, removeWishListItem } from "../../store/reducer/productReducer";
+import axios from "axios";
+import { BASE_URL } from "../../services/baseurl";
 
 export default function HeaderNavBar() {
   const wishListItems = useSelector((state) => state.products.wishList);
@@ -61,6 +63,128 @@ export default function HeaderNavBar() {
   const getActiveStyle = (path) => location.pathname === path ? { color: 'rgb(250, 17, 153)' } : {};
 
   const existinguser = JSON.parse(sessionStorage.getItem("existuser"));
+
+
+
+
+// to get product data
+
+const userId = sessionStorage.getItem('userId');
+
+const [getWishlist, setGetWishlist] = useState([]);
+  const [getWishlistImage, setGetWishlistImage] = useState([]);
+  const [combinedData, setCombinedData] = useState([]);
+
+  // Fetch wishlist data
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/wishlist/${userId}/`)
+      .then(res => {
+        // console.log("wishlist data", res);
+        setGetWishlist(res.data);
+      })
+      .catch(error => {
+        console.error('Error fetching wishlist data:', error);
+      });
+  }, [userId, BASE_URL]);
+
+
+  // Fetch wishlist image
+  useEffect(() => {
+    if (getWishlist.length > 0) {
+      const productIds = getWishlist.map(item => item.product);
+      const imageRequests = productIds.map(productId => 
+        axios.get(`${BASE_URL}/client/product/${productId}/`)
+      );
+
+      Promise.all(imageRequests)
+        .then(responses => {
+          const images = responses.map(res => res.data);
+          // console.log("wishlist images", images);
+          setGetWishlistImage(images);
+        })
+        .catch(error => {
+          console.error('Error fetching wishlist images:', error);
+        });
+    }
+  }, [getWishlist, BASE_URL]);
+
+
+   // Combine wishlist data and images
+   useEffect(() => {
+    if (getWishlist.length > 0 && getWishlistImage.length > 0) {
+      const combined = getWishlist.map((item, index) => ({
+        ...item,
+        image: getWishlistImage[index] 
+      }));
+      setCombinedData(combined);
+      // console.log("combined data",combined);
+    }
+  }, [getWishlist, getWishlistImage]);
+
+
+// to get cart data
+const [getCart, setgetCart] = useState([]);
+const [totalCart, settotalCart] = useState(0);
+
+  const [getCartImage, setGetCartImage] = useState([]);
+  const [CartCombinedData, setCartCombinedData] = useState([]);
+
+
+
+  // Fetch cart data
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/cart/${userId}/`)
+      .then(result => {
+        console.log("cart data", result);
+        if (Array.isArray(result.data.cart_items)) {
+          setgetCart(result.data.cart_items);
+           settotalCart(result.data.subtotal);
+        } else {
+          console.error('Invalid cart data format:', result.data);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching cart data:', error);
+      });
+  }, [userId, BASE_URL]);
+
+
+// Fetch cart image
+useEffect(() => {
+  if (getCart.length > 0) {
+    const cartIds = getCart.map(thing => thing.item);
+    const imageRequest = cartIds.map(cartId =>
+      axios.get(`${BASE_URL}/client/product/${cartId}/`)
+    );
+
+    Promise.all(imageRequest)
+      .then(responses => {
+        const images = responses.map(res => res.data);
+        console.log("cart images", images);
+        setGetCartImage(images);
+      })
+      .catch(error => {
+        console.error('Error fetching cart images:', error);
+      });
+  }
+}, [getCart, BASE_URL]);
+
+
+   // Combine wishlist data and images
+   useEffect(() => {
+    if (getCart.length > 0 && getCartImage.length > 0) {
+      const comb = getCart.map((item, index) => ({
+        ...item,
+        image: getCartImage[index] 
+      }));
+      setCartCombinedData(comb);
+       console.log("comb data",comb);
+    }
+  }, [getCart, getCartImage]);
+
+
+
+
 
   return (
     <>
@@ -149,7 +273,7 @@ export default function HeaderNavBar() {
           </Row>
         </div>
         <ModalBody>
-          {cartItems.map((product) => {
+          {CartCombinedData.map((product) => {
             if (product) {
               return (
                 <div key={product.id}>
@@ -167,20 +291,21 @@ export default function HeaderNavBar() {
                       <Link to="#">
                         <img
                           className="img"
-                          src={`assets/images/${product.pictures[0]}`}
+                           src={`${BASE_URL}${product.image.color.image_url}`}
                           alt="..."
                         />
                       </Link>
                     </Col>
                     <Col xs="5">
                       <h6>
-                        <div className="link-title">{product.name}</div>
+                        <div className="link-title">{product.product_name}</div>
                       </h6>
                       <div className="product-meta">
-                        <span className="mr-2 text-primary">
-                          ${product.salePrice.toFixed(2)}
+                      <p>Quantity:{product.quantity}</p>
+                        <span className="mr-2 text-primary">Total Price :- 
+                        ₹{product.total_price}
                         </span>
-                        <span className="text-muted">x {product.quantity}</span>
+                       
                       </div>
                     </Col>
                   </Row>
@@ -191,8 +316,8 @@ export default function HeaderNavBar() {
           })}
           <hr className="my-5" />
           <div className="d-flex justify-content-between align-items-center mb-8">
-            <span className="text-muted">Subtotal:</span>
-            <span className="text-dark">${subtotalCart.toFixed(2)}</span>
+            <span >Subtotal:</span>
+            <span className="text-dark"> ₹{totalCart.toFixed(2)}</span>
           </div>
           <Link
             to="/product-cart"
@@ -227,7 +352,7 @@ export default function HeaderNavBar() {
           </Row>
         </div>
         <ModalBody className="">
-          {wishListItems.map((product) => {
+          {combinedData.map((product) => {
             if (product) {
               return (
                 <div key={product.id}>
@@ -245,20 +370,20 @@ export default function HeaderNavBar() {
                       <div>
                         <img
                           className="img"
-                          src={`assets/images/${product.pictures[0]}`}
+                          src={`${BASE_URL}${product.image.color.image_url}`}
                           alt="..."
                         />
                       </div>
                     </Col>
                     <Col xs={5}>
                       <h6>
-                        <div className="link-title">{product.name}</div>
+                        <div className="link-title">{product.product_name}</div>
                       </h6>
                       <div className="product-meta">
                         <span className="mx-2 text-primary">
-                          ${product.salePrice.toFixed(2)}
+                          ${product.product_price}
                         </span>
-                        <span className="text-muted">x {product.quantity}</span>
+                        {/* <span className="text-muted">x {product.quantity}</span> */}
                       </div>
                       <div className="product-meta"></div>
                     </Col>

@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import { addToCart, addToWishList, setSelectedProduct } from "../store/reducer/productReducer";
 import axios from "axios";
 import { BASE_URL } from "../services/baseurl";
+import Swal from "sweetalert2";
+
 
 function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, rating,stock,description,category ,size}) {
   const dispatch = useDispatch();
@@ -50,36 +52,63 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
       const reqheaders = {
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
         }
       };
   
       const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}/`, data, reqheaders);
       console.log(response.data);
-      // Handle success response here
+      
+      Swal.fire("Product Added to Wishlist");
+
     } catch (error) {
-      console.error('There was an error adding the product to the cart:', error);
-      // Handle error here
+      if (error.response) {
+        if (error.response.status === 400) {
+          alert('Product Already Exist in Wishlist');
+        } else {
+          console.error('There was an error adding the product to the wishlist:', error);
+          alert('An unexpected error occurred.');
+        }
+      } else {
+        console.error('There was an error adding the product to the wishlist:', error);
+        alert('An unexpected error occurred.');
+      }
     }
   };
   
 
 
- 
+//  add tocart
 
-  const handleAddToCart = (product) => {
-    const size = product.size[0];
-    const color = product.colors[0];
 
-    const productToAdd = {
-      ...product,
-      size,
-      colors: color,
-      quantity: 1,
+const handleAddToCart = async () => {
+  const userId = sessionStorage.getItem('userId');
+  console.log("userid:", userId); // Assuming you've stored the user ID in session storage
+
+  const data = {
+    item:id,
+    user: userId,
+    quantity:stock
+  }; 
+
+  try {
+    const reqheaders = {
+      headers: {
+        "Content-Type": "application/json",
+        // "Authorization": Bearer ${token}
+      }
     };
 
-    dispatch(addToWishList(productToAdd));
-  };
+    const response = await axios.post(`${BASE_URL}/client/cart/${userId}/`, data, reqheaders);
+    console.log(response.data);
+    Swal.fire("Product Added to Cart");
+  } catch (error) {
+    console.error('There was an error adding the product to the cart:', error);
+    // Handle error here
+  }
+};
+
+
+ 
   
   const renderRating = () => {
     const stars = [];
