@@ -351,9 +351,10 @@ function CheckOut() {
                                                 </div>
                                                 <button onClick={handleSubmit} className="btn btn-primary btn-animated btn-block">Proceed to Payment</button>
                                             </div>
+                                            
                                         </Col>
                                     </Row>
-                                </Col>
+                                </Col> 
                             </Row>
                         </Container>
                     </section>
