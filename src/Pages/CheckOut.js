@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import {
     Button,
@@ -12,7 +12,11 @@ import {
     ListGroupItem,
     Row,
 } from "reactstrap";
-import PageHeading from "../Components/PageHeading/PageHeading";
+import { BASE_URL } from "../services/baseurl";
+import Swal from "sweetalert2";
+import axios from "axios";
+
+
 
 function CheckOut() {
     const cart = useSelector((state) => state.products.cart);
@@ -41,6 +45,56 @@ function CheckOut() {
         return total.toFixed(2);
     }
 
+
+
+    const[CheckoutData, setCheckoutData] = useState({
+        
+        first_name: "",
+        last_name: "",
+        email: "",
+        address: "",
+        mobile_no:"",
+        company_name:"",
+        country:"",
+        city:"",
+        state:"",
+        postal_code:""
+        
+      })
+    
+      console.log(CheckoutData);
+    
+    
+      const userId = sessionStorage.getItem('userId');
+
+      const handleSubmit = async () => {
+        try {
+          let formData = new FormData();
+          for (let key in CheckoutData) {
+            formData.append(key, CheckoutData[key]);
+          }
+          
+          let order_admin = await axios.post(`${BASE_URL}/client/order/${userId}/`, formData, {
+            headers: { 'Content-Type': 'application/json' }
+          });
+          console.log("Response:", order_admin);
+          Swal.fire({
+            icon:'success',
+            title: 'Added Successfully',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+         
+        } catch (err) {
+          console.error(err);
+          alert('Failed!!!')
+        }
+      };
+
     return (
         <div>
             <div className="page-wrapper">
@@ -63,6 +117,8 @@ function CheckOut() {
                                                             type="text"
                                                             id="fname"
                                                             placeholder="Your firstname"
+                                                            value={CheckoutData.first_name}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,first_name:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
@@ -75,6 +131,8 @@ function CheckOut() {
                                                             type="text"
                                                             id="lname"
                                                             placeholder="Your lastname"
+                                                            value={CheckoutData.last_name}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,last_name:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
@@ -87,6 +145,8 @@ function CheckOut() {
                                                             type="text"
                                                             id="email"
                                                             placeholder="State Province"
+                                                            value={CheckoutData.email}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,email:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
@@ -95,7 +155,8 @@ function CheckOut() {
                                                         <Label for="phone" className="font-w-6">
                                                             Phone Number
                                                         </Label>
-                                                        <Input type="text" id="phone" placeholder="" />
+                                                        <Input type="number" id="phone" placeholder=""   value={CheckoutData.mobile_no}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,mobile_no:e.target.value})} />
                                                     </FormGroup>
                                                 </Col>
                                                 <Col md={6}>
@@ -107,26 +168,23 @@ function CheckOut() {
                                                             type="text"
                                                             id="companyname"
                                                             placeholder="Company Name"
+                                                            value={CheckoutData.company_name}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,company_name:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
                                                 <Col md={6}>
                                                     <FormGroup>
                                                         <Label for="country" className="font-w-6">
-                                                            Select Country
+                                                            Country
                                                         </Label>
                                                         <Input
-                                                            type="select"
-                                                            id="country"
-                                                            className="form-control"
-                                                        >
-                                                            <option>Select country</option>
-                                                            <option value="#">Alaska</option>
-                                                            <option value="#">China</option>
-                                                            <option value="#">Japan</option>
-                                                            <option value="#">Korea</option>
-                                                            <option value="#">Philippines</option>
-                                                        </Input>
+                                                            type="text"
+                                                            id="Country"
+                                                            placeholder="Country"
+                                                            value={CheckoutData.country}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,country:e.target.value})}
+                                                        />
                                                     </FormGroup>
                                                 </Col>
                                                 <Col md={12}>
@@ -138,15 +196,11 @@ function CheckOut() {
                                                             type="text"
                                                             id="address"
                                                             placeholder="Enter Your Address"
+                                                            value={CheckoutData.address}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,address:e.target.value})}
                                                         />
                                                     </FormGroup>
-                                                    <FormGroup>
-                                                        <Input
-                                                            type="text"
-                                                            id="address2"
-                                                            placeholder="Second Address"
-                                                        />
-                                                    </FormGroup>
+                                                  
                                                 </Col>
                                                 <Col md={12}>
                                                     <FormGroup>
@@ -157,6 +211,8 @@ function CheckOut() {
                                                             type="text"
                                                             id="towncity"
                                                             placeholder="Town or City"
+                                                            value={CheckoutData.city}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,city:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
@@ -169,6 +225,8 @@ function CheckOut() {
                                                             type="text"
                                                             id="statename"
                                                             placeholder="State Province"
+                                                            value={CheckoutData.state}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,state:e.target.value})}
                                                         />
                                                     </FormGroup>{" "}
                                                 </Col>
@@ -178,9 +236,11 @@ function CheckOut() {
                                                             Zip/Postal Code
                                                         </Label>
                                                         <Input
-                                                            type="text"
+                                                            type="number"
                                                             id="zippostalcode"
                                                             placeholder="Zip / Postal"
+                                                            value={CheckoutData.postal_code}
+                                                            onChange={(e)=>setCheckoutData({...CheckoutData,postal_code:e.target.value})}
                                                         />
                                                     </FormGroup>
                                                 </Col>
@@ -289,7 +349,7 @@ function CheckOut() {
                                                         <label className="custom-control-label" for="customCheck1">I have read and accept the terms and conditions</label>
                                                     </div>
                                                 </div>
-                                                <button className="btn btn-primary btn-animated btn-block">Proceed to Payment</button>
+                                                <button onClick={handleSubmit} className="btn btn-primary btn-animated btn-block">Proceed to Payment</button>
                                             </div>
                                         </Col>
                                     </Row>
