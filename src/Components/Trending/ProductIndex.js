@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import { useSelector } from "react-redux/es";
 import all from '../../allproducts'
+import { BASE_URL } from "../../services/baseurl";
+import axios from "axios";
 
 function ProductIndex() {
   const trendingproducts = useSelector(
@@ -9,6 +11,26 @@ function ProductIndex() {
   ).slice(0, 8);
 
   useEffect(()=>{console.log('1',trendingproducts);},[])
+
+
+
+
+// to get trending products
+const [viewTrending,setviewTrending]=useState([])
+
+  useEffect(()=>{
+
+    axios.get(`${BASE_URL}/client/product/trending`)
+    .then(response=>{
+      console.log("r",response);
+      setviewTrending(response.data)
+    })
+    .catch(error=>{
+      console.error("Error in fetching data",error);
+    })
+  },[])
+
+
 
   return (
     <>
@@ -24,20 +46,31 @@ function ProductIndex() {
           </div>
           <div className="row">
 
-            {all.slice(0,8).map((product) => (
-
-              <div className="col-xl-3 col-lg-4 col-md-6" key={product.id}>
+            
+            {
+             viewTrending && viewTrending.length>0 ? (
+            viewTrending.map((product)=>(
+            <div className="col-xl-3 col-lg-4 col-md-6" key={product.id}>
                 <ProductCard
-                  id={product.id} 
-                  imgBackSrc={`assets/images/${product.pictures[0]}`}
-                  imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                  title={product.name}
-                  price={product.salePrice}
-                  actualPrice={product.price}
-                  rating={product.rating}
+                  id={product.id}
+                  imgBackSrc={`${BASE_URL}${product.color.image_url}`}
+                  imgFrontSrc={`${BASE_URL}${product.color.image_url}`}
+                  // imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                  title={product.product.name}
+                  price={product.discount_price}
+                  actualPrice={product.actual_price}
+                   rating={product.rating}
+                   stock={product.stock}
+                   description={product.product.description}
+                   category={product.category.name}
+                   size={product.size.name}
+
                 />
               </div>
-            ))}
+              ))
+            )
+            :null
+          }
           </div>
         </div>
       </section>

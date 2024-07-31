@@ -145,7 +145,7 @@ console.log("Parsed user:", existinguser);
                       >
                         <div className="login-btn btn-link" style={{ cursor: 'pointer' }}>
                           <p style={{ paddingTop: "10px", fontSize: "15px"}}>
-                            <a href="/edit-profile" style={{color:"black",textDecoration:"none"}}>{existinguser}</a>
+                            <a href="/view-profile" style={{color:"black",textDecoration:"none"}}>{existinguser}</a>
                           </p>
                         </div>
                     

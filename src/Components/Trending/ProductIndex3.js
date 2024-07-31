@@ -20,7 +20,7 @@ function ProductIndex3() {
                   <div className="col-lg-8 col-md-10">
                     <div className="mb-5">
                       <h6 className="text-primary mb-1">— New Collection</h6>
-                      <h2 className="mb-0">Trending Products</h2>
+                      <h2 className="mb-0">Trending Product</h2>
                     </div>
                   </div>
                 </Row>

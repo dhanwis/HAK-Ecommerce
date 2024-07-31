@@ -35,15 +35,9 @@ const RemainingBlogItems = ({ blogs }) => {
                                 ))}
                             </div>
                             <h2 className="h5 font-w-6 mt-3">
-                                <Link
-                                    className="link-title"
-                                    to="/blog-single"
-                                    onClick={() => {
-                                        dispatch(setSelectedBlog(blog.image));
-                                    }}
-                                >
+                                
                                     {blog.title}
-                                </Link>
+                                
                             </h2>
                         </div>
                         <div></div>

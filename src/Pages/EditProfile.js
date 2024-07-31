@@ -17,20 +17,7 @@ const EditProfile = () => {
     phone: '',
   });
 
-  const [isEditing, setIsEditing] = useState({
-    personalInfo: false,
-    addressInfo: false,
-    contactInfo: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const toggleEdit = (section) => {
-    setIsEditing({ ...isEditing, [section]: !isEditing[section] });
-  };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,19 +45,20 @@ axios.get(`${BASE_URL}/client/profile/${userId}/`)
 
   return (
     <div className="edit-profile">
-      <h3 className='text-center'>Edit Profile</h3>
+      <h3 className='text-center'>My Profile</h3>
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <div className="section">
-          <h4>Personal Information <Link to="" onClick={() => toggleEdit('personalInfo')}>Edit</Link></h4>
-          <div className={`form-row ${!isEditing.personalInfo ? 'disabled' : ''}`}>
+          <h4>Personal Information </h4>
+          <div className='form-row' >
             <label>
               First Name:
               <input
                 type="text"
                 name="firstname"
                 value={ViewProfile.firstname}
+                readOnly
                 
-                disabled={!isEditing.personalInfo}
+                
               />
             </label>
             <label>
@@ -79,23 +67,23 @@ axios.get(`${BASE_URL}/client/profile/${userId}/`)
                 type="text"
                 name="lastname"
                 value={ViewProfile.lastname}
-                
-                disabled={!isEditing.personalInfo}
+                readOnly
+               
               />
             </label>
           </div>
         </div>
         <div className="section">
-          <h4>Address Information <Link to="" onClick={() => toggleEdit('addressInfo')}>Edit</Link></h4>
-          <div className={`form-row ${!isEditing.addressInfo ? 'disabled' : ''}`}>
+          <h4>Address Information</h4>
+          <div className='form-row'>
             <label>
               Street:
               <input
                 type="text"
                 name="street"
                 value={ViewProfile.street}
-                onChange={handleChange}
-                disabled={!isEditing.addressInfo}
+               
+               readOnly
               />
             </label>
             <label>
@@ -105,19 +93,19 @@ axios.get(`${BASE_URL}/client/profile/${userId}/`)
                 name="city"
                 value={ViewProfile.city}
                 
-                disabled={!isEditing.addressInfo}
+                readOnly
               />
             </label>
           </div>
-          <div className={`form-row ${!isEditing.addressInfo ? 'disabled' : ''}`}>
+          <div className='form-row'>
             <label>
               State:
               <input
                 type="text"
                 name="state"
                 value={ViewProfile.state}
+               readOnly
                
-                disabled={!isEditing.addressInfo}
               />
             </label>
             <label>
@@ -126,23 +114,21 @@ axios.get(`${BASE_URL}/client/profile/${userId}/`)
                 type="text"
                 name="pincode"
                 value={ViewProfile.pincode}
-                onChange={handleChange}
-                disabled={!isEditing.addressInfo}
+               readOnly
               />
             </label>
           </div>
         </div>
         <div className="section">
-          <h4>Contact Information <Link to="" onClick={() => toggleEdit('contactInfo')}>Edit</Link></h4>
-          <div className={`form-row ${!isEditing.contactInfo ? 'disabled' : ''}`}>
+          <h4>Contact Information</h4>
+          <div className='form-row'>
             <label>
               Email:
               <input
                 type="email"
                 name="email"
                 value={ViewProfile.email}
-                onChange={handleChange}
-                disabled={!isEditing.contactInfo}
+                readOnly
               />
             </label>
             <label>
@@ -151,17 +137,14 @@ axios.get(`${BASE_URL}/client/profile/${userId}/`)
                 type="text"
                 name="phone"
                 value={ViewProfile.phone_number}
-                onChange={handleChange}
-                disabled={!isEditing.contactInfo}
+                readOnly
               />
             </label>
           </div>
         </div>
-        <button type="submit">Save</button>
+       
       </form>
-      <div className="faqs">
-        <a href="#">Delete Account</a>
-      </div>
+      
     </div>
   );
 };

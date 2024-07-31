@@ -11,32 +11,25 @@ const Section = () => {
             <Col xs={12} md={8}>
               <div className="position-relative rounded overflow-hidden text-right shadow-sm">
                 {/* Background */}
-                <img className="img-fluid hover-zoom" src="assets/images/product-ad/01.jpg" alt="" style={{height:'950px',width:'725px'}}/>
+               <Link to={'/saree'}> <img className="img-fluid hover-zoom" src="assets/images/product-ad/01.jpg" alt="" style={{height:'950px',width:'725px'}}/></Link>
                 {/* Body */}
                 <div className="position-absolute top-50 pl-5 text-left">
                   <h6 className="text-light">New Saree Collection</h6>
-                  {/* Heading */}
-                  <h3 className="text-light">
-                    <span className="font-w-7 text-primary d-block">50% OFF</span> Popular Items!
-                  </h3>
-                  {/* Link */}
-                  <Link className="btn btn-sm btn-primary btn-animated" to="/shop-grid-left-sidebar">
-                    Shop Now
-                  </Link>
+                 
                 </div>
               </div>
             </Col>
             <Col xs={12} md={4} className="mt-5 mt-md-0">
               <div className="position-relative rounded overflow-hidden">
-                <img className="img-fluid w-100 hover-zoom" src="assets/images/product-ad/02.webp" alt="" style={{height:'470px'}}/>
+              <Link to={'/kurtiset'}>  <img className="img-fluid w-100 hover-zoom" src="assets/images/product-ad/02.webp" alt="" style={{height:'470px'}}/></Link>
                 <div className="position-absolute top-50 pl-5" >
-                  <h4 className="mb-0 text-light" >New kurti <br /> Collection</h4>
+                  <h4 className="mb-0 text-light" >New kurtiSet <br /> Collection</h4>
                 </div>
               </div>
               <div className="position-relative rounded overflow-hidden mt-2 shadow-sm">
-                <img className="img-fluid w-100 hover-zoom" src="assets/images/product-ad/03.webp" alt="" style={{height:'470px'}}/>
+              <Link to={'/kurti'}>  <img className="img-fluid w-100 hover-zoom" src="assets/images/product-ad/03.webp" alt="" style={{height:'470px'}}/></Link>
                 <div className="position-absolute top-50 pl-5">
-                  <h4 className="mb-0 text-light">Trending kurti</h4>
+                  <h4 className="mb-0 text-light">New kurti Collection</h4>
                 </div>
               </div>
             </Col>

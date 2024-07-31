@@ -23,15 +23,9 @@ const BlogCard = ({ date, image, category, title }) => {
           ))}
         </div>
         <h2 className="h5 font-w-6 mt-2 mb-0">
-          <Link
-            className="link-title"
-            to="/blog-single"
-            onClick={() => {
-              dispatch(setSelectedBlog(image));
-            }}
-          >
+         
             {title}
-          </Link>
+          
         </h2>
       </CardBody>
     </Card>

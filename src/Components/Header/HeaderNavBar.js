@@ -193,7 +193,7 @@ useEffect(() => {
     axios.delete(`${BASE_URL}/client/wishlist/${userId}/${productId}/`)
     .then(response => {
       if (response.status === 200) {
-        Swal.fire("Deleted from wishlist").then(() => {
+        Swal.fire("Deleted").then(() => {
           window.location.reload();
         });
       }
@@ -211,7 +211,7 @@ useEffect(() => {
     axios.delete(`${BASE_URL}/client/cart/${userId}/${productId}/`)
     .then(response=>{
       if(response.status===200){
-        Swal.fire("Deleted from Cart").then(() => {
+        Swal.fire("Deleted").then(() => {
           window.location.reload();
         });
       }

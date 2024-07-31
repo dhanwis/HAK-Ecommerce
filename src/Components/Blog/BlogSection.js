@@ -29,9 +29,7 @@ const BlogSection = ({ blogs, title }) => {
         </Row>
         <Row className="justify-content-center text-center mt-5">
           <Col>
-            <Link className="btn btn-dark" to="blog-card">
-              View All Blog
-            </Link>
+            
           </Col>
         </Row>
       </Container>

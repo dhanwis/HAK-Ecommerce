@@ -56,7 +56,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
       const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}/`, data,reqheaders);
       console.log(response.data);
       
-      Swal.fire("Product Added to Cart").then(() => {
+      Swal.fire("Product Added to Wishlist").then(() => {
         window.location.reload();
       });
 

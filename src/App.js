@@ -48,6 +48,7 @@ import ProductSingle from "./Pages/ProductSingle.js";
 import { AuthContext } from "./ContextApi/Authentication";
 import EditProfile from "./Pages/EditProfile.js";
 import Sidebar from "./Pages/Sidebar.js";
+import Myorders from "./Pages/Myorders.js";
 
 function App() {
   const {accessToken,refreshToken} = useContext(AuthContext)
@@ -159,7 +160,8 @@ if(showGif){
           <Route path="/Userregistration" element={<Userregistration accessToken = {accessToken}/>} />
           <Route path="/send-otp/:id" element={<SendOtp />} />
           <Route path="/user" element={<><Header1/><Index2 /><Footer/><BackToTop/></>} />
-          <Route path="/edit-profile" element={<><Header1/><Sidebar/><EditProfile/><BackToTop/></>}/>
+          <Route path="/view-profile" element={<><Header1/><Sidebar/><EditProfile/><BackToTop/></>}/>
+          <Route path="/Myorders" element={<><Header1/><Sidebar/><Myorders/><BackToTop/></>}/>
           <Route path="/privacy-policy" element={<><Header/><PrivacyPage /><Footer/><BackToTop/></>} />
           <Route path="/terms-and-conditions" element={<><Header/><TAndC /><Footer/><BackToTop/></>} />
           <Route path="/blog-card" element={<><Header/><BlogCards /><Footer/><BackToTop/></>} />

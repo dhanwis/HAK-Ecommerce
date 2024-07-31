@@ -7,10 +7,10 @@ import CustomPagination from '../Components/pagination';
 import { useState } from 'react';
 
 function BlogCards() {
-    const firstBreadcrumb = { label: "Pages", link: "/blog-card" };
+    const firstBreadcrumb = { label: "Pages"};
     const secondBreadcrumb = {
         label: "Blog Card",
-        link: "/blog-card",
+       
         active: true,
     };
     const blogs = useSelector(

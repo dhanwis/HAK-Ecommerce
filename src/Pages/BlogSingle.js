@@ -21,10 +21,10 @@ function BlogSingle() {
         email: "",
         message: "",
     });
-    const firstBreadcrumb = { label: "Pages", link: "/blog-single" };
+    const firstBreadcrumb = { label: "Pages",};
     const secondBreadcrumb = {
         label: "Blog Card",
-        link: "/blog-single",
+        
         active: true,
     };
     const handleSubmit = (e) => {
