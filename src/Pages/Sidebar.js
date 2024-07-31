@@ -9,7 +9,7 @@ const Sidebar = () => {
         <ul>
        <Link to={'/Myorders'}><li>My Orders</li></Link>
             
-          <li>My Reviews & Ratings</li>
+          {/* <li>My Reviews & Ratings</li> */}
         </ul>
       </div>
     </div>
