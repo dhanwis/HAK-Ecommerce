@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { addToCart, addToWishList, setSelectedProduct } from "../store/reducer/productReducer";
 import axios from "axios";
 import { BASE_URL } from "../services/baseurl";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; 
 
 
 function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, rating,stock,description,category ,size}) {
@@ -15,7 +15,7 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
   const [token,setoken]=useState("")
 
   const toggleModal = () => {
-    setModalOpen(!modalOpen);
+    setModalOpen(!modalOpen);     
   };
 
   const allProducts = useSelector((state) => state.products.allProducts);
@@ -33,11 +33,9 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
     else{
       setoken("")
     }
-
-
   },[])
+
   
- 
 
   const handleAddToWishList = async () => {
     const userId = sessionStorage.getItem('userId');
@@ -55,10 +53,12 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
         }
       };
   
-      const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}/`, data, reqheaders);
+      const response = await axios.post(`${BASE_URL}/client/wishlist/${userId}/`, data,reqheaders);
       console.log(response.data);
       
-      Swal.fire("Product Added to Wishlist");
+      Swal.fire("Product Added to Cart").then(() => {
+        window.location.reload();
+      });
 
     } catch (error) {
       if (error.response) {
@@ -74,11 +74,11 @@ function ProductCard({ id, imgBackSrc, imgFrontSrc, title, price, actualPrice, r
       }
     }
   };
-  
 
 
-//  add tocart
 
+
+//  add to cart
 
 const handleAddToCart = async () => {
   const userId = sessionStorage.getItem('userId');
@@ -100,7 +100,10 @@ const handleAddToCart = async () => {
 
     const response = await axios.post(`${BASE_URL}/client/cart/${userId}/`, data, reqheaders);
     console.log(response.data);
-    Swal.fire("Product Added to Cart");
+    Swal.fire("Product Added to Cart").then(() => {
+      window.location.reload();
+    });
+
   } catch (error) {
     console.error('There was an error adding the product to the cart:', error);
     // Handle error here

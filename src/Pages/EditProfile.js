@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './EditProfile.css';
+import axios from 'axios';
+import { BASE_URL } from '../services/baseurl';
+import { error } from 'jquery';
 
 const EditProfile = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +37,25 @@ const EditProfile = () => {
     console.log(formData);
   };
 
+// to get profile data
+const [ViewProfile,setViewProfile]=useState([])
+
+const userId = sessionStorage.getItem('userId');
+
+useEffect(()=>{
+
+axios.get(`${BASE_URL}/client/profile/${userId}/`)
+.then(response=>{
+  console.log("response",response);
+  setViewProfile(response.data)
+})
+.catch(error=>{
+  console.error("Error in fetching data",error);
+})
+
+
+},[])
+
   return (
     <div className="edit-profile">
       <h3 className='text-center'>Edit Profile</h3>
@@ -46,8 +68,8 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="firstname"
-                value={formData.first_name}
-                onChange={handleChange}
+                value={ViewProfile.firstname}
+                
                 disabled={!isEditing.personalInfo}
               />
             </label>
@@ -56,8 +78,8 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="lastname"
-                value={formData.lastname}
-                onChange={handleChange}
+                value={ViewProfile.lastname}
+                
                 disabled={!isEditing.personalInfo}
               />
             </label>
@@ -71,7 +93,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="street"
-                value={formData.street}
+                value={ViewProfile.street}
                 onChange={handleChange}
                 disabled={!isEditing.addressInfo}
               />
@@ -81,8 +103,8 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="city"
-                value={formData.city}
-                onChange={handleChange}
+                value={ViewProfile.city}
+                
                 disabled={!isEditing.addressInfo}
               />
             </label>
@@ -93,8 +115,8 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="state"
-                value={formData.state}
-                onChange={handleChange}
+                value={ViewProfile.state}
+               
                 disabled={!isEditing.addressInfo}
               />
             </label>
@@ -103,7 +125,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="pincode"
-                value={formData.pincode}
+                value={ViewProfile.pincode}
                 onChange={handleChange}
                 disabled={!isEditing.addressInfo}
               />
@@ -118,7 +140,7 @@ const EditProfile = () => {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
+                value={ViewProfile.email}
                 onChange={handleChange}
                 disabled={!isEditing.contactInfo}
               />
@@ -128,7 +150,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="phone"
-                value={formData.phone}
+                value={ViewProfile.phone_number}
                 onChange={handleChange}
                 disabled={!isEditing.contactInfo}
               />

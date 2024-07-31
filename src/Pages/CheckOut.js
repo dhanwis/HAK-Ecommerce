@@ -93,6 +93,19 @@ function CheckOut() {
           console.error(err);
           alert('Failed!!!')
         }
+
+        setCheckoutData({
+            first_name: "",
+            last_name: "",
+            email: "",
+            address: "",
+            mobile_no:"",
+            company_name:"",
+            country:"",
+            city:"",
+            state:"",
+            postal_code:""
+        })
       };
 
     return (

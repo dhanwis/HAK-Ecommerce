@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
+
 import {
   Button,
   Col,
@@ -13,6 +13,10 @@ import {
 import { addToCart, removeCartItem, removeWishListItem } from "../../store/reducer/productReducer";
 import axios from "axios";
 import { BASE_URL } from "../../services/baseurl";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import { error } from "jquery";
+
 
 export default function HeaderNavBar() {
   const wishListItems = useSelector((state) => state.products.wishList);
@@ -182,8 +186,46 @@ useEffect(() => {
     }
   }, [getCart, getCartImage]);
 
+     
+  // delete from cart
+  const DeletefromWishlist = (productId) => {
+    const userId = sessionStorage.getItem('userId');
+    axios.delete(`${BASE_URL}/client/wishlist/${userId}/${productId}/`)
+    .then(response => {
+      if (response.status === 200) {
+        Swal.fire("Deleted from wishlist").then(() => {
+          window.location.reload();
+        });
+      }
+      setGetWishlist(getWishlist.filter(product => product.id !== productId));
+    })
+    
+      .catch(error => {
+        console.error("There was an error deleting the product from the cart", error);
+      });
+  }   
+  
 
+  // delete from cart
+  const DeleteCart=(productId)=>{
+    axios.delete(`${BASE_URL}/client/cart/${userId}/${productId}/`)
+    .then(response=>{
+      if(response.status===200){
+        Swal.fire("Deleted from Cart").then(() => {
+          window.location.reload();
+        });
+      }
+      setgetCart(getCart.filter(product=>product.id !== productId))
+      
+    })
+    .catch(error=>{
+console.error("There was an error deleting the product from the cart", error);
 
+    })
+    
+
+  }
+  
 
 
   return (
@@ -260,7 +302,7 @@ useEffect(() => {
         <div>
           <Row>
             <Col xs={9} className="py-4 align-item-center">
-              <h5 className="px-4">Your Cart ({cartItems?.length})</h5>
+              <h5 className="px-4">Your Cart({cartItems?.length})</h5>
             </Col>
             <Col xs={3} className="align-item-center">
               <Button
@@ -283,7 +325,7 @@ useEffect(() => {
                         <Button
                           type="submit"
                           className="btn btn-primary btn-sm"
-                          onClick={() => dispatch(removeCartItem(product.id))}
+                          onClick={() => DeleteCart(product.id)}
                         >
                           <i className="las la-times"></i>
                         </Button>
@@ -362,7 +404,7 @@ useEffect(() => {
                         <Button
                           type="submit"
                           className="btn btn-primary btn-sm"
-                          onClick={() => dispatch(removeWishListItem(product.id))}
+                          onClick={() => DeletefromWishlist(product.id)}
                         >
                           <i className="las la-times"></i>
                         </Button>
