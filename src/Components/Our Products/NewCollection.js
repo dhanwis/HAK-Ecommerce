@@ -90,7 +90,7 @@ export default function NewCollection() {
                   </div>
                 </Col>
                 <Col lg="6" className="text-lg-right mt-4 mt-lg-0">
-                  <Nav tabs className="flex-column flex-lg-row">
+                  {/* <Nav tabs className="flex-column flex-lg-row">
                     <NavItem>
                       <NavLink
                         className={classnames({ active: activeTab === '1' })}
@@ -121,7 +121,7 @@ export default function NewCollection() {
                         Featured Products
                       </NavLink>
                     </NavItem>
-                  </Nav>
+                  </Nav> */}
                 </Col>
               </Row>
               <Row>
