@@ -170,7 +170,7 @@ if(showGif){
           <Route path="/blog-single" element={<><Header/><BlogSingle /><Footer/><BackToTop/></>} />
           <Route path="/contact-us" element={<><Header/><ContactUs /><Footer/><BackToTop/></>} />
         </Routes>
-      </div>      
+      </div>     
     )
     }
     </>

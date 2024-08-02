@@ -16,6 +16,7 @@ import { BASE_URL } from "../../services/baseurl";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { error } from "jquery";
+import { FiLogOut } from "react-icons/fi";
 
 
 export default function HeaderNavBar() {
@@ -69,6 +70,8 @@ export default function HeaderNavBar() {
   const existinguser = JSON.parse(sessionStorage.getItem("existuser"));
 
 
+
+  
 
 
 // to get product data

@@ -1,9 +1,32 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../services/baseurl";
+import { error } from "jquery";
 
 export default function HeaderMiddle(props) {
   const { options } = props;
 
+
+  // search data
+  // const [searchTerm, setSearchTerm] = useState('');
+ // replace with your base url
+
+  // const handleChange = event => {
+  //   setSearchTerm(event.target.value);
+  // };
+
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   axios.get(`${BASE_URL}/client/product/search/?q=${searchTerm}`)
+  //     .then(response => {
+  //       console.log(response.data);
+  //       // handle your response data here
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data', error);
+  //     });
+  // };
   return (
     <>
       <div className="py-md-3 py-2">
@@ -24,9 +47,9 @@ export default function HeaderMiddle(props) {
               </div>
             </div>
 
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="right-nav align-items-center d-flex justify-content-end">
-                <form className="form-inline border rounded w-100">
+                <form onSubmit={handleSubmit} className="form-inline border rounded w-100">
                   <select className="custom-select border-0 rounded-0 bg-light form-control d-none d-lg-inline">
                     {options.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -34,12 +57,14 @@ export default function HeaderMiddle(props) {
                       </option>
                     ))}
                   </select>
-                  <input
-                    className="form-control border-0 border-left col"
-                    type="search"
-                    placeholder="Enter Your Keyword"
-                    aria-label="Search"
-                  />
+                <input
+        className="form-control border-0 border-left col"
+        type="search"
+        placeholder="Enter Your Key"
+        aria-label="Search"
+        value={searchTerm}
+        onChange={handleChange}
+      />
                   <button
                     className="btn btn-primary text-white col-auto"
                     type="submit"
@@ -48,7 +73,7 @@ export default function HeaderMiddle(props) {
                   </button>
                 </form>
               </div>
-            </div>
+            </div> */}
             {/* <!--menu end--> */}
           </div>
         </div>

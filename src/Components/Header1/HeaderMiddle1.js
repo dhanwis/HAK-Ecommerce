@@ -24,7 +24,7 @@ export default function HeaderMiddle(props) {
               </div>
             </div>
 
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="right-nav align-items-center d-flex justify-content-end">
                 <form className="form-inline border rounded w-100">
                   <select className="custom-select border-0 rounded-0 bg-light form-control d-none d-lg-inline">
@@ -48,7 +48,7 @@ export default function HeaderMiddle(props) {
                   </button>
                 </form>
               </div>
-            </div>
+            </div> */}
             {/* <!--menu end--> */}
           </div>
         </div>

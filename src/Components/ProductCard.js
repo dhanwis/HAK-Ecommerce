@@ -380,7 +380,9 @@ const handleAddToCart = async () => {
                 <Button
                   className="btn btn-primary btn-animated mr-sm-4 mb-3 mb-sm-0"
                   type="button"
-                  onClick={() => handleSelectedAddToCart(product)}
+                  onClick={() => {
+                    handleAddToCart(product)
+                  }}
                 >
                   <i className="las la-shopping-cart mr-1"></i>Add To Cart
                 </Button>
@@ -388,7 +390,7 @@ const handleAddToCart = async () => {
                   className="btn btn-dark btn-animated"
                   type="button"
                   onClick={() => {
-                    handleSelectedAddToWishList(product);
+                    handleAddToWishList(product)
                   }}
                 >
                   {/* heree */}

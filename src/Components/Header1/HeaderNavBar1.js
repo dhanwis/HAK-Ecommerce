@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FiLogOut } from "react-icons/fi";
-import { FaRegHeart } from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
+
 import Swal from "sweetalert2";
 
 import {
@@ -150,7 +149,7 @@ console.log("Parsed user:", existinguser);
                         </div>
                     
                       </div>
-                      <Link
+                      {/* <Link
                         className="wishlist-btn btn-link ms-3"
                         onClick={toggleWishList}
                       >
@@ -163,9 +162,9 @@ console.log("Parsed user:", existinguser);
                         <span className="bg-white px-2 py-1 shadow-sm rounded" >
                         <FaCartShopping />
                         </span>
-                      </Link>
+                      </Link> */}
                       
-                      <span onClick={handleLogout}  className="bg-white px-2 py-1 shadow-sm rounded" >
+                      <span onClick={handleLogout}  className="bg-white px-2 py-1 shadow-sm rounded mb-2 ms-2" >
                       <FiLogOut  />
                       </span>
                     
